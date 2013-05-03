@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'pg', '0.12.2'
+# gem 'pg', '0.12.2'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -20,19 +20,20 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pg'
   gem 'annotate', '2.5.0'
 end
 
 group :test do
   gem 'capybara', '1.1.2'
   gem 'rb-fsevent', '0.9.1', :require => false
-  gem 'growl', '1.0.3'
+  # gem 'growl', '1.0.3'
   gem 'factory_girl_rails', '4.1.0'
 end
 
-# group :production do
-#   gem 'pg'
-# end
+group :production do
+  gem 'pg'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
