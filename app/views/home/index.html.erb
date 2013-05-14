@@ -1,1 +1,351 @@
-<h1>Liz y Gerardo</h1>
+<% provide(:title, 'Liz y Gerardo') %>
+
+<section id="nav-wrapper">
+  <div class="row">
+    <div class="column-container">
+      <span class="logo">Liz + Gerardo</span>
+      <nav id="nav">
+        <ul>
+          <li><a href="#">Venue</a></li>
+          <li><a href="#">Timeline</a></li>
+          <li><a href="#">RSVP</a></li>
+          <li><a href="#">Wedding Party</a></li>
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Registry</a></li>
+          <li><a href="#">Lodging</a></li>
+          <li><a href="#">Vendors</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<header>
+  <div class="row">
+    <div class="column-container">
+      <%= image_tag 'bg_header_text.png', alt: "Liz y Gerardo are getting married! Y estan invitados! Aug. 10th, 2013, 4:00pm sharp, Redmond, OR. Join us to share our love and happiness as we finally get married!" %>
+    </div>
+  </div>
+</header>
+
+<section>
+  <article id="our-venue">
+    <h2>Our Venue</h2>
+    <p>The ceremony will take place at the Eagle Crest Resort in Redmond, Oregon. This will be followed by the reception at the River Run Event Center. Eagle Crest Resort displays a lush golf course and grounds with wonderful views of the lovely mountains and scenery that describe central Oregon. The River Run Event Center is located in Eagle Crest Resort, 7 miles west of Redmond, OR. There is a wonderful tiered deck that gives us a breath-taking view overlooking the Deschutes River.</p>
+
+    <figure>
+      <%= image_tag 'eagle_crest_resort.jpg' %>
+      <figcaption>
+        <h3>Ceremony Location:</h3>
+        <h4>Eagle Crest Resort</h4>
+        <address>
+          <span>1522 Cline Falls Road</span>
+          <span>Redmond, OR 97755</span>
+          <span>(Google Map)</span>
+        </address>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <%= image_tag 'river_run_event_center' %>
+      <figcaption>
+        <h3>Reception Location</h3>
+        <h4>River Run Event Center</h4>
+        <address>
+          <span>1730 Blue Heron Dr.</span>
+          <span>Redmond, OR 97756</span>
+          <span>(Google Map)</span>
+        </address>
+      </figcaption>
+    </figure>
+  </article>
+
+  <article id="rsvp">
+    <h2>RSVP</h2>
+    <h3>For the Craddock Party</h3>
+
+    <p>Please fill out the form to let us know who will be attending. Kindly respond by [date] to make sure we have you on the list. *</p>
+
+    <p><em>4</em> Seats have been reserved for your party</p>
+
+    <form action=""></form>
+
+    <p class="note">* As a reminder, our seating is limited, please be accurate. Any guests who have not RSVP’ed by [date] will not be allowed to attend. If you have concerns/questions, please <a href="#">contact us</a> as soon as possible.</p>
+  </article>
+
+  <article id="our-timeline">
+    <h2>Our Timeline</h2>
+    <p>Timeline goes here</p>
+  </article>
+</section>
+
+<section>
+  <article id="wedding-party">
+    <h2>The Wedding Party</h2>
+    <p>A huge "Thank You" to everyone in our wedding party! You all rock!</p>
+
+    <ul>
+      <li>
+        <dl>
+          <dt><%= image_tag 'laura_ramos.img' %></dt>
+          <dd>
+            <h3>Laura Ramos</h3>
+            <h4>Matron of Honor</h4>
+            <p>Short description of Laura goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><%= image_tag 'amanda_m_p.img' %></dt>
+          <dd>
+            <h3>Amanda Montgomery-Pacheco</h3>
+            <h4>Bridesmaid</h4>
+            <p>Short description of Amanda goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><%= image_tag 'lucia_meza.img' %></dt>
+          <dd>
+            <h3>Lucia Meza</h3>
+            <h4>Bridemaid</h4>
+            <p>Short description of Lucia goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><%= image_tag 'amanda_lopez.img' %></dt>
+          <dd>
+            <h3>Amanda Lopez</h3>
+            <h4>Bridesmaid</h4>
+            <p>Short description of Amanda goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><%= image_tag 'mindalay_perez.img' %></dt>
+          <dd>
+            <h3>Mindalay Perez</h3>
+            <h4>Bridemaid</h4>
+            <p>Short description of Minda goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><%= image_tag 'clarissa_gamolo.img' %></dt>
+          <dd>
+            <h3>Clarissa Gamolo</h3>
+            <h4>Bridesmaid</h4>
+            <p>Short description of Clarissa goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+    
+    <ul>
+      <li>
+        <dl>
+          <dt><%= image_tag 'juan_rodolfo_jimenez.img' %></dt>
+          <dd>
+            <h3>Juan Rodolfo Jimenez</h3>
+            <h4>Best Man</h4>
+            <p>Short description of Rodo goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><%= image_tag 'aaron_bingham.img' %></dt>
+          <dd>
+            <h3>Aaron Bingham</h3>
+            <h4>Groomsman</h4>
+            <p>Short description of Aaron goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><%= image_tag 'emmanuel_garcia.img' %></dt>
+          <dd>
+            <h3>Emmanuel Garcia</h3>
+            <h4>Groomsman</h4>
+            <p>Short description of Emmanuel goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt><%= image_tag 'kellan_craddock.img' %></dt>
+          <dd>
+            <h3>Kellan Craddock</h3>
+            <h4>Groomsman</h4>
+            <p>Short description of Kellan goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <dl>
+          <dt><%= image_tag 'togo.img' %></dt>
+          <dd>
+            <h3>Togo</h3>
+            <h4>Best Dog/Ring Bearer</h4>
+            <p>Short description of Togo goes here...</p>
+            <p><a href="#">(Read more)</a></p>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <article id="photos">
+    <h2>Photos</h2>
+
+    <h3>Our Engagement</h3>
+    <p>A <em>huge</em> &ldquo;Thank You&rdquo; to Ryan @ <a href="#">FS Photoghapy</a> for an awesome Engagement Session photo shoot! Ryan took us out to [location] along the beautiful Columbia Gorge area on the Washington side of the Columbia River. The sun came through, and not a rain cloud in sight. We were surrounded with beautiful scenery that definitely represented our love for the outdoors. He’ll be our photographer on our big day as well. Make sure and say &ldquo;Hi&rdquo; to Ryan! :)</p>
+
+    <h3>Your Photos</h3>
+    <p>Are you carrying around an iPhone or Android? Help us capture memories of our big day!</p>
+
+    <dl>
+      <dt><%= image_tag 'logo_wedding_party.jpg' %></dt>
+      <dd>
+        <h4>Wedding Party App</h4>
+        <p>Download our awesome wedding app! Check out the pictures we’ve taken so far using documenting the days leading up to the big day.</p>
+      </dd>
+    </dl>
+
+    <ol>
+      <li>Download our app: <strong>Wedding</strong> Party (from the iPhone or Android app store)</li>
+      <li>Register &amp; enter the wedding name: <strong>&ldquo;lizygerardo&rdquo;</strong></li>
+      <li>Have fun, take pictures and share them with us on our app!</li>
+    </ol>
+
+    <dl>
+      <dt><%= image_tag 'logo_instagram.jpg' %></dt>
+      <dd>
+        <h4>Instagram</h4>
+        <p>If you happen to be on Instagram, make sure to use our Wedding Hashtag <strong>&ldquo;#lizygerardo2013&rdquo;</strong> if you snap any awesome photos you’d like to share!</p>
+      </dd>
+    </dl>
+
+    <ul>
+      <li><%= image_tag 'instgram.jpg' %></li>
+      <li><%= image_tag 'instgram.jpg' %></li>
+      <li><%= image_tag 'instgram.jpg' %></li>
+      <li><%= image_tag 'instgram.jpg' %></li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <article id="our_registry">
+    <h2>Our Registry</h2>
+    <p>We’ve registered at the following locations. Thanks in advance!</p>
+    <ul>
+      <li><a href="#">Target</a></li>
+      <li><a href="#">Macy's</a></li>
+      <li><a href="#">Kohl's</a></li>
+    </ul>
+  </article>
+
+  <article id="lodging">
+    <ul>
+      <li>
+        <h3>Eagle Crest Resort</h3>
+        <address>
+          <span>1522 Cline Falls Road</span>
+          <span>Redmond, OR 97756</span>
+          <span>Reservations: (855) 682-4786</span>
+          <span>Use group code: <strong>KW82-THIS-IS-FAKE</strong></span>
+        </address>
+      </li>
+      <li>
+        <h3>Eagle Crest Resort</h3>
+        <address>
+          <span>1522 Cline Falls Road</span>
+          <span>Redmond, OR 97756</span>
+          <span>Reservations: (855) 682-4786</span>
+          <span>Use group code: <strong>KW82-THIS-IS-FAKE</strong></span>
+        </address>
+      </li>
+      <li>
+        <h3>Eagle Crest Resort</h3>
+        <address>
+          <span>1522 Cline Falls Road</span>
+          <span>Redmond, OR 97756</span>
+          <span>Reservations: (855) 682-4786</span>
+          <span>Use group code: <strong>KW82-THIS-IS-FAKE</strong></span>
+        </address>
+      </li>
+    </ul>
+  </article>
+
+  <article id="our_vendors">
+    <h2>Our Vendors</h2>
+    <p>A big thanks to our vendors!</p>
+
+    <ul>
+      <li>
+        <a href="#">Mayahuel Catering</a>
+        Portland, OR
+      </li>
+      <li>
+        <a href="#">FS Photography</a>
+        Portland, OR
+      </li>
+      <li>
+        <a href="#">DJ Max</a>
+        Portland, OR
+      </li>
+      <li>
+        <a href="#">Illuminate Your Night</a>
+        Bend, OR
+      </li>
+      <li>
+        <a href="#">Ceylon Blu</a>
+        Bend, OR
+      </li>
+      <li>
+        <a href="http://pinkskyflowers.com">Pink Sky Flowers</a>
+        Redmond, OR
+      </li>
+    </ul>
+  </article>
+
+  <article id="contact_us">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or concerns, please feel free to contact us. Thank you for taking the time to reach out to us. :)</p>
+
+    <a href="#">Send us an <strong>email</strong></a>
+  </article>
+</section>
+
+<footer>
+  <div class="row">
+    <div class="column-container">
+      <p>Designed with love by <strong>Kellan</strong> &amp; <strong>Jessica</strong></p>
+      <p class="copyright">&copy;2013, all rights reserved.</p>
+    </div>
+  </div>
+</footer>

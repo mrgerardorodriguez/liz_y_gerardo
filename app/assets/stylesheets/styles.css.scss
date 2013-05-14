@@ -1,0 +1,97 @@
+
+$sprite-icons-image: "sprite_icons.png";
+$sprite-icons-bg-size: 100px 650px;
+
+body {
+  background: $body-bg;
+}
+
+h1 {
+  font-family: $header-cursive-font-family;
+  font-weight: 400;
+}
+
+#nav-wrapper {
+  background: #303030;
+  padding-top: emCalc(5px);
+  padding-bottom: emCalc(5px);
+  position: relative;
+  color: #757575;
+  font-family: $header-cursive-font-family;
+  border-bottom: 1px solid #191919;
+
+  .logo {
+    display: block;
+    text-align: right;
+    font-size: emCalc(18px);
+    @include hide-text;
+    background: transparent url($sprite-icons-image) no-repeat right -487px;
+    background-size: $sprite-icons-bg-size;
+    width: 100%;
+    height: 26px;
+  }
+}
+
+#nav-toggle {
+  background: transparent url($sprite-icons-image) no-repeat -22px -116px;
+  background-size: $sprite-icons-bg-size;
+  @include hide-text;
+  width: 80px;
+  height: 34px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.column-container {
+  @include grid-column(12);
+}
+
+body > header {
+  background: #59809b url("bg_header_small_viewport.jpg") no-repeat bottom;
+  background-size: cover;
+  padding-top: emCalc(18px);
+  padding-left: emCalc(15px);
+  padding-right: emCalc(15px);
+  padding-bottom: emCalc(140px);
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    color: #fff;
+  }
+}
+
+body > footer {
+  background: #303030;
+  color: #757575;
+  padding-top: emCalc(15px);
+  padding-bottom: emCalc(15px);
+  font-size: emCalc(14px);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+
+  strong {
+    color: #a1a1a1;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.25;
+
+    &.copyright {
+      font-size: 8px;
+      font-family: Verdana, sans-serif;
+      background: transparent url($sprite-icons-image) no-repeat center 16px;
+      background-size: $sprite-icons-bg-size;
+      padding-bottom: emCalc(45px);
+    }
+  }
+}
+
+.column-container {
+  @include grid-column(12);
+}
