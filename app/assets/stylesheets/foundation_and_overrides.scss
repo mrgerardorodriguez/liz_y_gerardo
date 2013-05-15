@@ -16,7 +16,7 @@
 
 // We use these to control various global styles
 $body-bg: #fff;
-$body-font-color: #222;
+$body-font-color: lighten(#4f4d4f, 5%);
 $body-font-family: 'Rokkitt', serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -50,7 +50,7 @@ $secondary-color: #e9e9e9;
 // $include-html-grid-classes: $include-html-classes;
 $include-html-visibility-classes: false;
 // $include-html-button-classes: $include-html-classes;
-// $include-html-form-classes: $include-html-classes;
+$include-html-form-classes: false;
 $include-html-media-classes: false;
 $include-html-section-classes: false;
 $include-html-reveal-classes: false;
@@ -66,7 +66,7 @@ $include-html-progress-classes: false;
 //
 
 $row-width: 62.5em;
-$column-gutter: emCalc(25px);
+$column-gutter: emCalc(40px);
 // $total-columns: 12;
 
 //
@@ -88,7 +88,7 @@ $block-grid-media-queries: false;
 $header-font-family: 'Nixie One', cursive;
 $header-font-weight: 400;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: lighten(#3f3f3f, 5%);
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;

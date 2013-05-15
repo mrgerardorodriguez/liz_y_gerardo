@@ -1,7 +1,9 @@
-
 $sprite-icons-image: "sprite_icons.png";
 $sprite-icons-bg-size: 100px 650px;
 
+/******************************
+ Global Styles
+ ******************************/
 body {
   background: $body-bg;
 }
@@ -11,6 +13,98 @@ h1 {
   font-weight: 400;
 }
 
+h2 {
+  font-size: emCalc(38px);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: .277777778em;
+}
+
+h3 {
+  font-family: $body-font-family;
+  font-size: emCalc(16px);
+  text-transform: uppercase;
+  margin: .857142857em 0 .357142857em; // 12px 5px
+  line-height: 1;
+}
+
+h4 {
+  font-family: $body-font-family;
+  font-size: emCalc(30px);
+  margin: .178571429em 0; // 5px
+  line-height: 1;
+}
+
+p {
+  font-size: emCalc(20px);
+  line-height: 1.35;
+  margin-bottom: .5em;
+
+  strong {
+    color: darken($body-font-color, 5%);
+  }
+}
+
+a {
+  color: $body-font-color;
+
+  &:hover,
+  &:active {
+    color: darken($body-font-color, 5%);
+  }
+}
+
+hr {
+  background: transparent url($sprite-icons-image) no-repeat center -637px;
+  background-size: $sprite-icons-bg-size;
+  height: 14px;
+  display: block;
+  border: none;
+  margin: emCalc(10px) 0 emCalc(10px);
+}
+
+figure {
+  margin: emCalc(20px) 0;
+
+  img {
+    border: emCalc(4px) solid #fff;
+    display: block;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
+  }
+}
+
+address {
+  font-style: normal;
+  font-size: emCalc(20px);
+
+  span {
+    display: block;
+  }
+}
+
+.map-container {
+  width: 100%;
+  height: 150px;
+  border: emCalc(4px) solid #fff;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  margin: emCalc(10px) 0;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/******************************
+ Reusable Styles
+ ******************************/
+.column-container {
+  @include grid-column(12);
+}
+/******************************
+ Main Nav Styles
+ ******************************/
 #nav-wrapper {
   background: #303030;
   padding-top: emCalc(5px);
@@ -43,26 +137,27 @@ h1 {
   left: 0;
   top: 4px;
 }
-
-.column-container {
-  @include grid-column(12);
-}
-
+/******************************
+ Main Header Styles
+ ******************************/
 body > header {
-  background: #59809b url("bg_header_small_viewport.jpg") no-repeat bottom;
+  background: #6593ad url("bg_header_small_viewport.jpg") no-repeat bottom;
   background-size: cover;
   padding-top: emCalc(18px);
-  padding-left: emCalc(15px);
-  padding-right: emCalc(15px);
-  padding-bottom: emCalc(140px);
+  padding-left: emCalc(5px);
+  padding-right: emCalc(5px);
+  padding-bottom: 50%;
   color: #fff;
   text-align: center;
+  min-height: emCalc(350px);
 
   h1 {
     color: #fff;
   }
 }
-
+/******************************
+ Main Footer Styles
+ ******************************/
 body > footer {
   background: #303030;
   color: #757575;
@@ -91,7 +186,22 @@ body > footer {
     }
   }
 }
+/******************************
+ Venue/RSVP/Timeline Styles
+ ******************************/
+#venue-rsvp-timeline-container {
+  background: url("pattern_grey_chevron.png") center 5px repeat-x;
+  background-size: 20px 40px;
+}
+#venue-rsvp-container {
+  background: url("heart_yellow_on_white.png") no-repeat top center;
+  background-size: 69.5px 63px;
+  margin-top: emCalc(-12px);
+  padding-top: emCalc(58px);
+}
 
-.column-container {
-  @include grid-column(12);
+#our-venue {
+  h2 {
+    // padding-bottom: 16px;
+  }
 }

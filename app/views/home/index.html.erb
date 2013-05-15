@@ -29,56 +29,69 @@
   </div>
 </header>
 
-<section>
-  <article id="our-venue">
-    <h2>Our Venue</h2>
-    <p>The ceremony will take place at the Eagle Crest Resort in Redmond, Oregon. This will be followed by the reception at the River Run Event Center. Eagle Crest Resort displays a lush golf course and grounds with wonderful views of the lovely mountains and scenery that describe central Oregon. The River Run Event Center is located in Eagle Crest Resort, 7 miles west of Redmond, OR. There is a wonderful tiered deck that gives us a breath-taking view overlooking the Deschutes River.</p>
+<div id="venue-rsvp-timeline-container">
+  <div class="row">
+    <section id="venue-rsvp-container" class="column-container">
+      <article id="our-venue">
+        <h2>Our Venue</h2>
+        <hr>
+        <p>The ceremony will take place at the <strong>Eagle Crest Resort</strong> in <strong>Redmond, Oregon</strong>. This will be followed by the reception at the <strong>River Run Event Center</strong> located on the Eagle Crest Resort grounds. Eagle Crest Resort displays a lush golf course and grounds with wonderful views of the lovely mountains and scenery that describe central Oregon. The River Run Event Center has a wonderful tiered deck that gives us a breath-taking view overlooking the Deschutes River.</p>
+        <hr>
+        <figure>
+          <%= image_tag 'http://lorempixel.com/675/438/nature' %>
+          <figcaption>
+            <h3>Ceremony Location:</h3>
+            <h4>
+              <a href="http://maps.apple.com/maps?daddr=1522+Cline+Falls+Road+Redmond+OR+97756" target="_blank">Eagle Crest Resort</a>
+            </h4>
+            <address>
+              <a href="http://maps.apple.com/maps?daddr=1522+Cline+Falls+Road+Redmond+OR+97756" target="_blank">
+                <span>1522 Cline Falls Road</span>
+                <span>Redmond, OR 97755</span>
+              </a>
+            </address>
 
-    <figure>
-      <%= image_tag 'eagle_crest_resort.jpg' %>
-      <figcaption>
-        <h3>Ceremony Location:</h3>
-        <h4>Eagle Crest Resort</h4>
-        <address>
-          <span>1522 Cline Falls Road</span>
-          <span>Redmond, OR 97755</span>
-          <span>(Google Map)</span>
-        </address>
-      </figcaption>
-    </figure>
+            <!-- <div class="map-container"><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=1522%2BCline%2BFalls%2BRoad%2BRedmond%2C%2BOR(Liz+%2B+Gerardo+Wedding)&ie=UTF8&z=11&t=m&iwloc=near&output=embed"></iframe></div> -->
 
-    <figure>
-      <%= image_tag 'river_run_event_center' %>
-      <figcaption>
-        <h3>Reception Location</h3>
-        <h4>River Run Event Center</h4>
-        <address>
-          <span>1730 Blue Heron Dr.</span>
-          <span>Redmond, OR 97756</span>
-          <span>(Google Map)</span>
-        </address>
-      </figcaption>
-    </figure>
-  </article>
+          </figcaption>
+        </figure>
 
-  <article id="rsvp">
-    <h2>RSVP</h2>
-    <h3>For the Craddock Party</h3>
+        <figure>
+          <%= image_tag 'http://lorempixel.com/675/438/nature' %>
+          <figcaption>
+            <h3>Reception Location:</h3>
+            <h4>
+              <a href="http://maps.apple.com/maps?daddr=1730+Blue+Heron+Dr+Redmond+OR+97756" target="_blank">River Run Event Center</a>
+            </h4>
+            <address>
+              <a href="http://maps.apple.com/maps?daddr=1730+Blue+Heron+Dr+Redmond+OR+97756" target="_blank">
+                <span>1730 Blue Heron Dr.</span>
+                <span>Redmond, OR 97756</span>
+              </a>
+            </address>
+          </figcaption>
+        </figure>
+      </article>
 
-    <p>Please fill out the form to let us know who will be attending. Kindly respond by [date] to make sure we have you on the list. *</p>
+      <article id="rsvp">
+        <h2>RSVP</h2>
+        <h3>For the Craddock Party</h3>
 
-    <p><em>4</em> Seats have been reserved for your party</p>
+        <p>Please fill out the form to let us know who will be attending. Kindly respond by [date] to make sure we have you on the list. *</p>
 
-    <form action=""></form>
+        <p><em>4</em> Seats have been reserved for your party</p>
 
-    <p class="note">* As a reminder, our seating is limited, please be accurate. Any guests who have not RSVP’ed by [date] will not be allowed to attend. If you have concerns/questions, please <a href="#">contact us</a> as soon as possible.</p>
-  </article>
+        <form action=""></form>
 
-  <article id="our-timeline">
-    <h2>Our Timeline</h2>
-    <p>Timeline goes here</p>
-  </article>
-</section>
+        <p class="note">* As a reminder, our seating is limited, please be accurate. Any guests who have not RSVP’ed by [date] will not be allowed to attend. If you have concerns/questions, please <a href="#">contact us</a> as soon as possible.</p>
+      </article>
+    </section>
+    <aside id="our-timeline" class="column-container">
+      <h2>Our Timeline</h2>
+      <p>Timeline goes here</p>
+    </aside>
+  </div>
+</div>
 
 <section>
   <article id="wedding-party">
