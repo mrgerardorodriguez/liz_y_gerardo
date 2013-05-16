@@ -204,9 +204,9 @@ body > footer {
     &.copyright {
       font-size: 7px;
       font-family: Verdana, sans-serif;
-      background: transparent url($sprite-icons-image) no-repeat center 16px;
+      background: transparent url($sprite-icons-image) no-repeat center 15px;
       background-size: $sprite-icons-bg-size;
-      padding-bottom: emCalc(55px);
+      padding-bottom: emCalc(53px);
     }
   }
 }
