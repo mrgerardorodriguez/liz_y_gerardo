@@ -31,7 +31,7 @@
 
 <div id="venue-rsvp-timeline-container">
   <div class="row">
-    <section id="venue-rsvp-container" class="column-container">
+    <section id="venue-container" class="column-container">
       <article id="our-venue">
         <h2>Our Venue</h2>
         <hr>
@@ -56,6 +56,8 @@
           </figcaption>
         </figure>
 
+        <hr class="related">
+
         <figure>
           <%= image_tag 'http://lorempixel.com/675/438/nature' %>
           <figcaption>
@@ -72,20 +74,36 @@
           </figcaption>
         </figure>
       </article>
+    </section>
 
+    <section id="rsvp-container" class="column-container">
       <article id="rsvp">
         <h2>RSVP</h2>
         <h3>For the Craddock Party</h3>
 
+        <hr>
+
         <p>Please fill out the form to let us know who will be attending. Kindly respond by [date] to make sure we have you on the list. *</p>
 
-        <p><em>4</em> Seats have been reserved for your party</p>
+        <dl class="reserved-seats">
+          <dt>
+            <p>4</p>
+          </dt>
+          <dd>
+            <p>Seats have been reserved for your party</p>
+          </dd>
+        </dl>
+
+        <hr>
 
         <form action=""></form>
 
-        <p class="note">* As a reminder, our seating is limited, please be accurate. Any guests who have not RSVP’ed by [date] will not be allowed to attend. If you have concerns/questions, please <a href="#">contact us</a> as soon as possible.</p>
+        <aside class="note">
+          <p>* As a reminder, our seating is limited, please be accurate. Any guests who have not RSVP’ed by [date] will not be allowed to attend. If you have concerns/questions, please <a href="#">contact us</a> as soon as possible.</p>
+        </aside>
       </article>
     </section>
+
     <aside id="our-timeline" class="column-container">
       <h2>Our Timeline</h2>
       <p>Timeline goes here</p>

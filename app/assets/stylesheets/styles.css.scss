@@ -1,5 +1,5 @@
 $sprite-icons-image: "sprite_icons.png";
-$sprite-icons-bg-size: 100px 650px;
+$sprite-icons-bg-size: 100px 800px;
 
 /******************************
  Global Styles
@@ -9,12 +9,12 @@ body {
 }
 
 h1 {
-  font-family: $header-cursive-font-family;
+  font-family: $oleo-script-swash-font-family;
   font-weight: 400;
 }
 
 h2 {
-  font-size: emCalc(38px);
+  font-size: emCalc(36px);
   text-transform: uppercase;
   text-align: center;
   margin-bottom: .277777778em;
@@ -22,7 +22,7 @@ h2 {
 
 h3 {
   font-family: $body-font-family;
-  font-size: emCalc(16px);
+  font-size: emCalc(14px);
   text-transform: uppercase;
   margin: .857142857em 0 .357142857em; // 12px 5px
   line-height: 1;
@@ -36,7 +36,7 @@ h4 {
 }
 
 p {
-  font-size: emCalc(20px);
+  font-size: emCalc(18px);
   line-height: 1.35;
   margin-bottom: .5em;
 
@@ -61,10 +61,33 @@ hr {
   display: block;
   border: none;
   margin: emCalc(10px) 0 emCalc(10px);
+
+  &.related {
+    background: none;
+    padding: 0;
+    border: none;
+    border-top: 1px solid #4d4d4d;
+    text-align: center;
+    height: 1px;
+    margin: emCalc(55px) 0;
+
+    &:after {
+      background: #fff url($sprite-icons-image) no-repeat center -550px;
+      background-size: $sprite-icons-bg-size;
+      height: 46px;
+      width: 24px;
+      content: " ";
+      display: inline-block;
+      position: relative;
+      top: -26px;
+      font-size: 6em;
+      padding: 0 .3em;
+    }
+  }
 }
 
 figure {
-  margin: emCalc(20px) 0;
+  margin: emCalc(18px) 0;
 
   img {
     border: emCalc(4px) solid #fff;
@@ -75,7 +98,7 @@ figure {
 
 address {
   font-style: normal;
-  font-size: emCalc(20px);
+  font-size: emCalc(18px);
 
   span {
     display: block;
@@ -111,7 +134,7 @@ address {
   padding-bottom: emCalc(5px);
   position: relative;
   color: #757575;
-  font-family: $header-cursive-font-family;
+  font-family: $body-font-family;
   border-bottom: 1px solid #191919;
 
   .logo {
@@ -193,15 +216,75 @@ body > footer {
   background: url("pattern_grey_chevron.png") center 5px repeat-x;
   background-size: 20px 40px;
 }
-#venue-rsvp-container {
+
+#venue-container {
   background: url("heart_yellow_on_white.png") no-repeat top center;
   background-size: 69.5px 63px;
   margin-top: emCalc(-12px);
   padding-top: emCalc(58px);
 }
 
-#our-venue {
+#rsvp-container {
+  background: $primary-color;
+  color: darken($body-font-color, 5%);
+  padding-bottom: emCalc(28px);
+
   h2 {
-    // padding-bottom: 16px;
+    margin-bottom: emCalc(3px);
+    line-height: 1;
+  }
+
+  h3 {
+    font-family: $quicksand-font-family;
+    font-weight: 700;
+    text-align: center;
+    font-size: emCalc(12px);
+    margin: 0 0 .833333333em;
+  }
+
+  hr {
+    background-position: center -706px;
+    margin: emCalc(15px) 0;
+  }
+
+  .note {
+    color: $body-font-color;
+    border: 2px dashed #dbb900;
+    padding: emCalc(10px) emCalc(10px) 0;
+  }
+
+  .reserved-seats {
+    @include grid-row(nest);
+
+    dt {
+      @include grid-column(5);
+      text-align: right;
+      padding-right: 0;
+      font-family: $quicksand-font-family;
+      margin: 0;
+      background: url($sprite-icons-image) no-repeat left -219px;
+      background-size: $sprite-icons-bg-size;
+
+      p {
+        font-size: emCalc(76px);
+        font-weight: 300;
+        line-height: .8;
+        margin: 0;
+      }
+    }
+
+    dd {
+      @include grid-column(7);
+      padding-left: 0;
+      margin: 0;
+      padding-right: 25%;
+      background: url($sprite-icons-image) no-repeat right -349px;
+      background-size: $sprite-icons-bg-size;
+
+      p {
+        font-size: emCalc(18px);
+        line-height: 1.15;
+      }
+    }
   }
 }
