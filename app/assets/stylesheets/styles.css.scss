@@ -199,13 +199,14 @@ body > footer {
   p {
     margin: 0;
     line-height: 1.25;
+    font-size: emCalc(15px);
 
     &.copyright {
-      font-size: 8px;
+      font-size: 7px;
       font-family: Verdana, sans-serif;
       background: transparent url($sprite-icons-image) no-repeat center 16px;
       background-size: $sprite-icons-bg-size;
-      padding-bottom: emCalc(45px);
+      padding-bottom: emCalc(55px);
     }
   }
 }
