@@ -214,21 +214,34 @@ body > footer {
  Venue/RSVP/Timeline Styles
  ******************************/
 #venue-rsvp-timeline-container {
-  background: url("pattern_grey_chevron.png") center 5px repeat-x;
+  background: url("pattern_grey_chevron.gif") center 5px repeat-x;
   background-size: 20px 40px;
 }
-
+/******************************
+ Venue Styles
+ ******************************/
 #venue-container {
   background: url("heart_yellow_on_white.png") no-repeat top center;
   background-size: 69.5px 63px;
   margin-top: emCalc(-12px);
   padding-top: emCalc(58px);
+  padding-bottom: emCalc(40px);
 }
-
+/******************************
+ RSVP Styles
+ ******************************/
 #rsvp-container {
-  background: $primary-color;
+  background: $primary-color url("pattern_yellow_stripes.gif") center top repeat-x;
+  background-size: 2px 38.5px;
   color: darken($body-font-color, 5%);
   padding-bottom: emCalc(28px);
+}
+
+#rsvp {
+  background: url("heart_yellow_on_white.png") no-repeat top center;
+  background-size: 69.5px 63px;
+  margin-top: emCalc(-25px);
+  padding-top: emCalc(75px);
 
   h2 {
     margin-bottom: emCalc(3px);
@@ -287,5 +300,138 @@ body > footer {
         line-height: 1.15;
       }
     }
+  }
+}
+/******************************
+ Our Timeline Styles
+ ******************************/
+#our-timeline-container {
+  background: url("pattern_yellow_dots.gif") center top repeat-x;
+  background-size: 35.5px 35px;
+  padding-bottom: emCalc(28px);
+}
+
+#our-timeline {
+  background: url("heart_white_on_yellow.png") no-repeat top center;
+  background-size: 69.5px 63px;
+  margin-top: emCalc(-17px);
+  padding-top: emCalc(75px);
+
+}
+/******************************
+The Wedding Party Styles
+ ******************************/
+#wedding-party-container {
+  background: #757575 url("pattern_white_stripes.gif") center top repeat-x;
+  background-size: 13.5px 29.5px;
+  padding-bottom: emCalc(28px);
+}
+
+#wedding-party {
+  background: url("heart_yellow_on_grey.png") no-repeat top center;
+  background-size: 82.5px 63px;
+  color: #fff;
+  margin-top: emCalc(-17px);
+  padding-top: emCalc(70px);
+  text-align: center;
+
+  h2, h3, h4 {
+    color: #fff;
+  }
+
+  h2 {
+    line-height: 1;
+  }
+
+  p {
+    font-family: $quicksand-font-family;
+    font-size: emCalc(12px);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  hr {
+    background-position: center -706px;
+    margin: emCalc(20px) 0;
+  }
+
+  ul {
+    &.party {
+      list-style-type: none;
+      margin-bottom: 0;
+
+      & > li {
+        background: #fff;
+        padding: emCalc(6px);
+        border-bottom: 1px solid #5b5b5b;
+        margin-bottom: emCalc(20px);
+
+        dt,dl,dd {
+          margin-bottom: 0;
+        }
+
+        dt {
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+
+      h3 {
+        color: #4d4d4d;
+        font-size: emCalc(18px);
+        font-family: $header-font-family;
+        margin: emCalc(12px) 0 emCalc(3px);
+      }
+
+      h4 {
+        font-family: $quicksand-font-family;
+        font-size: emCalc(12px);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: emCalc(8px);
+      }
+
+      &.bridesmaids {
+        margin-top: emCalc(25px);
+
+        h4 {
+          color: #d3a900;
+        }
+      }
+
+      &.groomsmen {
+        margin-top: emCalc(25px);
+
+        h4 {
+          color: #1386d6;
+        }
+      }
+    }
+  }
+}
+/******************************
+ Photos Styles
+ ******************************/
+#photos-container {
+  background: url("pattern_grey_chevron.gif") center 5px repeat-x;
+  background-size: 20px 40px;
+}
+/******************************
+ Venue Styles
+ ******************************/
+#photos {
+  background: url("heart_yellow_on_white.png") no-repeat top center;
+  background-size: 69.5px 63px;
+  margin-top: emCalc(-12px);
+  padding-top: emCalc(58px);
+  padding-bottom: emCalc(40px);
+
+  h3 {
+    font-family: $quicksand-font-family;
+    font-size: emCalc(22px);
+    text-transform: uppercase;
+    text-align: center;
   }
 }
