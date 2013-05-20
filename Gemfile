@@ -5,6 +5,9 @@ gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
+gem 'pg'
+gem 'newrelic_rpm'
+
 
 gem 'bourbon'
 
@@ -23,7 +26,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pg'
+  # gem 'pg'
   gem 'annotate', '2.5.0'
 end
 
@@ -35,7 +38,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
