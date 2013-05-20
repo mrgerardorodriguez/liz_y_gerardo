@@ -2,12 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 # gem 'pg', '0.12.2'
+gem 'pg'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
-gem 'pg'
-gem 'newrelic_rpm'
-
 
 gem 'bourbon'
 
@@ -39,6 +37,7 @@ end
 
 group :production do
   # gem 'pg'
+  gem 'newrelic_rpm'
 end
 
 # To use ActiveModel has_secure_password
