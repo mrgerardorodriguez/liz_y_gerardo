@@ -418,9 +418,7 @@ The Wedding Party Styles
   background: url("pattern_grey_chevron.gif") center 5px repeat-x;
   background-size: 20px 40px;
 }
-/******************************
- Venue Styles
- ******************************/
+
 #photos {
   background: url("heart_yellow_on_white.png") no-repeat top center;
   background-size: 69.5px 63px;
@@ -435,3 +433,33 @@ The Wedding Party Styles
     text-align: center;
   }
 }
+/******************************
+ Registry/Loding/Vendors/Contact Styles
+ ******************************/
+#our-registry-container {
+  background: $primary-color url("pattern_yellow_stripes.gif") center top repeat-x;
+  background-size: 2px 38.5px;
+  color: darken($body-font-color, 5%);
+  padding-bottom: emCalc(28px);
+  text-align: center;
+
+  .inner-wrapper {
+    background: url("heart_yellow_on_white.png") no-repeat top center;
+    background-size: 69.5px 63px;
+    margin-top: emCalc(-25px);
+    padding-top: emCalc(75px);
+  }
+
+  p {
+    font-family: $quicksand-font-family;
+    font-size: emCalc(12px);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  hr {
+    background-position: center -706px;
+    margin: emCalc(15px) 0;
+  }
+}
+
