@@ -2,6 +2,61 @@ $sprite-icons-image: "sprite_icons.png";
 $sprite-icons-bg-size: 100px 800px;
 
 /******************************
+ Reusable Styles
+ ******************************/
+.column-container {
+  @include grid-column(12);
+}
+
+@mixin pattern-grey-chevron() {
+  background: url("pattern_grey_chevron.gif") center 5px repeat-x;
+  background-size: 20px 40px;
+}
+
+@mixin heart-yellow-on-white() {
+  background: url("heart_yellow_on_white.png") no-repeat top center;
+  background-size: 69.5px 63px;
+  margin-top: emCalc(-12px);
+  padding-top: emCalc(58px);
+  padding-bottom: emCalc(40px);
+}
+
+@mixin pattern-yellow-dots() {
+  background: url("pattern_yellow_dots.gif") center top repeat-x;
+  background-size: 35.5px 35px;
+  padding-bottom: emCalc(28px);
+}
+
+@mixin heart-white-on-yellow() {
+  background: url("heart_white_on_yellow.png") no-repeat top center;
+  background-size: 69.5px 63px;
+  margin-top: emCalc(-17px);
+  padding-top: emCalc(75px);
+}
+
+@mixin pattern-white-stripes() {
+  background: #757575 url("pattern_white_stripes.gif") center top repeat-x;
+  background-size: 13.5px 29.5px;
+  padding-bottom: emCalc(28px);
+}
+
+@mixin heart-yellow-on-grey() {
+  background: url("heart_yellow_on_grey.png") no-repeat top center;
+  background-size: 82.5px 63px;
+  color: #fff;
+  margin-top: emCalc(-17px);
+  padding-top: emCalc(70px);
+}
+
+@mixin diamonds-yellow() {
+  content: " ";
+  display: block;
+  background: transparent url($sprite-icons-image) no-repeat center -637px;
+  background-size: $sprite-icons-bg-size;
+  height: 14px;
+  margin: emCalc(10px) 0 emCalc(10px);
+}
+/******************************
  Global Styles
  ******************************/
 body {
@@ -55,12 +110,8 @@ a {
 }
 
 hr {
-  background: transparent url($sprite-icons-image) no-repeat center -637px;
-  background-size: $sprite-icons-bg-size;
-  height: 14px;
-  display: block;
+  @include diamonds-yellow;
   border: none;
-  margin: emCalc(10px) 0 emCalc(10px);
 
   &.related {
     background: none;
@@ -119,52 +170,6 @@ address {
 //   }
 // }
 
-/******************************
- Reusable Styles
- ******************************/
-.column-container {
-  @include grid-column(12);
-}
-
-@mixin pattern-grey-chevron() {
-  background: url("pattern_grey_chevron.gif") center 5px repeat-x;
-  background-size: 20px 40px;
-}
-
-@mixin heart-yellow-on-white() {
-  background: url("heart_yellow_on_white.png") no-repeat top center;
-  background-size: 69.5px 63px;
-  margin-top: emCalc(-12px);
-  padding-top: emCalc(58px);
-  padding-bottom: emCalc(40px);
-}
-
-@mixin pattern-yellow-dots() {
-  background: url("pattern_yellow_dots.gif") center top repeat-x;
-  background-size: 35.5px 35px;
-  padding-bottom: emCalc(28px);
-}
-
-@mixin heart-white-on-yellow() {
-  background: url("heart_white_on_yellow.png") no-repeat top center;
-  background-size: 69.5px 63px;
-  margin-top: emCalc(-17px);
-  padding-top: emCalc(75px);
-}
-
-@mixin pattern-white-stripes() {
-  background: #757575 url("pattern_white_stripes.gif") center top repeat-x;
-  background-size: 13.5px 29.5px;
-  padding-bottom: emCalc(28px);
-}
-
-@mixin heart-yellow-on-grey() {
-  background: url("heart_yellow_on_grey.png") no-repeat top center;
-  background-size: 82.5px 63px;
-  color: #fff;
-  margin-top: emCalc(-17px);
-  padding-top: emCalc(70px);
-}
 /******************************
  Main Nav Styles
  ******************************/
@@ -493,7 +498,7 @@ The Wedding Party Styles
   list-style-type: none;
 
   li {
-    margin-bottom: emCalc(10px);
+    margin-bottom: emCalc(25px);
   }
 
   a {
@@ -543,12 +548,7 @@ The Wedding Party Styles
 
     li {
       &:before {
-        content: " ";
-        display: block;
-        background: transparent url($sprite-icons-image) no-repeat center -637px;
-        background-size: $sprite-icons-bg-size;
-        height: 14px;
-        margin: emCalc(10px) 0 emCalc(10px);
+        @include diamonds-yellow;
       }
     }
 
@@ -570,7 +570,7 @@ The Wedding Party Styles
 
   text-align: center;
 
-  h2, h3, h4 {
+  h2, h3, h4, a {
     color: #fff;
   }
 
@@ -583,6 +583,26 @@ The Wedding Party Styles
     font-size: emCalc(12px);
     text-transform: uppercase;
     font-weight: 700;
+  }
+
+  .vendor-list {
+    list-style-type: none;
+
+    li {
+      &:before {
+        @include diamonds-yellow;
+      }
+    }
+
+    a {
+      font-size: emCalc(21px);
+      text-transform: uppercase;
+      text-decoration: underline;
+      line-height: 1;
+    }
+    span {
+      display: block;
+    }
   }
 }
 
