@@ -8,6 +8,23 @@ $sprite-icons-bg-size: 100px 800px;
   @include grid-column(12);
 }
 
+.button {
+  display: block;
+  background: #eeeeee;
+  border: 1px solid #dcdcdc;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #b3b3b3;
+  color: #1386d6;
+  text-transform: uppercase;
+  font-size: emCalc(27px);
+  border-radius: emCalc(4px);
+  font-weight: normal;
+  text-shadow: 0 1px 1px #fff;
+  padding: .444444444em .37037037em .296296296em;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+  @include linear-gradient(to bottom,  #ffffff 0%,#dcdcdc 93%,#fefefe 100%);
+}
+
 @mixin pattern-grey-chevron() {
   background: url("pattern_grey_chevron.gif") center 5px repeat-x;
   background-size: 20px 40px;
@@ -53,8 +70,13 @@ $sprite-icons-bg-size: 100px 800px;
   display: block;
   background: transparent url($sprite-icons-image) no-repeat center -637px;
   background-size: $sprite-icons-bg-size;
-  height: 14px;
+  height: 17px;
   margin: emCalc(10px) 0 emCalc(10px);
+}
+
+@mixin diamonds-white() {
+  @include diamonds-yellow;
+  background-position: center -706px;
 }
 /******************************
  Global Styles
@@ -79,7 +101,7 @@ h3 {
   font-family: $body-font-family;
   font-size: emCalc(14px);
   text-transform: uppercase;
-  margin: .857142857em 0 .357142857em; // 12px 5px
+  margin: .714285714em 0 .357142857em; // 10px 5px
   line-height: 1;
 }
 
@@ -297,7 +319,7 @@ body > footer {
   }
 
   hr {
-    background-position: center -706px;
+    @include diamonds-white;
     margin: emCalc(15px) 0;
   }
 
@@ -379,7 +401,7 @@ The Wedding Party Styles
   }
 
   hr {
-    background-position: center -706px;
+    @include diamonds-white;
     margin: emCalc(20px) 0;
   }
 
@@ -387,6 +409,11 @@ The Wedding Party Styles
     &.party {
       list-style-type: none;
       margin-bottom: 0;
+
+      &:before {
+        @include diamonds-white;
+        margin: emCalc(20px) 0;
+      }
 
       & > li {
         background: #fff;
@@ -447,17 +474,23 @@ The Wedding Party Styles
 }
 
 #photos {
-  background: url("heart_yellow_on_white.png") no-repeat top center;
-  background-size: 69.5px 63px;
-  margin-top: emCalc(-12px);
-  padding-top: emCalc(58px);
-  padding-bottom: emCalc(40px);
+  @include heart-yellow-on-white;
+
+  h2 {
+    margin-bottom: emCalc(5px);
+  }
 
   h3 {
     font-family: $quicksand-font-family;
     font-size: emCalc(22px);
     text-transform: uppercase;
     text-align: center;
+    margin-top: 0;
+
+    &:before {
+      @include diamonds-yellow;
+      margin: emCalc(5px) 0 emCalc(10px);
+    }
   }
 }
 /******************************
@@ -487,15 +520,15 @@ The Wedding Party Styles
     text-transform: uppercase;
     font-weight: 700;
   }
-
-  hr {
-    background-position: center -706px;
-    margin: emCalc(15px) 0;
-  }
 }
 
 .registry-list {
   list-style-type: none;
+
+  &:before {
+    @include diamonds-white;
+    margin: emCalc(15px) 0;
+  }
 
   li {
     margin-bottom: emCalc(25px);
@@ -605,4 +638,13 @@ The Wedding Party Styles
     }
   }
 }
-
+/******************************
+ Contact Us Styles
+ ******************************/
+#contact-us {
+  @include pattern-grey-chevron;
+  
+  .inner-wrapper {
+    @include heart-yellow-on-white;
+  }
+}
