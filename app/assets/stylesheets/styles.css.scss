@@ -1,5 +1,5 @@
-$sprite-icons-image: "sprite_icons.png";
-$sprite-icons-bg-size: 100px 800px;
+$sprite-icons-image: "sprite_icons_v2.png";
+$sprite-icons-bg-size: 94px 719px;
 
 /******************************
  Reusable Styles
@@ -8,7 +8,9 @@ $sprite-icons-bg-size: 100px 800px;
   @include grid-column(12);
 }
 
-.button {
+.button,
+.button:link,
+.button:visited {
   display: block;
   background: #eeeeee;
   border: 1px solid #dcdcdc;
@@ -22,7 +24,17 @@ $sprite-icons-bg-size: 100px 800px;
   text-shadow: 0 1px 1px #fff;
   padding: .444444444em .37037037em .296296296em;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
-  @include linear-gradient(to bottom,  #ffffff 0%,#dcdcdc 93%,#fefefe 100%);
+  @include linear-gradient(to bottom, #ffffff 0%,#dcdcdc 93%,#fefefe 100%);
+  @include transition(all .25s ease-out);
+
+  &:hover, 
+  &:active {
+    border-top: 1px solid #b3b3b3;
+    border-bottom: 1px solid #ebebeb;
+    @include linear-gradient(to bottom, #fefefe 0%,#dcdcdc 93%,#fff 100%);
+    color: darken(#1386d6, 10%);
+    // box-shadow: 0 1px 1px 1px rgba(19, 134, 214, 0.25);
+  }
 }
 
 @mixin pattern-grey-chevron() {
@@ -32,7 +44,7 @@ $sprite-icons-bg-size: 100px 800px;
 
 @mixin heart-yellow-on-white() {
   background: url("heart_yellow_on_white.png") no-repeat top center;
-  background-size: 69.5px 63px;
+  background-size: 70px 63px;
   margin-top: emCalc(-12px);
   padding-top: emCalc(58px);
   padding-bottom: emCalc(40px);
@@ -40,26 +52,26 @@ $sprite-icons-bg-size: 100px 800px;
 
 @mixin pattern-yellow-dots() {
   background: url("pattern_yellow_dots.gif") center top repeat-x;
-  background-size: 35.5px 35px;
+  background-size: 36px 35px;
   padding-bottom: emCalc(28px);
 }
 
 @mixin heart-white-on-yellow() {
   background: url("heart_white_on_yellow.png") no-repeat top center;
-  background-size: 69.5px 63px;
+  background-size: 70px 63px;
   margin-top: emCalc(-17px);
   padding-top: emCalc(75px);
 }
 
 @mixin pattern-white-stripes() {
   background: #757575 url("pattern_white_stripes.gif") center top repeat-x;
-  background-size: 13.5px 29.5px;
+  background-size: 14px 30px;
   padding-bottom: emCalc(28px);
 }
 
 @mixin heart-yellow-on-grey() {
   background: url("heart_yellow_on_grey.png") no-repeat top center;
-  background-size: 82.5px 63px;
+  background-size: 83px 63px;
   color: #fff;
   margin-top: emCalc(-17px);
   padding-top: emCalc(70px);
@@ -77,6 +89,11 @@ $sprite-icons-bg-size: 100px 800px;
 @mixin diamonds-white() {
   @include diamonds-yellow;
   background-position: center -706px;
+}
+
+@mixin timeline-patterns() {
+  background: url("sprite_timeline_patterns.png") no-repeat center top;
+  background-size: 212px 539px;
 }
 /******************************
  Global Styles
@@ -123,11 +140,18 @@ p {
 }
 
 a {
-  color: $body-font-color;
+
+  &:link,
+  &:visited {
+    color: $body-font-color;
+    @include transition(all .25s ease-out);
+  }
 
   &:hover,
   &:active {
     color: darken($body-font-color, 5%);
+    color: $primary-color;
+    // text-shadow: 0 0 1px darken($body-font-color, 10%);
   }
 }
 
@@ -176,6 +200,12 @@ address {
   span {
     display: block;
   }
+}
+
+sup {
+  vertical-align: super;
+  font-size: .5em;
+  text-decoration: underline;
 }
 
 // .map-container {
@@ -294,14 +324,14 @@ body > footer {
  ******************************/
 #rsvp-container {
   background: $primary-color url("pattern_yellow_stripes.gif") center top repeat-x;
-  background-size: 2px 38.5px;
+  background-size: 2px 39px;
   color: darken($body-font-color, 5%);
   padding-bottom: emCalc(28px);
 }
 
 #rsvp {
   background: url("heart_yellow_on_white.png") no-repeat top center;
-  background-size: 69.5px 63px;
+  background-size: 70px 63px;
   margin-top: emCalc(-25px);
   padding-top: emCalc(75px);
 
@@ -369,10 +399,147 @@ body > footer {
  ******************************/
 #our-timeline-container {
   @include pattern-yellow-dots;
+  padding-bottom: emCalc(40px);
 }
 
 #our-timeline {
   @include heart-white-on-yellow;
+  text-align: center;
+
+  h3 {
+    font-family: $oleo-script-swash-font-family;
+    font-size: emCalc(40px);
+    text-transform: none;
+    margin: 0 0 emCalc(1px);
+  }
+
+  dl {
+    margin-bottom: 0;
+  }
+
+  dt {
+    font-family: $quicksand-font-family;
+    color: $primary-color;
+    font-weight: 400;
+    font-size: emCalc(16px);
+    text-transform: uppercase;
+    margin-bottom: emCalc(8px);
+
+    span {
+      font-weight: 300;
+      font-size: emCalc(56px);
+      letter-spacing: -5px;
+      display: block;
+      line-height: .75;
+
+      strong {
+        font-size: .55em;
+        display: block;
+        font-weight: 300;
+        line-height: 1.2;
+      }
+    }
+
+    &:before {
+      @include timeline-patterns;
+      content: " ";
+      display: block;
+      height: emCalc(20px);
+    }
+  }
+
+  dd {
+    line-height: 1;
+    min-height: emCalc(32px);
+    margin-bottom: emCalc(4px);
+  }
+
+  .timeline-list {
+    list-style-type: none;
+    @include grid-row(nest);
+
+    .bride {
+      @include grid-column(6);
+
+      h3 {
+        color: $primary-color;
+      }
+
+      dt {
+        &.born:before {
+          background-position: center -209px;
+          height: 22px;
+        }
+
+        &.moved-to-oregon:before {
+          background-position: center -230px;
+          height: 45px;
+        }
+      }
+    }
+
+    .groom {
+      @include grid-column(6);
+
+      h3 {
+        color: $secondary-color;
+        margin-left: emCalc(-5px);
+      }
+
+      dt {
+        &.born:before {
+          background-position: center -274px;
+          height: 22px;
+        }
+
+        &.moved-to-oregon:before {
+          background-position: center -295px;
+          height: 45px;
+        }
+      }
+    }
+
+    .bride-and-groom {
+      @include grid-column(12);
+
+      dt {
+        &.cross-paths:before {
+          background-position: center 0;
+          height: 125px;
+        }
+
+        &.together:before {
+          background-position: center -127px;
+          height: 82px;
+        }
+
+        &.the-big-day {
+
+          &:before {
+            background: none;
+            height: 0;
+            display: none;
+          }
+
+          @include timeline-patterns;
+          background-position: center bottom;
+          color: #fff;
+          font-size: emCalc(14px);
+          padding: 114px 0 40px;
+
+          span {
+            font-size: emCalc(36px);
+            letter-spacing: -2px;
+          }
+        }
+      }
+
+      dd {
+        max-width: emCalc(140px);
+        margin: 0 auto emCalc(7px);
+      }
+    }
+  }
 }
 /******************************
 The Wedding Party Styles
@@ -502,14 +669,14 @@ The Wedding Party Styles
  ******************************/
 #our-registry {
   background: $primary-color url("pattern_yellow_stripes.gif") center top repeat-x;
-  background-size: 2px 38.5px;
+  background-size: 2px 39px;
   color: darken($body-font-color, 5%);
   padding-bottom: emCalc(28px);
   text-align: center;
 
   .inner-wrapper {
     background: url("heart_yellow_on_white.png") no-repeat top center;
-    background-size: 69.5px 63px;
+    background-size: 70px 63px;
     margin-top: emCalc(-25px);
     padding-top: emCalc(75px);
   }
@@ -628,10 +795,18 @@ The Wedding Party Styles
     }
 
     a {
-      font-size: emCalc(21px);
-      text-transform: uppercase;
-      text-decoration: underline;
-      line-height: 1;
+      &:link,
+      &:visited {
+        font-size: emCalc(21px);
+        text-transform: uppercase;
+        text-decoration: underline;
+        line-height: 1;
+      }
+
+      &:hover,
+      &:active {
+        color: $primary-color;
+      }
     }
     span {
       display: block;
