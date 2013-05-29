@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require responsive-nav
+//= require handlebars
 //= require_tree .
 
 $(document).foundation();

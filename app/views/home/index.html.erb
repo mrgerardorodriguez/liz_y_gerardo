@@ -309,36 +309,33 @@
       <h3>Your Photos</h3>
       <p>Are you carrying around an iPhone or Android? Help us capture memories of our big day!</p>
 
-      <dl>
-        <dt><%= image_tag 'http://lorempixel.com/400/400/people' %></dt>
+      <dl class="photos-app">
+        <dt><%= image_tag 'logo_wedding_party_app.png' %></dt>
         <dd>
           <h4>Wedding Party App</h4>
           <p>Download our awesome wedding app! Check out the pictures we’ve taken so far using documenting the days leading up to the big day.</p>
         </dd>
       </dl>
 
-      <ol>
-        <li>Download our app: <strong>Wedding</strong> Party (from the iPhone or Android app store)</li>
+      <ol class="photos-app-steps">
+        <li>Download our app: <strong>Wedding Party</strong> (from the iPhone or Android app store)</li>
         <li>Register &amp; enter the wedding name: <strong>&ldquo;lizygerardo&rdquo;</strong></li>
         <li>Have fun, take pictures and share them with us on our app!</li>
       </ol>
 
       <hr class="related" />
 
-      <dl>
-        <dt><%= image_tag 'http://lorempixel.com/400/400/people' %></dt>
+      <dl class="photos-app">
+        <dt><%= image_tag 'logo_instagram.png' %></dt>
         <dd>
           <h4>Instagram</h4>
           <p>If you happen to be on Instagram, make sure to use our Wedding Hashtag <strong>&ldquo;#lizygerardo2013&rdquo;</strong> if you snap any awesome photos you’d like to share!</p>
         </dd>
       </dl>
 
-      <ul>
-        <li><%= image_tag 'http://lorempixel.com/400/400/people' %></li>
-        <li><%= image_tag 'http://lorempixel.com/400/400/people' %></li>
-        <li><%= image_tag 'http://lorempixel.com/400/400/people' %></li>
-        <li><%= image_tag 'http://lorempixel.com/400/400/people' %></li>
-      </ul>
+      <div id="instagram-photos-container">
+        <!-- Instagram Photos Load Here -->
+      </div>
     </article>
   </div>
 </section>
@@ -450,3 +447,11 @@
     </div>
   </div>
 </footer>
+
+<script id="instagram-template" type="text/x-handlebars-template">
+  <ul class="instagram-photos">
+    {{#each data}}
+      <li><img src="{{this.images.thumbnail.url}}"</li>
+    {{/each}}
+  </ul>
+</script>
