@@ -721,6 +721,14 @@ The Wedding Party Styles
   }
 }
 
+#instagram-photos-container {
+  &.loading {
+    background: url("loader.gif") no-repeat center center;
+    background-size: 50px 50px;
+    height: emCalc(200px);
+  }
+}
+
 .instagram-photos {
   list-style-type: none;
   @include block-grid(2, 5px);

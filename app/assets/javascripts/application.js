@@ -15,6 +15,7 @@
 //= require foundation
 //= require responsive-nav
 //= require handlebars
+//= require magnificent-popup/magnificent-popup
 //= require_tree .
 
 $(document).foundation();

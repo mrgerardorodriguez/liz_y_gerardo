@@ -6,15 +6,15 @@
       <span class="logo">Liz + Gerardo</span>
       <nav id="nav">
         <ul>
-          <li><a href="#">Venue</a></li>
-          <li><a href="#">Timeline</a></li>
-          <li><a href="#">RSVP</a></li>
-          <li><a href="#">Wedding Party</a></li>
-          <li><a href="#">Photos</a></li>
-          <li><a href="#">Registry</a></li>
-          <li><a href="#">Lodging</a></li>
-          <li><a href="#">Vendors</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#our-venue">Venue</a></li>
+          <li><a href="#our-timeline">Timeline</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+          <li><a href="#wedding-party">Wedding Party</a></li>
+          <li><a href="#photos">Photos</a></li>
+          <li><a href="#our-registry">Registry</a></li>
+          <li><a href="#lodging">Lodging</a></li>
+          <li><a href="#our-vendors">Vendors</a></li>
+          <li><a href="#contact-us">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -306,6 +306,39 @@
       <h3>Our Engagement</h3>
       <p>A <em>huge</em> &ldquo;Thank You&rdquo; to Ryan @ <a href="#">FS Photoghapy</a> for an awesome Engagement Session photo shoot! Ryan took us out to [location] along the beautiful Columbia Gorge area on the Washington side of the Columbia River. The sun came through, and not a rain cloud in sight. We were surrounded with beautiful scenery that definitely represented our love for the outdoors. He’ll be our photographer on our big day as well. Make sure and say &ldquo;Hi&rdquo; to Ryan! :)</p>
 
+      <ul class="instagram-photos">
+        <li>
+          <a class="mfp-image popup-link" title="Photograph by Ryan @ FS Photography" href="<%= asset_path 'engagement_shoot/image_01_full.jpg' %>" target="_blank">
+            <img src="<%= asset_path 'engagement_shoot/image_01_thumb.jpg' %>" alt="Photograph by Ryan @ FS Photography"/>
+          </a>
+        </li>
+        <li>
+          <a class="mfp-image popup-link" title="Photograph by Ryan @ FS Photography" href="<%= asset_path 'engagement_shoot/image_02_full.jpg' %>" target="_blank">
+            <img src="<%= asset_path 'engagement_shoot/image_02_thumb.jpg' %>" alt="Photograph by Ryan @ FS Photography"/>
+          </a>
+        </li>
+        <li>
+          <a class="mfp-image popup-link" title="Photograph by Ryan @ FS Photography" href="<%= asset_path 'engagement_shoot/image_02_full.jpg' %>" target="_blank">
+            <img src="<%= asset_path 'engagement_shoot/image_02_thumb.jpg' %>" alt="Photograph by Ryan @ FS Photography"/>
+          </a>
+        </li>
+        <li>
+          <a class="mfp-image popup-link" title="Photograph by Ryan @ FS Photography" href="<%= asset_path 'engagement_shoot/image_01_full.jpg' %>" target="_blank">
+            <img src="<%= asset_path 'engagement_shoot/image_01_thumb.jpg' %>" alt="Photograph by Ryan @ FS Photography"/>
+          </a>
+        </li>
+        <li>
+          <a class="mfp-image popup-link" title="Photograph by Ryan @ FS Photography" href="<%= asset_path 'engagement_shoot/image_01_full.jpg' %>" target="_blank">
+            <img src="<%= asset_path 'engagement_shoot/image_01_thumb.jpg' %>" alt="Photograph by Ryan @ FS Photography"/>
+          </a>
+        </li>
+        <li>
+          <a class="mfp-image popup-link" title="Photograph by Ryan @ FS Photography" href="<%= asset_path 'engagement_shoot/image_02_full.jpg' %>" target="_blank">
+            <img src="<%= asset_path 'engagement_shoot/image_02_thumb.jpg' %>" alt="Photograph by Ryan @ FS Photography"/>
+          </a>
+        </li>
+    </ul>
+
       <h3>Your Photos</h3>
       <p>Are you carrying around an iPhone or Android? Help us capture memories of our big day!</p>
 
@@ -448,10 +481,4 @@
   </div>
 </footer>
 
-<script id="instagram-template" type="text/x-handlebars-template">
-  <ul class="instagram-photos">
-    {{#each data}}
-      <li><img src="{{this.images.thumbnail.url}}"</li>
-    {{/each}}
-  </ul>
-</script>
+<%= render "instagram-template" %>

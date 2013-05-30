@@ -16,8 +16,10 @@ LizYGerardo.HomeController = function() {
   // Private Properties
   //-------------------------------------------------
   var CLIENT_ID = "f9d0cd43f78b450d8c9c388ee1ed6927";
+  var INSTAGRAM_SEARCH_TAG = "puppy";
 
-  var instagramTemplate;
+  var _instagramTemplate;
+  var _$instagramPhotosContainer = $('#instagram-photos-container');
   //-------------------------------------------------
   // Private Methods
   //-------------------------------------------------
@@ -25,13 +27,32 @@ LizYGerardo.HomeController = function() {
    * @private init() - Takes care of any initial setup.
    */
   function init() {
-      initializeInstagramTemplate();
-      getInstagramPhotos();
+    initLoader();
+    initializeInstagramTemplate();
+    getInstagramPhotos();
+  }
+
+  function initLoader() {
+    _$instagramPhotosContainer.addClass('loading');
+  }
+
+  function killLoader() {
+    _$instagramPhotosContainer.removeClass('loading');
+  }
+
+  function initMagnificentPopup() {
+    $('.popup-link').magnificPopup({
+      // Delay in milliseconds before popup is removed
+      removalDelay: 1000,
+      // Class that is added to popup wrapper and background
+      // make it unique to apply your CSS animations just to this exact popup
+      mainClass: 'mfp-fade'
+    });
   }
 
   function initializeInstagramTemplate() {
     var instagramSource   = $("#instagram-template").html();
-    instagramTemplate = Handlebars.compile(instagramSource);
+    _instagramTemplate = Handlebars.compile(instagramSource);
   }
 
   function getInstagramPhotos() {
@@ -39,15 +60,17 @@ LizYGerardo.HomeController = function() {
         type: "GET",
         dataType: "jsonp",
         cache: false,
-        url: "https://api.instagram.com/v1/tags/marinedrive/media/recent?client_id=" + CLIENT_ID,
+        url: "https://api.instagram.com/v1/tags/" + INSTAGRAM_SEARCH_TAG + "/media/recent?client_id=" + CLIENT_ID,
         success: function(response) {
+          killLoader();
           renderInstagramPhotos(response);
+          initMagnificentPopup();
         }
     });
   }
 
   function renderInstagramPhotos(response) {
-    $('#instagram-photos-container').html(instagramTemplate(response));
+    _$instagramPhotosContainer.html(_instagramTemplate(response));
   }
   //-------------------------------------------------
   // Event Handlers
@@ -69,6 +92,8 @@ LizYGerardo.HomeController = function() {
 
       // initializeInstagramTemplate();
       // getInstagramPhotos();
+  
+      // initUI();
     }
     //-------------------------------------------------
     // Getters/Setters
@@ -85,5 +110,5 @@ LizYGerardo.HomeController = function() {
 $(function() {
   'use strict';
 
-  // LizYGerardo.HomeController.run();
+  LizYGerardo.HomeController.run();
 });
