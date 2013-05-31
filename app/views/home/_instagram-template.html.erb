@@ -1,8 +1,8 @@
 <script id="instagram-template" type="text/x-handlebars-template">
-  <ul class="instagram-photos">
+  <ul class="instagram-photos photo-gallery">
     {{#each data}}
       <li>
-        <a class="mfp-image popup-link" title="Posted by {{this.user.full_name}}" href="{{this.images.standard_resolution.url}}" target="_blank">
+        <a data-gallery="instagram" title="Posted by {{this.user.full_name}}" href="{{this.images.standard_resolution.url}}" target="_blank">
           <img src="{{this.images.thumbnail.url}}"/>
         </a>
       </li>

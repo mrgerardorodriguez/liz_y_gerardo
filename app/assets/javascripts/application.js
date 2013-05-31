@@ -16,6 +16,7 @@
 //= require responsive-nav
 //= require handlebars
 //= require magnificent-popup/magnificent-popup
+//= require touchTouch/touchTouch.jquery
 //= require_tree .
 
 $(document).foundation();

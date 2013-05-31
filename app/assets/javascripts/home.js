@@ -40,14 +40,19 @@ LizYGerardo.HomeController = function() {
     _$instagramPhotosContainer.removeClass('loading');
   }
 
-  function initMagnificentPopup() {
-    $('.popup-link').magnificPopup({
+  function setupPhotoGallery() {
+/*    $('.popup-link').magnificPopup({
       // Delay in milliseconds before popup is removed
       removalDelay: 1000,
       // Class that is added to popup wrapper and background
       // make it unique to apply your CSS animations just to this exact popup
       mainClass: 'mfp-fade'
     });
+*/
+
+    // Initialize the gallery
+    $('.photo-gallery a').touchTouch();
+
   }
 
   function initializeInstagramTemplate() {
@@ -64,7 +69,7 @@ LizYGerardo.HomeController = function() {
         success: function(response) {
           killLoader();
           renderInstagramPhotos(response);
-          initMagnificentPopup();
+          setupPhotoGallery();
         }
     });
   }
