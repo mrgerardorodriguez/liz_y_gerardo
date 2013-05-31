@@ -235,21 +235,28 @@
 			}
 			
 			// Call the load function with the href attribute of the item
-			loadImage(items.eq(index).attr('href'), function(){
-				placeholders.eq(index).html(this);
+			loadImage({
+				src: items.eq(index).attr('href'),
+				title: items.eq(index).attr('title')
+			}, function(){
+				placeholders.eq(index).html("<div class='wrapper'>");
+				placeholders.eq(index).find('.wrapper').html(this);
+				placeholders.eq(index).find('.wrapper').append("<p>"+items.eq(index).attr('title')+"</p>");
 			});
 		}
 		
 		// Load the image and execute a callback function.
 		// Returns a jQuery object
 		
-		function loadImage(src, callback){
+		function loadImage(imgData, callback){
 
 			var img = $('<img>').on('load', function(){
 				callback.call(img);
 			});
 			
-			img.attr('src',src);
+			img.attr('src',imgData.src);
+			img.attr('title', imgData.title);
+			img.attr('alt', imgData.title);
 		}
 		
 		function showNext(){

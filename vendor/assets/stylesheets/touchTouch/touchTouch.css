@@ -59,11 +59,26 @@
 	margin-right:-1px;
 }
 
+#gallerySlider .placeholder .wrapper{
+	display: inline-block;
+	vertical-align: middle;
+	/*padding-top: 1.5em;*/
+	max-height: 90%;
+	max-width: 90%;
+}
+
 #gallerySlider .placeholder img{
 	display: inline-block;
 	max-height: 100%;
 	max-width: 100%;
+	max-height: 90%;
+	max-width: 90%;
 	vertical-align: middle;
+}
+
+#gallerySlider .placeholder p{
+	color: #fff;
+	/*margin: 0;*/
 }
 
 #gallerySlider.rightSpring{
