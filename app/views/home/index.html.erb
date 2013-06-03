@@ -93,11 +93,34 @@
 
         <hr />
 
-        <form action="">
-          <input type="text" name="party-guest-1" placeholder="Type Guest Name" value="Kellan Craddock" />
+        <form action="" id="guest-form">
+          <ul class="guest-list">
+            <li>
+              <input type="text" name="party-guest-1" placeholder="Type Guest Name" value="Kellan Craddock" />
+              <a class="action remove" href="#">Remove Guest</a>
+            </li>
+            <li>
+              <input type="text" name="party-guest-2" placeholder="Type Guest Name" value="Jessica Tsuji Craddock" />
+              <a class="action remove" href="#">Remove Guest</a>
+            </li>
+            <li class="inactive">
+              <input type="text" name="party-guest-3" placeholder="Type Guest Name" />
+              <a class="action add" href="#">Remove Guest</a>
+            </li>
+            <li class="inactive">
+              <input type="text" name="party-guest-4" placeholder="Type Guest Name" />
+              <a class="action add" href="#">Remove Guest</a>
+            </li>
+          </ul>
 
-          <button class="decline" name="decline">Decline</button>
-          <button type="submit" name="reserve">Reserve</button>
+          <ul class="actions">
+            <li>
+              <button class="button" type="submit" name="decline" id="decline">Decline</button>
+            </li>
+            <li>
+              <button class="button" type="submit" name="reserve" id="reserve">Reserve</button>
+            </li>
+          </ul>
         </form>
 
         <aside class="note">

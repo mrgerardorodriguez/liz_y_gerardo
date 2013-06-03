@@ -30,6 +30,33 @@ LizYGerardo.HomeController = function() {
     initLoader();
     initializeInstagramTemplate();
     getInstagramPhotos();
+
+    setupGuestListUI();
+  }
+
+  function setupGuestListUI() {
+    var action = Modernizr.touch ? 'touchstart' : 'click';
+
+    $('input', '#guest-form .guest-list .inactive').attr('disabled','disabled');
+
+    $('.action', '#guest-form .guest-list').on(action, function(e){
+
+      var currGuestHolder = $(e.currentTarget).parent();
+
+      if ($(e.currentTarget).hasClass('remove')) {
+        $(currGuestHolder).addClass('inactive');
+        $('input', currGuestHolder).val('').attr('disabled','disabled');
+        $(e.currentTarget).removeClass('remove').addClass('add');
+      } else {
+        $(currGuestHolder).removeClass('inactive');
+        $('input', currGuestHolder).removeAttr('disabled').focus();
+        $(e.currentTarget).removeClass('add').addClass('remove');
+      }
+
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
   }
 
   function initLoader() {

@@ -1,0 +1,23 @@
+DB TABLES
+
+A "party" can have many "guests". (one-to-many)
+
+party
+----------------------
+id         | int
+name       | string
+status_id  | int
+
+
+guest
+----------------------
+id        | int
+name      | string
+party_id  | int
+
+
+
+status
+----------------------
+id    | int
+type  | string (reserved | declined | no response)
