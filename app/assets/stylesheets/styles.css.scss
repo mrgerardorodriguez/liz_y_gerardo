@@ -4,6 +4,23 @@ $sprite-icons-bg-size: 94px 719px;
 /******************************
  Reusable Styles
  ******************************/
+ 
+ .warning {
+  color: red;
+  margin: 1em;
+  padding: 1em;
+  border: 2px dashed darken(red, 10%);
+
+  strong, em {
+    color: red;
+    text-decoration: underline;
+  }
+
+  span {
+    text-transform: uppercase;
+  }
+ }
+
 .column-container {
   @include grid-column(12);
 }
