@@ -8,6 +8,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 
 gem 'bourbon'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
