@@ -1,5 +1,7 @@
 LizYGerardo::Application.routes.draw do
   
+  devise_for :parties
+
   root :to => "home#index"
 
 
