@@ -5,7 +5,8 @@ A "party" can have many "guests". (one-to-many)
 party
 ----------------------
 id         | int
-name       | string
+username   | string , required, unique
+name       | string (Mayra & Lindsay)
 status_id  | int
 
 
