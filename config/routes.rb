@@ -7,10 +7,7 @@ LizYGerardo::Application.routes.draw do
   #   put 'parties' => 'devise/registrations#update', :as => 'party_registration'
   # end
 
-  # root :to => "home#index"
-
-  root :to => 'coming_soon#index'
-
+  root :to => "home#index"
 
 
   # The priority is based upon order of creation:
