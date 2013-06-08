@@ -1,4 +1,6 @@
 class Guest < ActiveRecord::Base
+  belongs_to :party
+
   attr_accessible :age, :name, :party_id
 
   # Our validators
