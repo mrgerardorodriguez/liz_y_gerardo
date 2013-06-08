@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608191002) do
+ActiveRecord::Schema.define(:version => 20130608195721) do
 
   create_table "guests", :force => true do |t|
     t.string   "name",       :null => false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130608191002) do
     t.string   "name"
     t.string   "username",                                  :null => false
     t.boolean  "has_children",           :default => false
+    t.integer  "status_id",              :default => 1,     :null => false
   end
 
   add_index "parties", ["email"], :name => "index_parties_on_email"
