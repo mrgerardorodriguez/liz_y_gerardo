@@ -11,20 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608165957) do
+ActiveRecord::Schema.define(:version => 20130608181120) do
 
   create_table "guests", :force => true do |t|
-    t.string   "name"
-    t.integer  "party_id"
+    t.string   "name",       :null => false
+    t.integer  "party_id",   :null => false
+    t.integer  "age",        :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "guests", ["party_id"], :name => "index_guests_on_party_id", :unique => true
+  add_index "guests", ["party_id"], :name => "index_guests_on_party_id"
 
   create_table "parties", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -33,20 +34,15 @@ ActiveRecord::Schema.define(:version => 20130608165957) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "name"
-    t.string   "username",                               :null => false
+    t.string   "username",                                  :null => false
+    t.boolean  "has_children",           :default => false
   end
 
   add_index "parties", ["email"], :name => "index_parties_on_email"
   add_index "parties", ["reset_password_token"], :name => "index_parties_on_reset_password_token", :unique => true
   add_index "parties", ["username"], :name => "index_parties_on_username", :unique => true
-
-  create_table "statuses", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "name",       :null => false
-  end
 
 end
