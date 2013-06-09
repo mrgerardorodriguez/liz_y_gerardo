@@ -25,7 +25,9 @@ class Party < ActiveRecord::Base
     false
   end
 
+  # Returns the current Status description(name) for the Party
   def status
     Status.find(self.status_id).name
   end
+
 end
