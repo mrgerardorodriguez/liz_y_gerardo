@@ -27,12 +27,14 @@ LizYGerardo.HomeController = function() {
    * @private constructor() - Takes care of any initial setup.
    */
   function constructor() {
-    console.log('home.js');
-    initLoader();
-    initializeInstagramTemplate();
-    getInstagramPhotos();
 
-    setupGuestListUI();
+    if( $('#instagram-template').length) {
+      initLoader();
+      initializeInstagramTemplate();
+      getInstagramPhotos();
+    }
+
+    if ($('#guest-form').length) setupGuestListUI();
   }
 
   function setupGuestListUI() {
@@ -143,5 +145,5 @@ LizYGerardo.HomeController = function() {
 $(function() {
   'use strict';
 
-  LizYGerardo.HomeController.run();
+  // LizYGerardo.HomeController.run();
 });

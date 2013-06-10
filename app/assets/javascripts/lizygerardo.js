@@ -1,1 +1,1 @@
-var navigation = responsiveNav("#nav");
+if( $('#nav').length) var navigation = responsiveNav("#nav");

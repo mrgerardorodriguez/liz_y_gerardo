@@ -1,10 +1,24 @@
 $sprite-icons-image: "sprite_icons_v2.png";
 $sprite-icons-bg-size: 94px 719px;
 
+/******************************************
+ This stylesheet follows a Mobile First approach.
+ We are also making use of Foundation 4 grid-column and grid-row mixins
+ to keep markup semantic and grid layout more flexible.
+ ******************************************/
+
+/******************************************
+
+
+ Mobile First/Smallest Viewport Styles
+
+
+ ******************************************/
+
 /******************************
  Reusable Styles
  ******************************/
- 
+
 .warning {
   color: red;
   margin: 1em;
@@ -21,10 +35,10 @@ $sprite-icons-bg-size: 94px 719px;
   }
 }
 
-
 .alert {
   background: shade($base-alert-color, 20%);
-  text-shadow: 0 -1px 0 darken($base-alert-color, 25%);
+  background: $primary-color;
+  text-shadow: 0 1px 0 darken($base-alert-color, 15%);
   color: #fff;
   border-radius: 4px;
   text-align: center;
@@ -405,6 +419,7 @@ sup {
   .row {
     // @include pattern-grey-chevron;
     background-color: #fff;
+    max-width: emCalc(600px);
   }
   .column-container {
     @include heart-yellow-on-white;
@@ -1111,5 +1126,37 @@ The Wedding Party Styles
 
   .button {
     margin-bottom: emCalc(5px);
+  }
+}
+
+
+
+
+
+
+/******************************************
+
+
+ "Small" Viewport Section Styles (>=768px)
+
+
+ ******************************************/
+
+@media #{$small} {
+
+  /******************************
+   "Small" Viewport Authentication Login Styles
+   ******************************/
+  .authentication {
+    .row {
+      // @include pattern-grey-chevron;
+      background-color: #fff;
+    }
+    .column-container {
+      @include heart-yellow-on-white;
+      padding-top: emCalc(80px);
+      padding-bottom: emCalc(10px);
+      // text-align: center;
+    }
   }
 }

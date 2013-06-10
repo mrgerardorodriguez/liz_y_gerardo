@@ -31,7 +31,7 @@ $body-font-family: 'Rokkitt', serif;
 $primary-color: #ffd800; // yellow
 $secondary-color: #ababab; // grey
 $tertiary-color: #1386d6; // blue
-$base-alert-color: red;
+$base-alert-color: $primary-color;
 // $alert-color: #c60f13;
 // $success-color: #5da423;
 
