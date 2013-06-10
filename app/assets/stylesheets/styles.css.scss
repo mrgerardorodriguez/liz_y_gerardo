@@ -5,7 +5,7 @@ $sprite-icons-bg-size: 94px 719px;
  Reusable Styles
  ******************************/
  
- .warning {
+.warning {
   color: red;
   margin: 1em;
   padding: 1em;
@@ -19,7 +19,17 @@ $sprite-icons-bg-size: 94px 719px;
   span {
     text-transform: uppercase;
   }
- }
+}
+
+
+.alert {
+  background: shade($base-alert-color, 20%);
+  text-shadow: 0 -1px 0 darken($base-alert-color, 25%);
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  padding: emCalc(5px);
+}
 
 .column-container {
   @include grid-column(12);
@@ -360,24 +370,109 @@ sup {
   display: block;
   position: absolute;
   left: 0;
+  // bottom: -12px;
   top: 4px;
+}
+
+#nav {
+  margin-top: emCalc(15px);
+  margin-bottom: emCalc(25px);
+  margin-bottom: emCalc(10px);
+
+  ul {
+    @include block-grid(2);
+    text-align: center;
+
+    li {
+      &:nth-child(even) {
+        text-align: right;
+      }
+
+      &:nth-child(odd) {
+        text-align: left;
+      }
+    }
+
+    a {
+      font-size: emCalc(18px);
+    }
+  }
+}
+/******************************
+ Authentication Login Styles
+ ******************************/
+.authentication {
+  .row {
+    // @include pattern-grey-chevron;
+    background-color: #fff;
+  }
+  .column-container {
+    @include heart-yellow-on-white;
+    padding-top: emCalc(80px);
+    padding-bottom: emCalc(10px);
+    // text-align: center;
+  }
+  form {
+    margin-top: emCalc(30px);
+  }
+
+  p,
+  label {
+    font-size: emCalc(20px);
+  }
+
+  label {
+    // text-align: left;
+  }
+
+  #{$all-text-inputs} {
+    border: 1px solid $secondary-color;
+    border-radius: 4px;
+    background: #fff;
+    margin-bottom: emCalc(8px);
+    margin-top: emCalc(2px);
+    font-size: emCalc(20px);
+    padding: 10px;
+    @include transition(all .25s ease-out);
+
+    &:focus {
+      border-color: $tertiary-color;
+    }
+  }
+
+  .button {
+    margin-top: emCalc(10px);
+    width: 100%;
+  }
 }
 /******************************
  Main Header Styles
  ******************************/
-body > header {
-  background: #6593ad url("bg_header_small_viewport.jpg") no-repeat bottom;
-  background-size: cover;
-  padding-top: emCalc(18px);
-  padding-left: emCalc(5px);
-  padding-right: emCalc(5px);
-  padding-bottom: 50%;
-  color: #fff;
-  text-align: center;
-  min-height: emCalc(350px);
-
-  h1 {
+body  {
+  & > header {
+    background: #6593ad url("bg_header_small_viewport.jpg") no-repeat bottom;
+    background-size: cover;
+    padding-top: emCalc(18px);
+    padding-left: emCalc(5px);
+    padding-right: emCalc(5px);
+    padding-bottom: 50%;
     color: #fff;
+    text-align: center;
+    min-height: emCalc(350px);
+
+    h1 {
+      color: #fff;
+    }
+  }
+
+  &.sessions {
+    background: #5a819c;
+
+    & > header {
+      background: none;
+      min-height: 0;
+      padding: emCalc(25px) .75em emCalc(15px);
+    }
   }
 }
 /******************************

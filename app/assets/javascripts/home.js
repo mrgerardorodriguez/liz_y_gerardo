@@ -24,9 +24,10 @@ LizYGerardo.HomeController = function() {
   // Private Methods
   //-------------------------------------------------
   /**
-   * @private init() - Takes care of any initial setup.
+   * @private constructor() - Takes care of any initial setup.
    */
-  function init() {
+  function constructor() {
+    console.log('home.js');
     initLoader();
     initializeInstagramTemplate();
     getInstagramPhotos();
@@ -133,7 +134,7 @@ LizYGerardo.HomeController = function() {
 
   };
 
-  init();
+  constructor();
 
   return api;
 }();

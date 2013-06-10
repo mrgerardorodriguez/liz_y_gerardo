@@ -19,17 +19,14 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body class="<%= yield(:body_class) %>">
     <% if Rails.env.development? || Rails.env.staging? %>
-    <section class="warning">
+<!--     <section class="warning">
       <p>You are currently viewing our <span><%= Rails.env %></span> environment.</p>
       <p>Please <strong>DO NOT</strong> share this url with <em>anyone</em> or you will be subject to mind-bending repercussions. You have been warned.</p>
       <p>If you have reached this web page due to error, close the browser immediately as we are tracking all visits and will take all actions necessary to find you.</p>
-    </section>
+    </section> -->
     <% end %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
