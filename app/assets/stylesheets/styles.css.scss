@@ -1,5 +1,5 @@
 $sprite-icons-image: "sprite_icons_v2.png";
-$sprite-icons-bg-size: 94px 719px;
+$sprite-icons-bg-size: 119px 719px;
 
 /******************************************
  This stylesheet follows a Mobile First approach.
@@ -64,7 +64,7 @@ input.button, button.button,
   border-radius: emCalc(4px);
   font-weight: normal;
   text-shadow: 0 1px 1px #fff;
-  padding: .444444444em .37037037em .296296296em;
+  padding: .444444444em .925925926em .296296296em;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
   @include linear-gradient(to bottom, #ffffff 0%,#dcdcdc 93%,#fefefe 100%);
   @include transition(all .5s ease-out);
@@ -90,9 +90,9 @@ input.button, button.button,
     // box-shadow: 0 1px 1px 1px rgba(19, 134, 214, 0.25);
     // @include transition(all .5s ease-out);
 
-    & ~ .button {
-      opacity: .5;
-    } 
+    // & ~ .button {
+    //   opacity: .5;
+    // } 
   }
 }
 
@@ -115,8 +115,21 @@ input.button, button.button,
   padding-bottom: emCalc(28px);
 }
 
+@mixin pattern-grey-dots() {
+  background: url("pattern_grey_dots.gif") center top repeat-x;
+  background-size: 36px 35px;
+  padding-bottom: emCalc(28px);
+}
+
 @mixin heart-white-on-yellow() {
   background: url("heart_white_on_yellow.png") no-repeat top center;
+  background-size: 70px 63px;
+  margin-top: emCalc(-17px);
+  padding-top: emCalc(75px);
+}
+
+@mixin heart-white-on-grey() {
+  background: url("heart_white_on_grey.png") no-repeat top center;
   background-size: 70px 63px;
   margin-top: emCalc(-17px);
   padding-top: emCalc(75px);
@@ -157,7 +170,7 @@ input.button, button.button,
 
 @mixin photo-frame() {
   border: emCalc(4px) solid #fff;
-  display: block;
+  display: inline-block;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
 }
 /******************************
@@ -165,6 +178,11 @@ input.button, button.button,
  ******************************/
 body {
   background: $body-bg;
+
+  // &:before {
+  //   content: "small";
+  //   // display: none;
+  // }
 }
 
 h1 {
@@ -376,7 +394,7 @@ sup {
 }
 
 #nav-toggle {
-  background: transparent url($sprite-icons-image) no-repeat -22px -116px;
+  background: transparent url($sprite-icons-image) no-repeat -27px -116px;
   background-size: $sprite-icons-bg-size;
   @include hide-text;
   width: 80px;
@@ -390,12 +408,11 @@ sup {
 
 #nav {
   margin-top: emCalc(15px);
-  margin-bottom: emCalc(25px);
+  // margin-bottom: emCalc(25px);
   margin-bottom: emCalc(10px);
 
   ul {
     @include block-grid(2);
-    text-align: center;
 
     li {
       &:nth-child(even) {
@@ -415,11 +432,16 @@ sup {
 /******************************
  Authentication Login Styles
  ******************************/
+body.sessions {
+  max-width: emCalc(500px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .authentication {
   .row {
     // @include pattern-grey-chevron;
     background-color: #fff;
-    max-width: emCalc(600px);
   }
   .column-container {
     @include heart-yellow-on-white;
@@ -477,6 +499,16 @@ body  {
 
     h1 {
       color: #fff;
+
+      // &.liz-y-gerardo {
+      //   @include hide-text;
+      //   background: url("bg_header_text.png") no-repeat;
+      //   background-size: cover;
+      //   display: block;
+      //   width: 100%;
+      //   max-width: emCalc(560px);
+      //   height: 100%;
+      // }
     }
   }
 
@@ -489,6 +521,11 @@ body  {
       padding: emCalc(25px) .75em emCalc(15px);
     }
   }
+}
+
+#liz-y-gerardo-text {
+  max-width: emCalc(400px);
+  width: 100%;
 }
 /******************************
  Main Footer Styles
@@ -533,6 +570,10 @@ body > footer {
  ******************************/
 #venue-container {
   @include heart-yellow-on-white;
+
+  figure {
+    text-align: center;
+  }
 }
 /******************************
  RSVP Styles
@@ -616,6 +657,8 @@ body > footer {
     button {
       width: 100%;
       margin: 0;
+      padding-left: emCalc(5px);
+      padding-right: emCalc(5px);
     }
   }
 }
@@ -808,12 +851,15 @@ The Wedding Party Styles
       }
 
       & > li {
-        background: #fff;
-        padding: emCalc(6px);
-        border-bottom: 1px solid #5b5b5b;
-        margin-bottom: emCalc(20px);
+        
+        dl {
+          background: #fff;
+          padding: emCalc(6px);
+          border-bottom: 1px solid #5b5b5b;
+          margin-bottom: emCalc(20px);
+        }
 
-        dt,dl,dd {
+        dt,dd {
           margin-bottom: 0;
         }
 
@@ -827,6 +873,7 @@ The Wedding Party Styles
 
       h3 {
         color: #4d4d4d;
+        text-shadow: 0 1px 0 #fff;
         font-size: emCalc(18px);
         font-family: $header-font-family;
         margin: emCalc(12px) 0 emCalc(3px);
@@ -865,8 +912,21 @@ The Wedding Party Styles
   @include pattern-grey-chevron;
 }
 
-#photos {
+#photos-container header {
   @include heart-yellow-on-white;
+  padding-bottom: 0;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+#your-photos {
+  margin-bottom: emCalc(20px);
+}
+
+#photos,
+#your-photos {
 
   h2 {
     margin-bottom: emCalc(5px);
@@ -953,6 +1013,7 @@ The Wedding Party Styles
 .photo-gallery {
   list-style-type: none;
   @include block-grid(2, 5px);
+  margin: emCalc(20px) 0;
 
   li {
     img {
@@ -960,6 +1021,10 @@ The Wedding Party Styles
       width: 100%;
     }
   }
+}
+
+.engagement-photos {
+  margin-bottom: 0;
 }
 /******************************
  Registry/Loding/Vendors/Contact Styles
@@ -1119,9 +1184,14 @@ The Wedding Party Styles
  ******************************/
 #contact-us {
   @include pattern-grey-chevron;
+  text-align: center;
   
   .inner-wrapper {
     @include heart-yellow-on-white;
+  }
+
+  p {
+    text-align: left;
   }
 
   .button {
@@ -1137,7 +1207,7 @@ The Wedding Party Styles
 /******************************************
 
 
- "Small" Viewport Section Styles (>=768px)
+ "Small" Viewport Section Styles (>=500px)
 
 
  ******************************************/
@@ -1148,15 +1218,308 @@ The Wedding Party Styles
    "Small" Viewport Authentication Login Styles
    ******************************/
   .authentication {
+    margin-bottom: emCalc(50px);
+
     .row {
-      // @include pattern-grey-chevron;
-      background-color: #fff;
+      padding-left: emCalc(50px);
+      padding-right: emCalc(50px);
+      padding-bottom: emCalc(20px);
+      border-radius: 4px;
+      box-shadow: 0 1px 3px 2px rgba(0,0,0,.2);
     }
-    .column-container {
-      @include heart-yellow-on-white;
-      padding-top: emCalc(80px);
-      padding-bottom: emCalc(10px);
-      // text-align: center;
+
+    .button {
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
+
+  /******************************
+   "Small" Viewport Main Nav Styles
+   ******************************/
+
+  #nav-wrapper {
+    padding-top: emCalc(10px);
+    // padding-bottom: emCalc(10px);
+
+    .logo {
+      background-position: right -456px;
+      height: 31px;
+    }
+  }
+
+  #nav-toggle {
+    background-position: -27px -68px;
+    top: 0;
+  }
+
+  #nav {
+    margin-top: emCalc(25px);
+    margin-bottom: emCalc(20px);
+
+    ul {
+
+      li {
+        text-align: center;
+
+        &:nth-child(even) {
+          text-align: center;
+        }
+
+        &:nth-child(odd) {
+          text-align: center;
+        }
+      }
+
+      a {
+        font-size: emCalc(20px);
+      }
+    }
+  }
+
+
+  /******************************
+  "Small" Viewport RSVP Styles
+   ******************************/
+  #rsvp .reserved-seats dd p {
+    font-size: emCalc(20px);
+  }
+
+
+  /******************************
+  "Small" Viewport Wedding Party Styles
+   ******************************/
+  #wedding-party {
+
+    ul {
+      &.party {
+        @include block-grid(2, 5px);
+
+        &:before {
+          @include diamonds-white;
+          margin: emCalc(25px) 0;
+        }
+      }
+
+      &.groomsmen.party {
+        &:before {
+          margin: emCalc(-30px) 0 0;
+          padding-top: emCalc(38px);
+        }
+      }
+
+      &.togo.groomsmen.party {
+        & > li {
+          float: none;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  /******************************
+   Contact Us Styles
+   ******************************/
+  #contact-us {
+    .button {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+/******************************************
+
+
+ "Medium" Viewport Section Styles (>=768px)
+
+
+ ******************************************/
+
+@media #{$medium} {
+
+  /******************************
+   "Medium" Viewport Main Header Styles
+   ******************************/
+  body  {
+    & > header {
+      // background: #6593ad url("bg_header_small_viewport.jpg") no-repeat bottom;
+      // background-size: cover;
+      // padding-top: emCalc(18px);
+      // padding-left: emCalc(5px);
+      // padding-right: emCalc(5px);
+      padding-bottom: 40%;
+      // color: #fff;
+      // text-align: center;
+      // min-height: emCalc(350px);
+    }
+  }
+
+  #liz-y-gerardo-text {
+    max-width: emCalc(426px);
+  }
+  
+  /******************************
+    "Medium" Viewport Main Nav Styles
+   ******************************/
+  #nav {
+    ul {
+      @include block-grid(5);
+
+      & > li {
+        clear: none !important;
+      }
+
+      // a {
+      //   font-size: emCalc(18px);
+      // }
+    }
+  }
+  /******************************
+    "Medium" Viewport RSVP/Venue/Timeline Styles
+   ******************************/
+  #venue-rsvp-container,
+  #our-timeline-container {
+    @include grid-column(6)
+  }
+
+  #venue-container,
+  #our-timeline-container,
+  #our-timeline,
+  #rsvp {
+    background: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  #venue-rsvp-timeline-container {
+    margin-bottom: emCalc(65px);
+
+    & .inner-wrapper {
+      @include heart-yellow-on-white;
+      padding-top: emCalc(72px);
+    }
+  }
+
+  #rsvp-container {
+    background: $primary-color;
+    border-radius: 5px;
+    padding-top: emCalc(20px);
+  }
+
+  #venue-container figure {
+    text-align: left;
+  }
+  /******************************
+  "Medium" Viewport Wedding Party Styles
+   ******************************/
+  #wedding-party {
+
+    ul {
+
+      & > li {
+        clear: none !important;
+      }
+
+      &.party {
+        @include block-grid(3, 10px);
+
+        &:before {
+          @include diamonds-white;
+          margin: emCalc(25px) 0;
+        }
+
+        h3 {
+          font-size: emCalc(17px);
+        }
+
+        & li dl {
+          margin-bottom: emCalc(10px);
+        }
+      }
+
+      &.bridesmaids.party {
+
+      }
+
+      &.groomsmen.party {
+        // @include block-grid(3, 5px);
+
+        &:before {
+          margin: emCalc(-30px) 0 0;
+          padding-top: emCalc(38px);
+        }
+
+        & > li {
+          &:nth-child(odd) {
+            margin-left: 16.666666667%;
+            clear: both !important;
+          }
+        }
+      }
+
+      &.togo.groomsmen.party {
+        & > li {
+          float: none;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+  /******************************
+   "Medium" Viewport Photos Styles
+   ******************************/
+  #photos,
+  #your-photos {
+    @include grid-column(6);
+  }
+
+  #photos-container {
+    @include pattern-grey-dots;
+
+    header {
+      @include heart-white-on-grey;
+
+      h2 {
+        margin-bottom: emCalc(10px);
+      }
+    }
+  }
+
+  #photos,
+  #your-photos {
+
+    h3 {
+
+      &:before {
+        // @include diamonds-yellow;
+        // margin: emCalc(5px) 0 emCalc(10px);
+        background: none;
+        display: none;
+      }
+
+      &:after {
+        @include diamonds-yellow;
+        margin: emCalc(20px) 0 emCalc(15px);
+      }
+    }
+  }
+
+  .instagram-photos {
+    @include block-grid(3, 5px);
+
+    & > li { clear: none !important; }
+  }
+
 }

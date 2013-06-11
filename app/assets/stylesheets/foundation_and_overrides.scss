@@ -63,6 +63,15 @@ $include-html-panel-classes: false;
 $include-html-pricing-classes: false;
 $include-html-progress-classes: false;
 
+
+//
+// Media Queries
+// 
+
+$small-screen: emCalc(500px);
+$medium-screen: emCalc(768px);
+$large-screen: emCalc(1280px);
+
 //
 // Grid Variables
 //
@@ -70,6 +79,13 @@ $include-html-progress-classes: false;
 $row-width: 62.5em;
 $column-gutter: emCalc(40px);
 // $total-columns: 12;
+
+$screen: "only screen";
+$small: "only screen and (min-width: #{$small-screen})";
+$medium: "only screen and (min-width: #{$medium-screen})";
+$large: "only screen and (min-width: #{$large-screen})";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
 
 //
 // Block Grid Variables

@@ -26,161 +26,165 @@
 <header>
   <div class="row">
     <div class="column-container">
-      <%= image_tag 'bg_header_text.png', alt: "Liz y Gerardo are getting married! Y estan invitados! Aug. 10th, 2013, 4:00pm sharp, Redmond, OR. Join us to share our love and happiness as we finally get married!" %>
+      <%= image_tag 'bg_header_text.png', id: "liz-y-gerardo-text", alt: "Liz y Gerardo are getting married! Y estan invitados! Aug. 10th, 2013, 4:00pm sharp, Redmond, OR. Join us to share our love and happiness as we finally get married!" %>
     </div>
   </div>
 </header>
 
 <div id="venue-rsvp-timeline-container">
   <div class="row">
-    <section id="venue-container" class="column-container">
-      <article id="our-venue">
-        <h2>Our Venue</h2>
-        <hr />
-        <p>The ceremony will take place at the <strong>Eagle Crest Resort</strong> in <strong>Redmond, Oregon</strong>. This will be followed by the reception at the <strong>River Run Event Center</strong> located on the Eagle Crest Resort grounds. Eagle Crest Resort displays a lush golf course and grounds with wonderful views of the lovely mountains and scenery that describe central Oregon. The River Run Event Center has a wonderful tiered deck that gives us a breath-taking view overlooking the Deschutes River.</p>
-        <hr />
-        <figure>
-          <%= image_tag 'http://lorempixel.com/675/438/nature' %>
-          <figcaption>
-            <h3>Ceremony Location:</h3>
-            <h4>
-              <a href="http://maps.apple.com/maps?daddr=1522+Cline+Falls+Road+Redmond+OR+97756" target="_blank">Eagle Crest Resort</a>
-            </h4>
-            <address>
-              <a href="http://maps.apple.com/maps?daddr=1522+Cline+Falls+Road+Redmond+OR+97756" target="_blank">
-                <span>1522 Cline Falls Road</span>
-                <span>Redmond, OR 97755</span>
-              </a>
-            </address>
-          </figcaption>
-        </figure>
+    <div class="inner-wrapper">
+      <div id="venue-rsvp-container">
+        <section id="venue-container" class="column-container">
+          <article id="our-venue">
+            <h2>Our Venue</h2>
+            <hr />
+            <p>The ceremony will take place at the <strong>Eagle Crest Resort</strong> in <strong>Redmond, Oregon</strong>. This will be followed by the reception at the <strong>River Run Event Center</strong> located on the Eagle Crest Resort grounds. Eagle Crest Resort displays a lush golf course and grounds with wonderful views of the lovely mountains and scenery that describe central Oregon. The River Run Event Center has a wonderful tiered deck that gives us a breath-taking view overlooking the Deschutes River.</p>
+            <hr />
+            <figure>
+              <%= image_tag 'http://lorempixel.com/675/438/nature' %>
+              <figcaption>
+                <h3>Ceremony Location:</h3>
+                <h4>
+                  <a href="http://maps.apple.com/maps?daddr=1522+Cline+Falls+Road+Redmond+OR+97756" target="_blank">Eagle Crest Resort</a>
+                </h4>
+                <address>
+                  <a href="http://maps.apple.com/maps?daddr=1522+Cline+Falls+Road+Redmond+OR+97756" target="_blank">
+                    <span>1522 Cline Falls Road</span>
+                    <span>Redmond, OR 97755</span>
+                  </a>
+                </address>
+              </figcaption>
+            </figure>
 
-        <hr class="related">
+            <hr class="related">
 
-        <figure>
-          <%= image_tag 'http://lorempixel.com/675/438/nature' %>
-          <figcaption>
-            <h3>Reception Location:</h3>
-            <h4>
-              <a href="http://maps.apple.com/maps?daddr=1730+Blue+Heron+Dr+Redmond+OR+97756" target="_blank">River Run Event Center</a>
-            </h4>
-            <address>
-              <a href="http://maps.apple.com/maps?daddr=1730+Blue+Heron+Dr+Redmond+OR+97756" target="_blank">
-                <span>1730 Blue Heron Dr.</span>
-                <span>Redmond, OR 97756</span>
-              </a>
-            </address>
-          </figcaption>
-        </figure>
-      </article>
-    </section>
+            <figure>
+              <%= image_tag 'http://lorempixel.com/675/438/nature' %>
+              <figcaption>
+                <h3>Reception Location:</h3>
+                <h4>
+                  <a href="http://maps.apple.com/maps?daddr=1730+Blue+Heron+Dr+Redmond+OR+97756" target="_blank">River Run Event Center</a>
+                </h4>
+                <address>
+                  <a href="http://maps.apple.com/maps?daddr=1730+Blue+Heron+Dr+Redmond+OR+97756" target="_blank">
+                    <span>1730 Blue Heron Dr.</span>
+                    <span>Redmond, OR 97756</span>
+                  </a>
+                </address>
+              </figcaption>
+            </figure>
+          </article>
+        </section>
 
-    <section id="rsvp-container" class="column-container">
-      <article id="rsvp">
-        <h2>RSVP</h2>
-        <h3>For the Craddock Party</h3>
+        <section id="rsvp-container" class="column-container">
+          <article id="rsvp">
+            <h2>RSVP</h2>
+            <h3>For the Craddock Party</h3>
 
-        <hr />
+            <hr />
 
-        <p>Please fill out the form to let us know who will be attending. Kindly respond by [date] to make sure we have you on the list. *</p>
+            <p>Please fill out the form to let us know who will be attending. Kindly respond by [date] to make sure we have you on the list. *</p>
 
-        <dl class="reserved-seats">
-          <dt>
-            <p>4</p>
-          </dt>
-          <dd>
-            <p>Seats have been reserved for your party</p>
-          </dd>
-        </dl>
+            <dl class="reserved-seats">
+              <dt>
+                <p>4</p>
+              </dt>
+              <dd>
+                <p>Seats have been reserved for your party</p>
+              </dd>
+            </dl>
 
-        <hr />
+            <hr />
 
-        <form action="" id="guest-form">
-          <ul class="guest-list">
-            <li>
-              <input type="text" name="party-guest-1" placeholder="Type Guest Name" value="Kellan Craddock" />
-              <a class="action remove" href="#">Remove Guest</a>
+            <form action="" id="guest-form">
+              <ul class="guest-list">
+                <li>
+                  <input type="text" name="party-guest-1" placeholder="Type Guest Name" value="Kellan Craddock" />
+                  <a class="action remove" href="#">Remove Guest</a>
+                </li>
+                <li>
+                  <input type="text" name="party-guest-2" placeholder="Type Guest Name" value="Jessica Tsuji Craddock" />
+                  <a class="action remove" href="#">Remove Guest</a>
+                </li>
+                <li class="inactive">
+                  <input type="text" name="party-guest-3" placeholder="Type Guest Name" />
+                  <a class="action add" href="#">Remove Guest</a>
+                </li>
+                <li class="inactive">
+                  <input type="text" name="party-guest-4" placeholder="Type Guest Name" />
+                  <a class="action add" href="#">Remove Guest</a>
+                </li>
+              </ul>
+
+              <ul class="actions">
+                <li>
+                  <button class="button" type="submit" name="decline" id="decline">Decline</button>
+                </li>
+                <li>
+                  <button class="button" type="submit" name="reserve" id="reserve">Reserve</button>
+                </li>
+              </ul>
+            </form>
+
+            <aside class="note">
+              <p>* As a reminder, our seating is limited, please be accurate. Any guests who have not RSVP’ed by [date] will not be allowed to attend. If you have concerns/questions, please <a href="#">contact us</a> as soon as possible.</p>
+            </aside>
+          </article>
+        </section>
+      </div>
+
+      <section id="our-timeline-container" class="column-container">
+        <aside id="our-timeline">
+          <h2>Our Timeline</h2>
+
+          <ul class="timeline-list">
+            <li class="bride">
+              <h3>Liz</h3>
+              <dl>
+                <dt class="born">October 3<sup>rd</sup> <span>1981</span></dt>
+                <dd>Born to Maricela &amp; Aurelio</dd>
+                
+                <dt class="moved-to-oregon">July <span>1992</span></dt>
+                <dd>Liz&apos;s family moves to Madras, Oregon</dd>
+              </dl>
             </li>
-            <li>
-              <input type="text" name="party-guest-2" placeholder="Type Guest Name" value="Jessica Tsuji Craddock" />
-              <a class="action remove" href="#">Remove Guest</a>
+            <li class="groom">
+              <h3>Gerardo</h3>
+              <dl>
+                <dt class="born">December 9<sup>th</sup> <span>1982</span></dt>
+                <dd>Born to Juanita &amp; Antonio</dd>
+                
+                <dt class="moved-to-oregon">August <span>1992</span></dt>
+                <dd>Gerardo&apos;s family moves to Hermiston, Oregon</dd>
+              </dl>
             </li>
-            <li class="inactive">
-              <input type="text" name="party-guest-3" placeholder="Type Guest Name" />
-              <a class="action add" href="#">Remove Guest</a>
-            </li>
-            <li class="inactive">
-              <input type="text" name="party-guest-4" placeholder="Type Guest Name" />
-              <a class="action add" href="#">Remove Guest</a>
+            <li class="bride-and-groom">
+              <dl>
+                <dt class="cross-paths">January <span>2003</span></dt>
+                <dd>Liz &amp; Gerardo set eyes on each other on the dance floor at a UO Salsa class</dd>
+                
+                <dt class="together">March <span>2003</span></dt>
+                <dd>Liz &amp; Gerardo begin dating!! :)</dd>
+                
+                <dt class="together">June <span>2005 <strong>&amp;</strong> 2006</span></dt>
+                <dd>Liz &amp; Gerardo graduate from the University of Oregon</dd>
+                
+                <dt class="together">May <span>2009</span></dt>
+                <dd>Togo becomes part of the family!</dd>
+
+                <dt class="together">September <span>2010</span></dt>
+                <dd>Liz and Gerardo get engaged in beautiful Maui, HI</dd>
+
+                <dt class="the-big-day">August 10<sup>th</sup> <span>2013</span></dt>
+                <dd>10 years later&hellip;the big day final arrives.</dd>
+              </dl>
             </li>
           </ul>
 
-          <ul class="actions">
-            <li>
-              <button class="button" type="submit" name="decline" id="decline">Decline</button>
-            </li>
-            <li>
-              <button class="button" type="submit" name="reserve" id="reserve">Reserve</button>
-            </li>
-          </ul>
-        </form>
-
-        <aside class="note">
-          <p>* As a reminder, our seating is limited, please be accurate. Any guests who have not RSVP’ed by [date] will not be allowed to attend. If you have concerns/questions, please <a href="#">contact us</a> as soon as possible.</p>
         </aside>
-      </article>
-    </section>
-
-    <section id="our-timeline-container" class="column-container">
-      <aside id="our-timeline">
-        <h2>Our Timeline</h2>
-
-        <ul class="timeline-list">
-          <li class="bride">
-            <h3>Liz</h3>
-            <dl>
-              <dt class="born">October 3<sup>rd</sup> <span>1981</span></dt>
-              <dd>Born to Maricela &amp; Aurelio</dd>
-              
-              <dt class="moved-to-oregon">July <span>1992</span></dt>
-              <dd>Liz&apos;s family moves to Madras, Oregon</dd>
-            </dl>
-          </li>
-          <li class="groom">
-            <h3>Gerardo</h3>
-            <dl>
-              <dt class="born">December 9<sup>th</sup> <span>1982</span></dt>
-              <dd>Born to Juanita &amp; Antonio</dd>
-              
-              <dt class="moved-to-oregon">August <span>1992</span></dt>
-              <dd>Gerardo&apos;s family moves to Hermiston, Oregon</dd>
-            </dl>
-          </li>
-          <li class="bride-and-groom">
-            <dl>
-              <dt class="cross-paths">January <span>2003</span></dt>
-              <dd>Liz &amp; Gerardo set eyes on each other on the dance floor at a UO Salsa class</dd>
-              
-              <dt class="together">March <span>2003</span></dt>
-              <dd>Liz &amp; Gerardo begin dating!! :)</dd>
-              
-              <dt class="together">June <span>2005 <strong>&amp;</strong> 2006</span></dt>
-              <dd>Liz &amp; Gerardo graduate from the University of Oregon</dd>
-              
-              <dt class="together">May <span>2009</span></dt>
-              <dd>Togo becomes part of the family!</dd>
-
-              <dt class="together">September <span>2010</span></dt>
-              <dd>Liz and Gerardo get engaged in beautiful Maui, HI</dd>
-
-              <dt class="the-big-day">August 10<sup>th</sup> <span>2013</span></dt>
-              <dd>10 years later&hellip;the big day final arrives.</dd>
-            </dl>
-          </li>
-        </ul>
-
-      </aside>
-    </section>
+      </section>
+    </div>
   </div>
 </div>
 
@@ -217,7 +221,7 @@
           <dl>
             <dt><%= image_tag 'wedding_party/bridesmaids/lucia_meza.jpg' %></dt>
             <dd>
-              <h3>Lucia Meza</h3>
+              <h3>Lucía Meza</h3>
               <h4>Bridesmaid</h4>
               <!-- <p>Short description of Lucia goes here...</p> -->
               <!-- <p><a href="#">(Read more)</a></p> -->
@@ -228,7 +232,7 @@
           <dl>
             <dt><%= image_tag 'wedding_party/bridesmaids/amanda_lopez.jpg' %></dt>
             <dd>
-              <h3>Amanda Lopez</h3>
+              <h3>Amanda López</h3>
               <h4>Bridesmaid</h4>
               <!-- <p>Short description of Amanda goes here...</p> -->
               <!-- <p><a href="#">(Read more)</a></p> -->
@@ -239,7 +243,7 @@
           <dl>
             <dt><%= image_tag 'wedding_party/bridesmaids/mindalay_perez.jpg' %></dt>
             <dd>
-              <h3>Mindalay Perez</h3>
+              <h3>Mindalay Pérez</h3>
               <h4>Bridesmaid</h4>
               <!-- <p>Short description of Minda goes here...</p> -->
               <!-- <p><a href="#">(Read more)</a></p> -->
@@ -264,7 +268,7 @@
           <dl>
             <dt><%= image_tag 'wedding_party/groomsmen/juan_rodolfo_jimenez.jpg' %></dt>
             <dd>
-              <h3>Juan Rodolfo Jimenez</h3>
+              <h3>Rodolfo Jiménez</h3>
               <h4>Best Man</h4>
               <!-- <p>Short description of Rodo goes here...</p> -->
               <!-- <p><a href="#">(Read more)</a></p> -->
@@ -286,7 +290,7 @@
           <dl>
             <dt><%= image_tag 'wedding_party/groomsmen/emmanuel_garcia.jpg' %></dt>
             <dd>
-              <h3>Emmanuel Garcia</h3>
+              <h3>Emmanuel García</h3>
               <h4>Groomsman</h4>
               <!-- <p>Short description of Emmanuel goes here...</p> -->
               <!-- <p><a href="#">(Read more)</a></p> -->
@@ -306,12 +310,12 @@
         </li>
       </ul>
 
-      <ul class="groomsmen party">
+      <ul class="togo groomsmen party">
         <li>
           <dl>
             <dt><%= image_tag 'wedding_party/groomsmen/togo.jpg' %></dt>
             <dd>
-              <h3>Togo</h3>
+              <h3>Tógo</h3>
               <h4>Best Dog/Ring Bearer</h4>
               <!-- <p>Short description of Togo goes here...</p> -->
               <!-- <p><a href="#">(Read more)</a></p> -->
@@ -325,9 +329,11 @@
 
 <section id="photos-container">
   <div class="row">
-    <article id="photos" class="column-container">
+    <header>
       <h2>Photos</h2>
+    </header>
 
+    <article id="photos" class="column-container">
       <h3>Our Engagement</h3>
       <p>A <em>huge</em> &ldquo;Thank You&rdquo; to Ryan @ <a href="#">FS Photoghapy</a> for an awesome Engagement Session photo shoot! Ryan took us out to [location] along the beautiful Columbia Gorge area on the Washington side of the Columbia River. The sun came through, and not a rain cloud in sight. We were surrounded with beautiful scenery that definitely represented our love for the outdoors. He’ll be our photographer on our big day as well. Make sure and say &ldquo;Hi&rdquo; to Ryan! :)</p>
 
@@ -362,8 +368,10 @@
             <img src="<%= asset_path 'engagement_shoot/image_02_thumb.jpg' %>" alt="Photograph by Ryan @ FS Photography"/>
           </a>
         </li>
-    </ul>
+      </ul>
+    </article>
 
+    <article id="your-photos" class="column-container">
       <h3>Your Photos</h3>
       <p>Are you carrying around an iPhone or Android? Help us capture memories of our big day!</p>
 
@@ -371,7 +379,7 @@
         <dt><%= image_tag 'logo_wedding_party_app.png' %></dt>
         <dd>
           <h4>Wedding Party App</h4>
-          <p>Download our awesome wedding app! Check out the pictures we’ve taken so far using documenting the days leading up to the big day.</p>
+          <p>Download our awesome wedding app! Check out the pictures we’ve taken so far documenting the events leading up to the big day.</p>
         </dd>
       </dl>
 
