@@ -17,6 +17,8 @@
 //= require handlebars
 //= require magnificent-popup/magnificent-popup
 //= require touchTouch/touchTouch.jquery
-//= require_tree .
+// require_tree .
+//= require lizygerardo
+//= require home
 
 $(document).foundation();

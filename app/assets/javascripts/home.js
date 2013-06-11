@@ -20,6 +20,13 @@ LizYGerardo.HomeController = function() {
 
   var _instagramTemplate;
   var _$instagramPhotosContainer = $('#instagram-photos-container');
+
+  var _breakpoints = {
+    small: 500,
+    medium: 768,
+    large: 1000
+  }
+
   //-------------------------------------------------
   // Private Methods
   //-------------------------------------------------
@@ -28,13 +35,21 @@ LizYGerardo.HomeController = function() {
    */
   function constructor() {
 
-    if( $('#instagram-template').length) {
+    if( $('#instagram-template').length ) {
       initLoader();
       initializeInstagramTemplate();
       getInstagramPhotos();
     }
 
-    if ($('#guest-form').length) setupGuestListUI();
+    if( $('#guest-form').length ) setupGuestListUI();
+
+    if( $('#liz-y-gerardo-text').length ) {
+      setupHeaderText();
+    }
+  }
+
+  function setupHeaderText() {
+    
   }
 
   function setupGuestListUI() {
@@ -71,15 +86,6 @@ LizYGerardo.HomeController = function() {
   }
 
   function setupPhotoGallery() {
-/*    $('.popup-link').magnificPopup({
-      // Delay in milliseconds before popup is removed
-      removalDelay: 1000,
-      // Class that is added to popup wrapper and background
-      // make it unique to apply your CSS animations just to this exact popup
-      mainClass: 'mfp-fade'
-    });
-*/
-
     // Initialize the gallery
     $('.photo-gallery a').touchTouch();
 
@@ -107,6 +113,32 @@ LizYGerardo.HomeController = function() {
   function renderInstagramPhotos(response) {
     _$instagramPhotosContainer.html(_instagramTemplate(response));
   }
+
+  function windowSizeCheck(currWidth) {
+    console.log(currWidth);
+
+      if (currWidth > 0 && currWidth < _breakpoints.small) {
+        console.log('tiny');
+        showSmallerHeader();
+      } else if(currWidth >= _breakpoints.small && currWidth < _breakpoints.medium) {
+        console.log('small');
+        showSmallerHeader();
+      } else if (currWidth >= _breakpoints.medium) {
+        console.log('medium');
+        showLargerHeader();
+      } else {
+        console.log('unknown');
+      }
+  }
+
+  function showSmallerHeader() {
+    $('#liz-y-gerardo-text').attr('src','/assets/bg_header_text.png');
+  }
+
+  function showLargerHeader() {
+    $('#liz-y-gerardo-text').attr('src','/assets/bg_header_text_medium_up.png');
+  }
+
   //-------------------------------------------------
   // Event Handlers
   //-------------------------------------------------
@@ -121,7 +153,7 @@ LizYGerardo.HomeController = function() {
     //-------------------------------------------------
     // Public Methods
     //-------------------------------------------------
-    run: function() {
+    // run: function() {
       // Public members are addressable through the 'api' object.
       // api.publicAttribute = false;
 
@@ -129,7 +161,12 @@ LizYGerardo.HomeController = function() {
       // getInstagramPhotos();
   
       // initUI();
+    // },
+
+    windowResizeUpdated: function(currWidth) {
+      windowSizeCheck(currWidth);
     }
+
     //-------------------------------------------------
     // Getters/Setters
     //-------------------------------------------------
@@ -146,4 +183,13 @@ $(function() {
   'use strict';
 
   // LizYGerardo.HomeController.run();
+});
+
+// debulked onresize handler
+function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,100)};return c};
+
+on_resize(function() {
+
+  LizYGerardo.HomeController.windowResizeUpdated($(window).width());
+
 });
