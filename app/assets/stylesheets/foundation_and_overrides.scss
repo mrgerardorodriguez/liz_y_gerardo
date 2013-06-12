@@ -70,13 +70,13 @@ $include-html-progress-classes: false;
 
 $small-screen: emCalc(500px);
 $medium-screen: emCalc(768px);
-$large-screen: emCalc(1280px);
+$large-screen: emCalc(1025px);
 
 //
 // Grid Variables
 //
 
-$row-width: 62.5em;
+$row-width: 64.0625em; // 1025px
 $column-gutter: emCalc(40px);
 // $total-columns: 12;
 

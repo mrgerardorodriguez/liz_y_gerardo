@@ -149,6 +149,13 @@ input.button, button.button,
   padding-top: emCalc(70px);
 }
 
+@mixin pattern-yellow-stripes() {
+  background: $primary-color url("pattern_yellow_stripes.gif") center top repeat-x;
+  background-size: 2px 39px;
+  padding-bottom: emCalc(28px);
+  color: darken($body-font-color, 5%);
+}
+
 @mixin diamonds-yellow() {
   content: " ";
   display: block;
@@ -377,7 +384,7 @@ sup {
   padding-top: emCalc(5px);
   padding-bottom: emCalc(5px);
   position: relative;
-  color: #757575;
+  color: #7f7f7f;
   font-family: $body-font-family;
   border-bottom: 1px solid #191919;
 
@@ -426,6 +433,7 @@ sup {
 
     a {
       font-size: emCalc(18px);
+      color: #7f7f7f;
     }
   }
 }
@@ -535,7 +543,7 @@ body > footer {
   color: #757575;
   padding-top: emCalc(15px);
   padding-bottom: emCalc(15px);
-  font-size: emCalc(14px);
+  // font-size: emCalc(14px);
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1px;
@@ -548,7 +556,7 @@ body > footer {
   p {
     margin: 0;
     line-height: 1.25;
-    font-size: emCalc(15px);
+    font-size: emCalc(13px);
 
     &.copyright {
       font-size: 7px;
@@ -579,10 +587,7 @@ body > footer {
  RSVP Styles
  ******************************/
 #rsvp-container {
-  background: $primary-color url("pattern_yellow_stripes.gif") center top repeat-x;
-  background-size: 2px 39px;
-  color: darken($body-font-color, 5%);
-  padding-bottom: emCalc(28px);
+  @include pattern-yellow-stripes;
 }
 
 #rsvp {
@@ -1034,10 +1039,7 @@ The Wedding Party Styles
  Registry Styles
  ******************************/
 #our-registry {
-  background: $primary-color url("pattern_yellow_stripes.gif") center top repeat-x;
-  background-size: 2px 39px;
-  color: darken($body-font-color, 5%);
-  padding-bottom: emCalc(28px);
+  @include pattern-yellow-stripes;
   text-align: center;
 
   .inner-wrapper {
@@ -1068,28 +1070,12 @@ The Wedding Party Styles
   }
 
   a {
-    background: url("sprite_store_logos.png") no-repeat;
-    background-size: 236px 188px;
-    @include hide-text;
     display: block;
-    margin: 0 auto;
-
-    &.target {
-      background-position: top center;
-      width: 236px;
-      height: 54px;
-    }
-
-    &.wedding-republic {
-      background-position: center -112px;
-      width: 236px;
-      height: 77px;
-    }
-
-    &.kohls {
-      background-position: center -52px;
-      width: 231px;
-      height: 57px;
+    
+    img {
+      display: block;
+      max-width: 75%;
+      margin: 0 auto;
     }
   }
 }
@@ -1320,7 +1306,7 @@ The Wedding Party Styles
   }
 
   /******************************
-   Contact Us Styles
+   "Small" Viewport Contact Us Styles
    ******************************/
   #contact-us {
     .button {
@@ -1330,6 +1316,14 @@ The Wedding Party Styles
     }
   }
 
+  /******************************
+   "Small" Viewport Main Footer Styles
+   ******************************/
+  body > footer {
+    p {
+      font-size: emCalc(14px);
+    }
+  }
 }
 
 
@@ -1390,7 +1384,7 @@ The Wedding Party Styles
    ******************************/
   #venue-rsvp-container,
   #our-timeline-container {
-    @include grid-column(6)
+    @include grid-column(6);
   }
 
   #venue-container,
@@ -1521,5 +1515,230 @@ The Wedding Party Styles
 
     & > li { clear: none !important; }
   }
+
+  /******************************
+   "Medium" Viewport Registry/Lodging/Our Vendors/Contact Us Styles
+   ******************************/
+  #other-details-container {
+    @include pattern-yellow-stripes;
+    padding-bottom: 0;
+
+    .inner-wrapper {
+      background: url("heart_yellow_on_white.png") no-repeat top center;
+      background-size: 70px 63px;
+      margin-top: emCalc(-25px);
+      padding-top: emCalc(75px);
+    }
+  }
+
+  #our-registry,
+  #lodging,
+  #our-vendors,
+  #contact-us {
+    @include grid-column(3);
+    background: none;
+
+    .inner-wrapper {
+      background: none;
+      margin-top: 0;
+      padding-top: 0;
+      color: darken($body-font-color, 5%);
+    }
+
+    .lodging-list {
+      // text-align: left;
+
+      li {
+        margin-bottom: emCalc(20px);
+
+        &:before {
+          background: none;
+          height: 0;
+          margin: 0;
+        }
+      }
+    }
+
+    .vendor-list {
+      li {
+        &:before {
+          @include diamonds-white;
+        }
+      }
+
+      a {
+        &:link,
+        &:visited {
+          font-size: emCalc(15px);
+          font-weight: bold;
+          color: darken($body-font-color, 5%);
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          color: darken($body-font-color, 10%);
+        }
+      }
+    }
+
+    hr {
+      @include diamonds-white;
+    }
+
+    h2 {
+      font-size: emCalc(21px);
+      color: darken($body-font-color, 5%);
+      line-height: 1.25;
+      margin-bottom: emCalc(10px);
+    }
+
+    h3 {
+      font-size: emCalc(15px);
+      margin-top: 0;
+    }
+
+    address {
+      font-size: emCalc(14px);
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: emCalc(10px);
+    }
+  }
+
+  #vendors,
+  #lodging {
+    a {
+      &:link,
+      &:visited {
+        color: darken($body-font-color, 5%);
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        color: darken($body-font-color, 10%);
+      }
+    }
+  }
+
+  #contact-us {
+    p {
+      font-size: emCalc(14px);
+    }
+
+    .button {
+      font-size: emCalc(14px);
+      width: 100%;
+      padding-top: emCalc(8px);
+
+      span {
+        display: block;
+        font-size: emCalc(27px);
+      }
+    }
+  }
+
+  .registry-list {
+
+    &:before {
+      margin-top: emCalc(40px);
+    }
+
+    li {
+      margin-top: emCalc(40px);
+    }
+
+    a {
+      
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+/******************************************
+
+
+ "Large" Viewport Section Styles (>=1025)
+
+
+ ******************************************/
+
+@media #{$large} {
+
+  /******************************
+   "Large" Viewport Main Header Styles
+   ******************************/
+  .js #nav,
+  #nav-wrapper .logo {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+  }
+
+  #nav ul {
+    float: right;
+    margin: 0;
+
+    & > li {
+      width: auto;
+      padding-bottom: 0;
+      background: url($sprite-icons-image) no-repeat left -664px;
+      background-size: $sprite-icons-bg-size;
+      padding: 0 15px 0 21px;
+
+      &:first-child {
+        background: none;
+      }
+
+      a {
+        font-size: emCalc(15px);
+      }
+    }
+  }
+  #nav-wrapper .logo {
+    background-position: left -456px;
+    width: 119px;
+  }
+  /******************************
+    "Large" Viewport RSVP/Venue/Timeline Styles
+   ******************************/
+  #venue-rsvp-container {
+    @include grid-column(8);
+  }
+  #our-timeline-container {
+    @include grid-column(4);
+  }
+
+
+  /******************************
+   "Large" Viewport Photos Styles
+   ******************************/
+  #photos {
+    @include grid-column(8);
+  }
+  #your-photos {
+    @include grid-column(4);
+  }
+  .engagement-photos {
+    @include block-grid(3, 5px);
+
+    & > li { clear: none !important; }
+  }
+
+  .instagram-photos {
+    @include block-grid(4, 5px);
+
+    & > li { clear: none !important; }
+  }
+
 
 }

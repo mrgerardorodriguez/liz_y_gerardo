@@ -26,12 +26,12 @@
   max-height: 9999px;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 1025px) {
   .js #nav {
-    position: relative;
-    max-height: none;
+    position: relative !important;
+    max-height: none !important;
   }
   #nav-toggle {
-    display: none;
+    display: none !important;
   }
 }
