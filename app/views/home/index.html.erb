@@ -6,15 +6,15 @@
       <span class="logo">Liz + Gerardo</span>
       <nav id="nav">
         <ul>
-          <li><a href="#our-venue">Venue</a></li>
-          <li><a href="#our-timeline">Timeline</a></li>
-          <li><a href="#rsvp">RSVP</a></li>
-          <li><a href="#wedding-party">Wedding Party</a></li>
-          <li><a href="#photos">Photos</a></li>
-          <li><a href="#our-registry">Registry</a></li>
-          <li><a href="#lodging">Lodging</a></li>
-          <li><a href="#our-vendors">Vendors</a></li>
-          <li><a href="#contact-us">Contact</a></li>
+          <li><a class="section-link" href="#our-venue">Venue</a></li>
+          <li><a class="section-link" href="#our-timeline">Timeline</a></li>
+          <li><a class="section-link" href="#rsvp">RSVP</a></li>
+          <li><a class="section-link" href="#wedding-party">Wedding Party</a></li>
+          <li><a class="section-link" href="#photos">Photos</a></li>
+          <li><a class="section-link" href="#our-registry">Registry</a></li>
+          <li><a class="section-link" href="#lodging">Lodging</a></li>
+          <li><a class="section-link" href="#our-vendors">Vendors</a></li>
+          <li><a class="section-link" href="#contact-us">Contact</a></li>
 
           <li><%= link_to('Logout', destroy_party_session_path, :method => :delete) %></li>
         </ul>
@@ -42,7 +42,7 @@
             <p>The ceremony will take place at the <strong>Eagle Crest Resort</strong> in <strong>Redmond, Oregon</strong>. This will be followed by the reception at the <strong>River Run Event Center</strong> located on the Eagle Crest Resort grounds. Eagle Crest Resort displays a lush golf course and grounds with wonderful views of the lovely mountains and scenery that describe central Oregon. The River Run Event Center has a wonderful tiered deck that gives us a breath-taking view overlooking the Deschutes River.</p>
             <hr />
             <figure>
-              <%= image_tag 'http://lorempixel.com/675/438/nature' %>
+              <span><%= image_tag 'http://lorempixel.com/675/438/nature' %></span>
               <figcaption>
                 <h3>Ceremony Location:</h3>
                 <h4>
@@ -60,7 +60,7 @@
             <hr class="related">
 
             <figure>
-              <%= image_tag 'http://lorempixel.com/675/438/nature' %>
+              <span><%= image_tag 'http://lorempixel.com/675/438/nature' %></span>
               <figcaption>
                 <h3>Reception Location:</h3>
                 <h4>
@@ -514,5 +514,7 @@
     </div>
   </div>
 </footer>
+
+<a id="back-to-top" class="button back" href="#nav-wrapper">Back to Top</a>
 
 <%= render "instagram-template" %>

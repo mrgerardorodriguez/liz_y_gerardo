@@ -17,6 +17,8 @@
 //= require handlebars
 //= require magnificent-popup/magnificent-popup
 //= require touchTouch/touchTouch.jquery
+//= require jquery.scrollTo/jquery.scrollTo
+//= require jquery.easing.min
 // require_tree .
 //= require lizygerardo
 //= require home

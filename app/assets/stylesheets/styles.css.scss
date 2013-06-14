@@ -238,8 +238,9 @@ a {
   }
 
   &:hover,
-  &:active {
-    color: darken($body-font-color, 5%);
+  &:active,
+  &:focus {
+    // color: darken($body-font-color, 5%);
     color: $primary-color;
     // text-shadow: 0 0 1px darken($body-font-color, 10%);
   }
@@ -379,6 +380,24 @@ sup {
 /******************************
  Main Nav Styles
  ******************************/
+#back-to-top {
+  position: fixed;
+  bottom: -50px;
+  right: 1%;
+  margin-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  width: emCalc(90px);
+  font-size: emCalc(18px);
+  opacity: 0;
+  cursor: default;
+
+  &.active {
+    bottom: 0;
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
 #nav-wrapper {
   background: #303030;
   padding-top: emCalc(5px);
@@ -434,6 +453,12 @@ sup {
     a {
       font-size: emCalc(18px);
       color: #7f7f7f;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $primary-color;
+      }
     }
   }
 }
@@ -1156,7 +1181,8 @@ The Wedding Party Styles
       }
 
       &:hover,
-      &:active {
+      &:active,
+      &:focus {
         color: $primary-color;
       }
     }
@@ -1347,15 +1373,9 @@ The Wedding Party Styles
    ******************************/
   body  {
     & > header {
-      // background: #6593ad url("bg_header_small_viewport.jpg") no-repeat bottom;
-      // background-size: cover;
-      // padding-top: emCalc(18px);
-      // padding-left: emCalc(5px);
-      // padding-right: emCalc(5px);
-      padding-bottom: 40%;
-      // color: #fff;
-      // text-align: center;
-      // min-height: emCalc(350px);
+      background-image: url("bg_header.png");
+      padding-top: emCalc(36px);
+      padding-bottom: 35%;
     }
   }
 
@@ -1675,6 +1695,22 @@ The Wedding Party Styles
 @media #{$large} {
 
   /******************************
+   "Large" Viewport General Styles
+   ******************************/
+  h3 {
+    font-size: emCalc(17px);
+  }
+
+  h4 {
+    font-size: emCalc(35px);
+  }
+
+  address {
+    font-size: emCalc(22px);
+    line-height: 1.1;
+  }
+
+  /******************************
    "Large" Viewport Main Header Styles
    ******************************/
   .js #nav,
@@ -1718,6 +1754,20 @@ The Wedding Party Styles
     @include grid-column(4);
   }
 
+  #our-venue {
+    figure {
+      @include grid-row(nest);
+
+      & > span {
+        @include grid-column(7);
+      }
+      & > figcaption {
+        @include grid-column(5);
+        padding-left: 0;
+        padding-right: emCalc(15px);
+      }
+    }
+  }
 
   /******************************
    "Large" Viewport Photos Styles

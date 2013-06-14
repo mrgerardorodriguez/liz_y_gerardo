@@ -15,7 +15,9 @@ LizYGerardo.AppController = function() {
   //-------------------------------------------------
   // Private Properties
   //-------------------------------------------------
+  var BACK_TO_TOP_THRESHOLD = 700; // dictates when the 'back to top' shows up
 
+  var $backToTopButton = $('#back-to-top');
   //-------------------------------------------------
   // Private Methods
   //-------------------------------------------------
@@ -24,10 +26,36 @@ LizYGerardo.AppController = function() {
    */
   function constructor() {
     if( $('#nav').length) setupNav();
+
+    setupBackToTop();
   }
 
   function setupNav() {
     var navigation = responsiveNav("#nav");
+    
+    // setup main nav scrollTo
+    $('.section-link').on('click', function(e){
+      $.scrollTo( e.currentTarget.hash, 1000, { axis: 'y', easing:'easeInOutExpo' });
+      return false;
+    });
+  }
+
+  function setupBackToTop() {
+    $(window).on('scroll', function(e){
+      var fromTop = $(e.currentTarget).scrollTop();
+
+      if (fromTop > BACK_TO_TOP_THRESHOLD) {
+        $backToTopButton.addClass('active');
+      } else {
+        $backToTopButton.removeClass('active');
+      }
+    });
+
+    // setup main nav scrollTo
+    $('body').on('click', '.back.button.active', function(e){
+      $.scrollTo( e.currentTarget.hash, 1000, { axis: 'y', easing:'easeInOutExpo' });
+      return false;
+    });
   }
 
   //-------------------------------------------------
@@ -59,10 +87,3 @@ LizYGerardo.AppController = function() {
 
   return api;
 }();
-
-
-$(function() {
-  'use strict';
-
-  // LizYGerardo.AppController.run();
-});
