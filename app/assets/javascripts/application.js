@@ -15,7 +15,6 @@
 //= require foundation
 //= require responsive-nav
 //= require handlebars
-//= require magnificent-popup/magnificent-popup
 //= require touchTouch/touchTouch.jquery
 //= require jquery.scrollTo/jquery.scrollTo
 //= require jquery.easing.min
@@ -23,4 +22,4 @@
 //= require lizygerardo
 //= require home
 
-$(document).foundation();
+$(document).foundation('reveal');

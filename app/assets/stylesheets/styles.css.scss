@@ -227,6 +227,16 @@ p {
   strong {
     color: darken($body-font-color, 5%);
   }
+
+  &.intro {
+    &:first-letter {
+      font-family: $header-font-family;
+      font-size: emCalc(70px);
+      float: left;
+      line-height: .9;
+      margin-right: 7px;
+    }
+  }
 }
 
 a {
@@ -351,7 +361,7 @@ sup {
       @include transition(all .5s ease-out .25s);
 
       &.add {
-        @include transform(rotateZ(45deg));
+        @include transform(rotateZ(135deg));
         // -webkit-transform: translate3d(0, 0, 0);
         // transform: rotate(45deg);
       }
@@ -439,6 +449,7 @@ sup {
 
   ul {
     @include block-grid(2);
+    margin: 0;
 
     li {
       &:nth-child(even) {
@@ -1710,6 +1721,10 @@ The Wedding Party Styles
     line-height: 1.1;
   }
 
+  hr {
+    margin: emCalc(25px) 0;
+  }
+
   /******************************
    "Large" Viewport Main Header Styles
    ******************************/
@@ -1718,6 +1733,13 @@ The Wedding Party Styles
     display: inline-block;
     vertical-align: top;
     margin: 0;
+  }
+
+  #nav-wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    top: 0;
   }
 
   #nav ul {
@@ -1744,14 +1766,26 @@ The Wedding Party Styles
     background-position: left -456px;
     width: 119px;
   }
+
+  body > header {
+    margin-top: emCalc(47px);
+  }
   /******************************
     "Large" Viewport RSVP/Venue/Timeline Styles
    ******************************/
+  #venue-rsvp-timeline-container {
+    margin-bottom: emCalc(3px);
+  }
+
   #venue-rsvp-container {
     @include grid-column(8);
   }
   #our-timeline-container {
     @include grid-column(4);
+  }
+
+  #venue-container {
+    padding-bottom: 4.5em;
   }
 
   #our-venue {
@@ -1769,6 +1803,81 @@ The Wedding Party Styles
     }
   }
 
+  #rsvp {
+    padding-left: emCalc(35px);
+    padding-right: emCalc(35px);
+
+    p {
+      font-size: emCalc(24px);
+      line-height: 1.25;
+    }
+
+    .reserved-seats {
+      dt {
+        background-position: left -204px;
+
+        p {
+          font-size: emCalc(112px);
+        }
+      }
+      dd {
+        background-position: right -334px;
+
+        p {
+          font-size: emCalc(31px);
+        }
+      }
+    }
+  }
+
+  #guest-form {
+    @include grid-row(nest);
+
+    .guest-list,
+    .actions-note-container {
+      @include grid-column(6);
+    }
+
+    .guest-list {
+      padding-left: 0;
+
+      & > li {
+        margin-bottom: emCalc(15px);
+      }
+
+      input[type="text"] {
+        padding: emCalc(9px) emCalc(10px);
+      }
+
+      a.action {
+        background-position: center -15px;
+        height: 43px;
+      }
+    }
+
+    .actions-note-container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .actions {
+      button {
+        font-size: emCalc(25px);
+      }
+    }
+
+    .note {
+      p {
+        font-size: emCalc(18px);
+      }
+    }
+  }
+
+  #our-timeline dt span {
+    font-size: emCalc(31px);
+    letter-spacing: -3px;
+  }
+
   /******************************
    "Large" Viewport Photos Styles
    ******************************/
@@ -1780,6 +1889,11 @@ The Wedding Party Styles
   }
   .engagement-photos {
     @include block-grid(3, 5px);
+ 
+    &:before {
+      @include diamonds-yellow;
+      margin-bottom: emCalc(35px);
+    }
 
     & > li { clear: none !important; }
   }
@@ -1790,5 +1904,38 @@ The Wedding Party Styles
     & > li { clear: none !important; }
   }
 
+  .photos-app {
+    dt {
+      margin-bottom: 0;
+    }
+
+    h4 {
+      font-size: emCalc(25px);
+    }
+  }
+
+  .photos-app-steps {
+    font-size: emCalc(17px)
+  }
+
+  /******************************
+   "Large" Viewport Registry/Lodging/Our Vendors/Contact Us Styles
+   ******************************/
+  // #our-registry,
+  // #lodging,
+  // #our-vendors,
+  // #contact-us {
+  //   @include grid-column(3);
+  // }
+  
+  .registry-list {
+    &:before {
+      margin-top: 1.5em;
+    }
+
+    & > li:first-child {
+      margin-top: 1.5em;
+    }
+  }
 
 }

@@ -16,7 +16,7 @@ LizYGerardo.HomeController = function() {
   // Private Properties
   //-------------------------------------------------
   var CLIENT_ID = "f9d0cd43f78b450d8c9c388ee1ed6927";
-  var INSTAGRAM_SEARCH_TAG = "puppy";
+  var INSTAGRAM_SEARCH_TAG = "lizygerardo2013";
 
   var _instagramTemplate;
   var _$instagramPhotosContainer = $('#instagram-photos-container');
@@ -44,12 +44,8 @@ LizYGerardo.HomeController = function() {
     if( $('#guest-form').length ) setupGuestListUI();
 
     if( $('#liz-y-gerardo-text').length ) {
-      setupHeaderText();
+      windowSizeCheck();
     }
-  }
-
-  function setupHeaderText() {
-    
   }
 
   function setupGuestListUI() {
@@ -114,21 +110,23 @@ LizYGerardo.HomeController = function() {
     _$instagramPhotosContainer.html(_instagramTemplate(response));
   }
 
-  function windowSizeCheck(currWidth) {
-    console.log(currWidth);
+  function windowSizeCheck() {
+    var currWidth = $(window).width();
 
-      if (currWidth > 0 && currWidth < _breakpoints.small) {
-        console.log('tiny');
-        showSmallerHeader();
-      } else if(currWidth >= _breakpoints.small && currWidth < _breakpoints.medium) {
-        console.log('small');
-        showSmallerHeader();
-      } else if (currWidth >= _breakpoints.medium) {
-        console.log('medium');
-        showLargerHeader();
-      } else {
-        console.log('unknown');
-      }
+    // console.log(currWidth);
+
+    if (currWidth > 0 && currWidth < _breakpoints.small) {
+      // console.log('tiny');
+      showSmallerHeader();
+    } else if(currWidth >= _breakpoints.small && currWidth < _breakpoints.medium) {
+      // console.log('small');
+      showSmallerHeader();
+    } else if (currWidth >= _breakpoints.medium) {
+      // console.log('medium');
+      showLargerHeader();
+    } else {
+      // console.log('unknown');
+    }
   }
 
   function showSmallerHeader() {
@@ -163,8 +161,8 @@ LizYGerardo.HomeController = function() {
       // initUI();
     // },
 
-    windowResizeUpdated: function(currWidth) {
-      windowSizeCheck(currWidth);
+    windowResizeUpdated: function() {
+      windowSizeCheck();
     }
 
     //-------------------------------------------------
@@ -190,6 +188,6 @@ function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,100)}
 
 on_resize(function() {
 
-  LizYGerardo.HomeController.windowResizeUpdated($(window).width());
+  LizYGerardo.HomeController.windowResizeUpdated();
 
 });
