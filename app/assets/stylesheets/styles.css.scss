@@ -290,6 +290,12 @@ figure {
   img {
     @include photo-frame;
   }
+
+  address {
+    a {
+      display: inline-block;
+    }
+  }
 }
 
 address {
