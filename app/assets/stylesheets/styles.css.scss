@@ -60,6 +60,7 @@ input.button, button.button,
   border-bottom: 1px solid #b3b3b3;
   color: $tertiary-color;
   text-transform: uppercase;
+  text-decoration: none;
   font-size: emCalc(27px);
   border-radius: emCalc(4px);
   font-weight: normal;
@@ -69,7 +70,7 @@ input.button, button.button,
   @include linear-gradient(to bottom, #ffffff 0%,#dcdcdc 93%,#fefefe 100%);
   @include transition(all .5s ease-out);
 
-  &[name="decline"] {
+  &.decline {
     color: #868686;
 
     &:hover,
@@ -245,6 +246,7 @@ a {
   &:visited {
     color: $body-font-color;
     @include transition(all .25s ease-out);
+    text-decoration: underline;
   }
 
   &:hover,
@@ -470,6 +472,7 @@ sup {
     a {
       font-size: emCalc(18px);
       color: #7f7f7f;
+      text-decoration: none;
 
       &:hover,
       &:active,
@@ -651,9 +654,31 @@ body > footer {
     margin: 0 0 .833333333em;
   }
 
+  .status  {
+    text-align: center;
+    margin: .75em 0;
+    padding: .8em;
+    line-height: 1;
+    background: #fff;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,.5);
+    font-size: emCalc(25px);
+  }
+
   hr {
     @include diamonds-white;
     margin: emCalc(15px) 0;
+  }
+
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $tertiary-color;
+    }
+  }
+
+  strong {
+    text-transform: uppercase;
   }
 
   .note {
@@ -701,7 +726,7 @@ body > footer {
   .actions {
     @include block-grid(2);
 
-    button {
+    .button {
       width: 100%;
       margin: 0;
       padding-left: emCalc(5px);
@@ -1451,6 +1476,10 @@ The Wedding Party Styles
   #venue-container figure {
     text-align: left;
   }
+
+  #our-timeline-container {
+    padding-bottom: 0;
+  }
   /******************************
   "Medium" Viewport Wedding Party Styles
    ******************************/
@@ -1779,10 +1808,6 @@ The Wedding Party Styles
   /******************************
     "Large" Viewport RSVP/Venue/Timeline Styles
    ******************************/
-  #venue-rsvp-timeline-container {
-    margin-bottom: emCalc(3px);
-  }
-
   #venue-rsvp-container {
     @include grid-column(8);
   }
@@ -1831,50 +1856,51 @@ The Wedding Party Styles
 
         p {
           font-size: emCalc(31px);
+          line-height: 1;
         }
       }
     }
-  }
 
-  #guest-form {
-    @include grid-row(nest);
+    .edit_party {
+      @include grid-row(nest);
 
-    .guest-list,
-    .actions-note-container {
-      @include grid-column(6);
-    }
-
-    .guest-list {
-      padding-left: 0;
-
-      & > li {
-        margin-bottom: emCalc(15px);
+      .guest-list,
+      .actions-note-container {
+        @include grid-column(6);
       }
 
-      input[type="text"] {
-        padding: emCalc(9px) emCalc(10px);
+      .guest-list {
+        padding-left: 0;
+
+        & > li {
+          margin-bottom: emCalc(15px);
+        }
+
+        input[type="text"] {
+          padding: emCalc(9px) emCalc(10px);
+        }
+
+        a.action {
+          background-position: center -15px;
+          height: 43px;
+        }
       }
 
-      a.action {
-        background-position: center -15px;
-        height: 43px;
+      .actions-note-container {
+        padding-right: 0;
+        padding-left: 0;
       }
-    }
 
-    .actions-note-container {
-      padding-right: 0;
-      padding-left: 0;
-    }
-
-    .actions {
-      button {
-        font-size: emCalc(25px);
+      .actions {
+        .button {
+          font-size: emCalc(25px);
+        }
       }
-    }
 
-    .note {
-      p {
-        font-size: emCalc(18px);
+      .note {
+        p {
+          font-size: emCalc(18px);
+        }
       }
     }
   }

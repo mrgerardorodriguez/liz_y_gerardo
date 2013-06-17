@@ -80,15 +80,28 @@
         <section id="rsvp-container" class="column-container">
           <article id="rsvp">
             <h2>RSVP</h2>
-            <h3>For the Craddock Party</h3>
+            <h3>For the <%= @party.name %> Party</h3>
 
             <hr />
 
-            <p>Please fill out the form to let us know who will be attending. Kindly respond by [date] to make sure we have you on the list. *</p>
+            <h4 class="status"><strong><%= @party.friendly_status %></strong></h4>
+
+            <% if @party.has_responded? %>
+
+              <% if @party.has_reserved? %>
+                <p>You have <strong>reserved</strong> [count] out of the <strong><%= @party.guests.count %></strong> seats available for your party. We look forward to seeing you at our wedding!</p>
+                <p>If you need to update your party, please do so by <strong>July 10<sup>th</sup>, 2013</strong> using the form below. Thank you!</p>
+              <% else %>
+                <p>You have informed us you will be unable to attend our wedding by <strong>declining</strong> your RSVP. We are sorry you will be unable to attend. Thank you for letting us know.</p>
+                <p>If circumstances change, please fill out the form below and reserve your seats no later than <strong>July 10<sup>th</sup>, 2013</strong>.</p>
+              <% end %>
+            <% else %>
+              <p>Please fill out the form to let us know who will be attending. Kindly respond by <strong>July 10<sup>th</sup>, 2013</strong> to make sure we have you on the list. *</p>
+            <% end %>
 
             <dl class="reserved-seats">
               <dt>
-                <p>4</p>
+                <p><%= @party.guests.count %></p>
               </dt>
               <dd>
                 <p>Seats have been reserved for your party</p>
@@ -97,41 +110,42 @@
 
             <hr />
 
-            <form action="" id="guest-form">
+            <%= form_for( @party, :url => party_update_path, :method => :put) do |f| %>
+
               <ul class="guest-list">
-                <li>
-                  <input type="text" name="party-guest-1" placeholder="Type Guest Name" value="Kellan Craddock" />
-                  <a class="action remove" href="#">Remove Guest</a>
-                </li>
-                <li>
-                  <input type="text" name="party-guest-2" placeholder="Type Guest Name" value="Jessica Tsuji Craddock" />
-                  <a class="action remove" href="#">Remove Guest</a>
-                </li>
-                <li class="inactive">
-                  <input type="text" name="party-guest-3" placeholder="Type Guest Name" />
-                  <a class="action add" href="#">Remove Guest</a>
-                </li>
-                <li class="inactive">
-                  <input type="text" name="party-guest-4" placeholder="Type Guest Name" />
-                  <a class="action add" href="#">Remove Guest</a>
-                </li>
+                <% @guests.each do |guest| %>
+                  <%= f.fields_for :guests, guest do |builder| %>
+
+                    <% if guest.isChildWithNoName? %>
+                      <%= render "child_guest", :guest => builder %>
+                    <% else %>
+                      <%= render "adult_guest", :guest => builder %>
+                    <% end %>
+
+                  <% end %>
+                <% end %>
               </ul>
 
               <article class="actions-note-container">
                 <ul class="actions">
                   <li>
-                    <button class="button" type="submit" name="decline" id="decline">Decline</button>
+                    <%= f.submit "Decline", class: "button decline" %>
                   </li>
                   <li>
-                    <button class="button" type="submit" name="reserve" id="reserve">Reserve</button>
+                    <% if @party.has_reserved? %>
+                      <%= f.submit "Update", class: "button" %>
+                    <% else %> 
+                      <%= f.submit "Reserve", class: "button" %>
+                    <% end %>
                   </li>
                 </ul>
 
                 <aside class="note">
-                  <p>* As a reminder, our seating is limited, please be accurate. Any guests who have not RSVP’ed by [date] will not be allowed to attend. If you have concerns/questions, please <a href="#">contact us</a> as soon as possible.</p>
+                  <p>* As a reminder, our seating is limited, please be accurate. Any guests who have not responded by <strong>July 10<sup>th</sup>, 2013</strong> will not be allowed to attend. If you have concerns or questions, please <a href="#contact-us" class="section-link">contact us</a> as soon as possible.</p>
                 </aside>
               </article>
-            </form>
+
+            <% end %>
           </article>
         </section>
       </div>
@@ -337,7 +351,7 @@
 
     <article id="photos" class="column-container">
       <h3>Our Engagement</h3>
-      <p class="intro">A <em>huge</em> &ldquo;Thank You&rdquo; to Ryan @ <a href="#">FS Photoghapy</a> for an awesome Engagement Session photo shoot! Ryan took us out to [location] along the beautiful Columbia Gorge area on the Washington side of the Columbia River. The sun came through, and not a rain cloud in sight. We were surrounded with beautiful scenery that definitely represented our love for the outdoors. He’ll be our photographer on our big day as well. Make sure and say &ldquo;Hi&rdquo; to Ryan! :)</p>
+      <p class="intro">A <em>huge</em> &ldquo;Thank You&rdquo; to Ryan @ <a href="http://www.fsweddings.com/" target="_blank">FS Photoghapy</a> for an awesome Engagement Session photo shoot! Ryan took us out along the beautiful Columbia River Gorge on the Washington side of the Columbia River. The sun came through, and not a rain cloud in sight. We were surrounded with beautiful scenery that definitely represented our love for the outdoors. He’ll be our photographer on our big day as well. Make sure and say &ldquo;Hi&rdquo; to Ryan! :)</p>
 
       <ul class="engagement-photos photo-gallery">
         <li>
@@ -517,6 +531,6 @@
   </div>
 </footer>
 
-<a id="back-to-top" class="button back" href="#nav-wrapper">Back to Top</a>
+<!-- <a id="back-to-top" class="button back" href="#nav-wrapper">Back to Top</a> -->
 
 <%= render "instagram-template" %>

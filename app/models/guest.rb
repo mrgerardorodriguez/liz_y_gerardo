@@ -5,4 +5,10 @@ class Guest < ActiveRecord::Base
 
   # Our validators
   validates :name, :age, :party_id, presence: true
+
+  # Returns the current Status description(name) for the Party
+  def isChildWithNoName?
+    self.name === 'child';
+  end
+
 end
