@@ -41,7 +41,7 @@ LizYGerardo.HomeController = function() {
       getInstagramPhotos();
     }
 
-    if( $('#guest-form').length ) setupGuestListUI();
+    if( $('.edit_party').length ) setupGuestListUI();
 
     if( $('#liz-y-gerardo-text').length ) {
       windowSizeCheck();
@@ -51,9 +51,9 @@ LizYGerardo.HomeController = function() {
   function setupGuestListUI() {
     var action = Modernizr.touch ? 'touchstart' : 'click';
 
-    $('input', '#guest-form .guest-list .inactive').attr('disabled','disabled');
+    $('input', '.edit_party .guest-list .inactive').attr('disabled','disabled');
 
-    $('.action', '#guest-form .guest-list').on(action, function(e){
+    $('.action', '.edit_party .guest-list').on(action, function(e){
 
       var currGuestHolder = $(e.currentTarget).parent();
 
@@ -99,6 +99,7 @@ LizYGerardo.HomeController = function() {
         cache: false,
         url: "https://api.instagram.com/v1/tags/" + INSTAGRAM_SEARCH_TAG + "/media/recent?client_id=" + CLIENT_ID,
         success: function(response) {
+          // console.log('response: ', response);
           killLoader();
           renderInstagramPhotos(response);
           setupPhotoGallery();

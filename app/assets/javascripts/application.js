@@ -22,4 +22,4 @@
 //= require lizygerardo
 //= require home
 
-$(document).foundation('reveal');
+$(document).foundation();
