@@ -19,6 +19,32 @@ $sprite-icons-bg-size: 119px 719px;
  Reusable Styles
  ******************************/
 
+/* .tooltip {
+  background: $primary-color;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.35);
+  box-shadow: 0 2px 3px 0px rgba(0,0,0,.5);
+  max-width: emCalc(300px);
+  text-align: center;
+  
+  p {
+    font-size: emCalc(18px);
+    font-weight: normal;
+    margin-bottom: 0;
+    line-height: 1.25;
+
+    strong {
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+
+  & > .nub {
+    border-color: transparent transparent $primary-color;
+  }
+}
+ */
+
 .warning {
   color: red;
   margin: 1em;
@@ -1547,6 +1573,7 @@ The Wedding Party Styles
 
   #photos-container {
     @include pattern-grey-dots;
+    margin-bottom: 1.25em;
 
     header {
       @include heart-white-on-grey;
@@ -1559,6 +1586,7 @@ The Wedding Party Styles
 
   #photos,
   #your-photos {
+    margin-bottom: 0;
 
     h3 {
 
