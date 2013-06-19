@@ -361,15 +361,16 @@ sup {
 
   select {
     width: auto;
-      border: 1px solid #e0bd00;
-      border-radius: 4px;
-      background: #fff;
-      height: 30px;
-      width: 60px;
-      margin-left: emCalc(5px);
-      font-family: $body-font-family;
-      color: $body-font-color;
-      font-size: 18px;
+    border: 1px solid #e0bd00;
+    border-radius: 4px;
+    background: #fff;
+    height: 30px;
+    width: 60px;
+    margin-left: emCalc(5px);
+    font-family: $body-font-family;
+    color: $body-font-color;
+    font-size: 18px;
+    padding: 5px;
   }
 
   & > li {
@@ -699,10 +700,11 @@ body > footer {
 }
 
 #rsvp {
-  background: url("heart_yellow_on_white.png") no-repeat top center;
-  background-size: 70px 63px;
-  margin-top: emCalc(-25px);
+  @include heart-yellow-on-white;
+  margin: emCalc(-25px) auto 0;
   padding-top: emCalc(75px);
+  max-width: emCalc(370px);
+  padding-bottom: 0;
 
   h2 {
     margin-bottom: emCalc(3px);
@@ -1878,6 +1880,10 @@ The Wedding Party Styles
   }
   #our-timeline-container {
     @include grid-column(4);
+  }
+
+  #rsvp {
+    max-width: none;
   }
 
   #venue-container {
