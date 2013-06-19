@@ -16,7 +16,7 @@
         <%= render "devise/shared/notices_alerts" %>
 
         <%= f.label :username, "Username:" %>
-        <%= f.text_field :username, placeholder: "Enter your username" %>
+        <%= f.text_field :username, placeholder: "Enter your username", autocapitalize: "off", autocorrect: "off" %>
 
         <%= f.label :password, "Password:" %>
         <%= f.password_field :password, placeholder: "Enter your password" %>
