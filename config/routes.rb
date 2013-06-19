@@ -8,10 +8,11 @@ LizYGerardo::Application.routes.draw do
   # devise_for :parties
   devise_for :parties, :skip => [:registrations]
   as :party do
-    get 'party/edit' => 'devise/registrations#edit', :as => 'edit_party_registration'
+    # get 'party/edit' => 'devise/registrations#edit', :as => 'edit_party_registration'
+    get 'party/edit' => 'home#edit', :as => 'edit_party_registration'
     # put 'parties' => 'devise/registrations#update', :as => 'party_registration'
     put 'party/update' => 'home#update', :as => 'party_update'
-    get 'party/update' => 'home#index'
+    get 'parties/sign_up' => 'home#create'
   end
 
 

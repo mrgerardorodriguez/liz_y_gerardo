@@ -21,4 +21,12 @@ class HomeController < ApplicationController
 
     redirect_to :root;
   end
+
+  def edit
+    redirect_to :root;
+  end
+
+  def create
+    redirect_to :root;
+  end
 end
