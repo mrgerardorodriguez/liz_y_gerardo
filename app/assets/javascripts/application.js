@@ -12,13 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require foundation/foundation
 //= require responsive-nav
 //= require handlebars
 //= require touchTouch/touchTouch.jquery
 //= require jquery.scrollTo/jquery.scrollTo
 //= require jquery.easing.min
-// require_tree .
 //= require lizygerardo
 //= require home
 
