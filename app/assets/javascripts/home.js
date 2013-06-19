@@ -52,19 +52,20 @@ LizYGerardo.HomeController = function() {
   function setupGuestListUI() {
     var action = Modernizr.touch ? 'touchstart' : 'click';
 
-    $('input', '.edit_party .guest-list .inactive').attr('disabled','disabled');
+    $('input, select', '.edit_party .guest-list .inactive').attr('disabled','disabled');
 
     $('.action', '.edit_party .guest-list').on(action, function(e){
 
-      var currGuestHolder = $(e.currentTarget).parent();
+      var currGuestHolder = $(e.currentTarget).parent().parent();
 
       if ($(e.currentTarget).hasClass('remove')) {
         $(currGuestHolder).addClass('inactive');
-        $('input', currGuestHolder).val('').attr('disabled','disabled');
+        $('input, select', currGuestHolder).val('').attr('disabled','disabled');
         $(e.currentTarget).removeClass('remove').addClass('add');
       } else {
         $(currGuestHolder).removeClass('inactive');
-        $('input', currGuestHolder).removeAttr('disabled').focus();
+        $('input, select', currGuestHolder).removeAttr('disabled')
+        $('input', currGuestHolder).focus();
         $(e.currentTarget).removeClass('add').addClass('remove');
       }
 

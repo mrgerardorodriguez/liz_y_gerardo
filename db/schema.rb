@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610021101) do
+ActiveRecord::Schema.define(:version => 20130619055206) do
 
   create_table "guests", :force => true do |t|
-    t.string   "name",       :default => "child", :null => false
-    t.integer  "party_id",                        :null => false
-    t.integer  "age",                             :null => false
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.string   "name",          :default => "child", :null => false
+    t.integer  "party_id",                           :null => false
+    t.integer  "age",                                :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "attending",     :default => false,   :null => false
+    t.boolean  "primary_guest", :default => true,    :null => false
   end
 
   add_index "guests", ["party_id"], :name => "index_guests_on_party_id"

@@ -1,0 +1,9 @@
+  <li class="active <%= 'with_age' if !guest.primary_guest? %>">
+    <article>
+      <%= f.text_field :name , placeholder: 'Type guest name' %>
+      <a class="action remove" href="#">Remove Guest</a>
+    </article>
+    <% if !guest.primary_guest? %>
+      <%= render 'guest_age_section', :f => f %>
+    <% end %>
+  </li>

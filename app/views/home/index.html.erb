@@ -89,24 +89,35 @@
             <% if @party.has_responded? %>
 
               <% if @party.has_reserved? %>
-                <p>You have <strong>reserved</strong> [count] out of the <strong><%= @party.guests.count %></strong> seats available for your party. We look forward to seeing you at our wedding!</p>
+                <p>You have reserved <strong><%= @party.total_attending %></strong> out of the <strong><%= @party.guests.count %></strong> seats available for your party. We look forward to seeing you at our wedding!</p>
                 <p>If you need to update your party, please do so by <strong>July 10<sup>th</sup>, 2013</strong> using the form below. Thank you!</p>
               <% else %>
-                <p>You have informed us you will be unable to attend our wedding by <strong>declining</strong> your RSVP. We are sorry you will be unable to attend. Thank you for letting us know.</p>
+                <p>You have informed us you will be unable to attend our wedding by <strong>declining</strong>. We are very sorry you will be unable to attend. Thank you for letting us know.</p>
                 <p>If circumstances change, please fill out the form below and reserve your seats no later than <strong>July 10<sup>th</sup>, 2013</strong>.</p>
               <% end %>
             <% else %>
               <p>Please fill out the form to let us know who will be attending. Kindly respond by <strong>July 10<sup>th</sup>, 2013</strong> to make sure we have you on the list. *</p>
             <% end %>
 
+            <% if @party.has_reserved? %>
             <dl class="reserved-seats">
               <dt>
-                <p><%= @party.guests.count %></p>
+                <p><%= @party.total_attending %></p>
               </dt>
               <dd>
                 <p>Seats have been reserved for your party</p>
               </dd>
             </dl>
+            <% else %>
+            <dl class="reserved-seats">
+              <dt>
+                <p><%= @party.guests.count %></p>
+              </dt>
+              <dd>
+                <p>Seats are available for your party</p>
+              </dd>
+            </dl>
+            <% end %>
 
             <hr />
 
@@ -114,12 +125,13 @@
 
               <ul class="guest-list">
                 <% @guests.each do |guest| %>
+
                   <%= f.fields_for :guests, guest do |builder| %>
 
-                    <% if guest.isChildWithNoName? %>
-                      <%= render "child_guest", :guest => builder %>
+                    <% if guest.attending? %>
+                      <%= render "attending_guest", :f => builder, :guest => guest %>
                     <% else %>
-                      <%= render "adult_guest", :guest => builder %>
+                      <%= render "non_attending_guest", :f => builder, :guest => guest %>
                     <% end %>
 
                   <% end %>
@@ -129,19 +141,19 @@
               <article class="actions-note-container">
                 <ul class="actions">
                   <li>
-                    <%= f.submit "Decline", class: "button decline" %>
+                    <%= f.submit "Decline", class: "button decline", name: "response", value: "decline" %>
                   </li>
                   <li>
                     <% if @party.has_reserved? %>
-                      <%= f.submit "Update", class: "button" %>
+                      <%= f.button "Update", class: "button", name: "response", value: "reserve", type: "submit" %>
                     <% else %> 
-                      <%= f.submit "Reserve", class: "button" %>
+                      <%= f.button "Reserve", class: "button", name: "response", value: "reserve", type: "submit" %>
                     <% end %>
                   </li>
                 </ul>
 
                 <aside class="note">
-                  <p>* As a reminder, our seating is limited, please be accurate. Any guests who have not responded by <strong>July 10<sup>th</sup>, 2013</strong> will not be allowed to attend. If you have concerns or questions, please <a href="#contact-us" class="section-link">contact us</a> as soon as possible.</p>
+                  <p>* As a reminder, our seating is limited, please be accurate. Any guests who have not reserved their seat by <strong>July 10<sup>th</sup>, 2013</strong> will not be allowed to attend. If you have concerns or questions, please <a href="#contact-us" class="section-link">contact us</a> as soon as possible.</p>
                 </aside>
               </article>
 

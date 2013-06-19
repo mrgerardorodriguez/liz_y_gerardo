@@ -1,7 +1,7 @@
 class Guest < ActiveRecord::Base
   belongs_to :party
 
-  attr_accessible :age, :name, :party_id
+  attr_accessible :age, :name, :party_id, :attending, :primary_guest
 
   # Our validators
   validates :name, :age, :party_id, presence: true

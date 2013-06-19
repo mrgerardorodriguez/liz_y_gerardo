@@ -1,0 +1,7 @@
+  <li class="inactive with_age">
+    <article>
+      <%= f.text_field :name , placeholder: 'Type guest name', value: '' %>
+      <a class="action add" href="#">Add Guest</a>
+    </article>
+    <%= render 'guest_age_section', :f => f %>
+  </li>

@@ -56,4 +56,8 @@ class Party < ActiveRecord::Base
     self.status === 'reserve'
   end
 
+  def total_attending
+    self.guests.where(attending: true).count
+  end
+
 end
