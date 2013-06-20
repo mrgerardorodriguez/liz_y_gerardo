@@ -8,7 +8,6 @@ class HomeController < ApplicationController
   end
 
   def update
-
 =begin
     @party = current_party
     @guests = Guest.where(:party_id => current_party.id).order('attending DESC, primary_guest DESC')
@@ -31,10 +30,20 @@ class HomeController < ApplicationController
     # @params = params[:party]
 
     # Update the party and guest attributes
-    current_party.update_attributes(params[:party])
+    # current_party.update_attributes(params[:party])
+
+    respond_to do |format|  
+      if current_party.update_attributes(params[:party])
+        format.js 
+        format.html { redirect_to :root, :notice => 'Party was updated.' }
+      else  
+        format.js
+        format.html { redirect_to :root, :notice => 'Party failed to update.' }
+      end  
+    end  
 
     # render 'index'
-    redirect_to :root
+    # redirect_to :root
   end
 
   def edit

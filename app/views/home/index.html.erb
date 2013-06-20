@@ -121,7 +121,14 @@
 
             <hr />
 
-            <%= form_for( @party, :url => party_update_path, :method => :put) do |f| %>
+            <% if flash[:notice] %>
+              <p class="notice"><%= flash[:notice] %></p>
+            <% end %>
+            <% if flash[:error] %>
+              <p class="error"><%= flash[:error] %></p>
+            <% end %>
+
+            <%= form_for( @party, :html => { id: "party-guest-form"}, :url => party_update_path, :method => :put, :remote => true) do |f| %>
 
               <ul class="guest-list">
                 <% @guests.each do |guest| %>
@@ -141,7 +148,7 @@
               <article class="actions-note-container">
                 <ul class="actions">
                   <li>
-                    <%= f.submit "Decline", class: "button decline", name: "response", value: "decline" %>
+                    <%= f.button "Decline", class: "button decline", name: "response", value: "decline" %>
                   </li>
                   <li>
                     <% if @party.has_reserved? %>
@@ -546,4 +553,6 @@
 
 <!-- <a id="back-to-top" class="button back" href="#nav-wrapper">Back to Top</a> -->
 
-<%= render "instagram-template" %>
+<%= render "children_warning" %>
+
+<%= render "instagram_template" %>

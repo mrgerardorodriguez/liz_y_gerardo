@@ -45,6 +45,15 @@ $sprite-icons-bg-size: 119px 719px;
 }
  */
 
+.reveal-modal {
+  .button {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+}
+
 .warning {
   color: red;
   margin: 1em;
@@ -727,6 +736,23 @@ body > footer {
     background: #fff;
     box-shadow: 0 2px 4px 0px rgba(0,0,0,.5);
     font-size: emCalc(25px);
+    position: relative;
+
+    &.anim-start {
+      box-shadow: none;
+      // top: emCalc(-25px);
+      @include transform(scale(.75));
+      opacity: 0;
+    }
+
+    &.anim-finish {
+      box-shadow: 0 2px 4px 0px rgba(0,0,0,.5);
+      // top: 0;
+      @include transform(scale(1));
+      opacity: 1;
+      // @include transition(all 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275));
+      @include transition(all 1.75s cubic-bezier(0.190, 1.000, 0.220, 1.000) .5s);
+    }
   }
 
   hr {

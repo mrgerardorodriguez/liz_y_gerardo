@@ -42,11 +42,48 @@ LizYGerardo.HomeController = function() {
       getInstagramPhotos();
     }
 
-    if( $('.edit_party').length ) setupGuestListUI();
+    if( $('#party-guest-form').length ) {
+      setupGuestListUI();
+      bindFormEvents();
+    }
 
     if( $('#liz-y-gerardo-text').length ) {
       windowSizeCheck();
     }
+  }
+
+  function getParameterByName(name, searchString) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        // results = regex.exec(location.search);
+        results = regex.exec(searchString);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
+  function bindFormEvents() {
+
+    $('#party-guest-form')
+      .on('ajax:beforeSend', function(e, xhr, settings) {
+
+        var response = getParameterByName('response', settings.data);
+
+        $.cookie("response",response);
+
+        if( !$.cookie("accepted-agreement") && response === 'reserve' ) {
+          $('#children-modal').foundation('reveal', 'open');
+
+          $('.accept','#children-modal').on('click', function(e){
+            e.preventDefault();
+            $.cookie("accepted-agreement",true, { expires: 1 });
+            $('button[value="' + response + '"]','#party-guest-form').click();
+          });
+
+          return false;
+        }
+      })
+      .on('ajax:success', function(e, data, status, xhr){
+        document.location.reload(true);
+      });
   }
 
   function setupGuestListUI() {

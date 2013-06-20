@@ -19,6 +19,7 @@ LizYGerardo.AppController = function() {
   var SCROLL_TO_OFFSET = 50; // to take into account the top nav
 
   var $backToTopButton = $('#back-to-top');
+  var _rsvpTimer;
   //-------------------------------------------------
   // Private Methods
   //-------------------------------------------------
@@ -29,6 +30,24 @@ LizYGerardo.AppController = function() {
     if( $('#nav').length) setupNav();
 
     // setupBackToTop();
+    
+    if($.cookie("response")){
+      $('.status','#rsvp').addClass('anim-start').removeClass('anim-finish');
+      _rsvpTimer = window.setInterval(checkRSVP, 500);
+    }
+  }
+
+  function checkRSVP() {
+
+    var scrollToPos = parseInt($('#rsvp-container').offset().top - SCROLL_TO_OFFSET);
+
+    if(scrollToPos != $(document).scrollTop()){
+      $.scrollTo(scrollToPos, 1000, { axis: 'y', easing:'easeInOutExpo' });
+    } else {
+      window.clearInterval(_rsvpTimer);
+      $.removeCookie("response");
+      $('.status','#rsvp').addClass('anim-finish').removeClass('anim-start');
+    }
   }
 
   function setupNav() {

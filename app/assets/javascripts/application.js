@@ -13,11 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation/foundation
+//= require foundation/foundation.reveal
+//= require foundation/foundation.cookie
 //= require responsive-nav
 //= require handlebars
 //= require touchTouch/touchTouch.jquery
 //= require jquery.scrollTo/jquery.scrollTo
 //= require jquery.easing.min
+//= require jquery.deserialize
 //= require lizygerardo
 //= require home
 
