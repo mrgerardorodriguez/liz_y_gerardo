@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130619055206) do
+ActiveRecord::Schema.define(:version => 20130620031059) do
 
   create_table "guests", :force => true do |t|
-    t.string   "name",          :default => "child", :null => false
+    t.string   "name",          :default => "child"
     t.integer  "party_id",                           :null => false
     t.integer  "age",                                :null => false
     t.datetime "created_at",                         :null => false

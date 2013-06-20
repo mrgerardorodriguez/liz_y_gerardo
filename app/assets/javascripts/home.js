@@ -52,26 +52,33 @@ LizYGerardo.HomeController = function() {
   function setupGuestListUI() {
     var action = Modernizr.touch ? 'touchstart' : 'click';
 
-    $('input, select', '.edit_party .guest-list .inactive').attr('disabled','disabled');
+    $('select', '.edit_party .guest-list .inactive').attr('disabled','disabled');
 
-    $('.action', '.edit_party .guest-list').on(action, function(e){
-
-      var currGuestHolder = $(e.currentTarget).parent().parent();
+    $('.edit_party .guest-list li').on(action, '.action', function(e){
+      var $currGuestHolder = $(e.delegateTarget);
 
       if ($(e.currentTarget).hasClass('remove')) {
-        $(currGuestHolder).addClass('inactive');
-        $('input, select', currGuestHolder).val('').attr('disabled','disabled');
-        $(e.currentTarget).removeClass('remove').addClass('add');
+        $currGuestHolder.find('input').val('').blur();
+        $currGuestHolder.addClass('inactive');
+        $(e.currentTarget).addClass('add').removeClass('remove');
+        $currGuestHolder.find('select').attr('disabled','disabled');
       } else {
-        $(currGuestHolder).removeClass('inactive');
-        $('input, select', currGuestHolder).removeAttr('disabled')
-        $('input', currGuestHolder).focus();
+        $currGuestHolder.find('input').focus();
+        $currGuestHolder.removeClass('inactive');
         $(e.currentTarget).removeClass('add').addClass('remove');
+        $currGuestHolder.find('select').removeAttr('disabled');
       }
 
-      e.preventDefault();
-      e.stopPropagation();
+
       return false;
+    });
+
+    $('.edit_party .guest-list .inactive').on('focus', 'input[type="text"]', function(e){
+      var $currGuestHolder = $(e.delegateTarget);
+
+      $currGuestHolder.removeClass('inactive');
+      $currGuestHolder.find('.action').removeClass('add').addClass('remove');
+      $currGuestHolder.find('select').removeAttr('disabled');
     });
   }
 
