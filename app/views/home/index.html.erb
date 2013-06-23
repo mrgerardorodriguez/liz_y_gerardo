@@ -554,6 +554,6 @@
 
 <!-- <a id="back-to-top" class="button back" href="#nav-wrapper">Back to Top</a> -->
 
-<%= render "children_warning" %>
+<%= render "children_warning" if @party.has_children? %>
 
 <%= render "instagram_template" %>
