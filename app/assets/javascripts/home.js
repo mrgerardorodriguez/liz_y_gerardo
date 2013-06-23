@@ -69,16 +69,18 @@ LizYGerardo.HomeController = function() {
 
         $.cookie("response",response);
 
-        if( !$.cookie("accepted-agreement") && response === 'reserve' ) {
-          $('#children-modal').foundation('reveal', 'open');
+        if( $('body').hasClass('children') ) {
+          if( !$.cookie("accepted-agreement") && response === 'reserve' ) {
+            $('#children-modal').foundation('reveal', 'open');
 
-          $('.accept','#children-modal').on('click', function(e){
-            e.preventDefault();
-            $.cookie("accepted-agreement",true, { expires: 1 });
-            $('button[value="' + response + '"]','#party-guest-form').click();
-          });
+            $('.accept','#children-modal').on('click', function(e){
+              e.preventDefault();
+              $.cookie("accepted-agreement",true, { expires: 1 });
+              $('button[value="' + response + '"]','#party-guest-form').click();
+            });
 
-          return false;
+            return false;
+          }
         }
       })
       .on('ajax:success', function(e, data, status, xhr){

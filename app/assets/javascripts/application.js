@@ -20,7 +20,6 @@
 //= require touchTouch/touchTouch.jquery
 //= require jquery.scrollTo/jquery.scrollTo
 //= require jquery.easing.min
-//= require jquery.deserialize
 //= require lizygerardo
 //= require home
 

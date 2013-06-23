@@ -4,7 +4,11 @@ class HomeController < ApplicationController
   def index
     @party = current_party
     @guests = Guest.where(:party_id => current_party.id).order('attending DESC, primary_guest DESC')
-    @guest_age_array = 99.times.collect { |age| [age+1,age+1] }
+
+    @guest_age_array = 99.times.collect do |age| 
+      yearText = age === 0 ? "year" : "years"
+      [(age+1).to_s + " #{yearText} old", age+1] 
+    end
   end
 
   def update

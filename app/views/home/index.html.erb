@@ -1,4 +1,5 @@
 <% provide(:title, 'Liz y Gerardo') %>
+<% provide(:body_class, 'children') if @party.has_children? %>
 
 <section id="nav-wrapper">
   <div class="row">

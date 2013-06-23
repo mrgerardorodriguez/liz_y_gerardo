@@ -374,7 +374,7 @@ sup {
     border-radius: 4px;
     background: #fff;
     height: 30px;
-    width: 60px;
+    // width: 60px;
     margin-left: emCalc(5px);
     font-family: $body-font-family;
     color: $body-font-color;
@@ -751,7 +751,7 @@ body > footer {
       @include transform(scale(1));
       opacity: 1;
       // @include transition(all 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275));
-      @include transition(all 1.75s cubic-bezier(0.190, 1.000, 0.220, 1.000) .5s);
+      @include transition(all 1.75s cubic-bezier(0.190, 1.000, 0.220, 1.000) .35s);
     }
   }
 
@@ -1974,7 +1974,7 @@ The Wedding Party Styles
         }
 
         input[type="text"] {
-          padding: emCalc(9px) emCalc(10px);
+          padding: 9px 30px 9px 10px;
         }
 
         a.action {
