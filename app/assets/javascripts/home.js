@@ -16,8 +16,7 @@ LizYGerardo.HomeController = function() {
   // Private Properties
   //-------------------------------------------------
   var CLIENT_ID = "f9d0cd43f78b450d8c9c388ee1ed6927";
-  // var INSTAGRAM_SEARCH_TAG = "lizygerardo2013";
-  var INSTAGRAM_SEARCH_TAG = "puppy";
+  var INSTAGRAM_SEARCH_TAG = "lizygerardo2013";
 
   var _instagramTemplate;
   var _$instagramPhotosContainer = $('#instagram-photos-container');
