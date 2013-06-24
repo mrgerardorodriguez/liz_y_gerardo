@@ -1250,6 +1250,8 @@ The Wedding Party Styles
   h3 {
     font-size: emCalc(21px);
     font-weight: 600;
+    text-align: center;
+    margin-top: emCalc(30px);
   }
 
   .lodging-list {
@@ -1258,7 +1260,24 @@ The Wedding Party Styles
 
     li {
       &:before {
-        @include diamonds-yellow;
+        // @include diamonds-yellow;
+      }
+      margin: emCalc(10px) 0;
+    }
+
+    a {
+      &:link,
+      &:visited {
+        font-size: emCalc(21px);
+        text-transform: uppercase;
+        text-decoration: underline;
+        line-height: 1;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $primary-color;
       }
     }
 
@@ -1321,6 +1340,10 @@ The Wedding Party Styles
     }
     span {
       display: block;
+
+      &.vendor-name {
+        font-weight: bold;
+      }
     }
   }
 }
@@ -1707,13 +1730,29 @@ The Wedding Party Styles
     .lodging-list {
       // text-align: left;
 
+ 
       li {
-        margin-bottom: emCalc(20px);
+        // margin-bottom: emCalc(20px);
+        // margin: emCalc(10px) 0;
 
         &:before {
           background: none;
           height: 0;
           margin: 0;
+        }
+      }
+
+      a {
+        &:link,
+        &:visited {
+          font-size: emCalc(15px);
+          font-weight: bold;
+          color: darken($body-font-color, 5%);
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          color: darken($body-font-color, 10%);
         }
       }
     }
@@ -1766,6 +1805,17 @@ The Wedding Party Styles
     }
   }
 
+  #lodging {
+    h3 {
+      font-size: emCalc(16px);
+      margin-top: emCalc(25px);
+    }
+
+    a {
+      font-size: emCalc(12px);
+    }
+  }
+
   #vendors,
   #lodging {
     a {
@@ -1781,6 +1831,7 @@ The Wedding Party Styles
     }
   }
 
+  #lodging,
   #contact-us {
     p {
       font-size: emCalc(14px);
