@@ -1,7 +1,14 @@
 <% provide(:title, 'Liz y Gerardo') %>
 <% provide(:body_class, 'children') if @party.has_children? %>
 
+
 <section id="nav-wrapper">
+  <% if @party.is_admin? %>
+  <div class="admin-section">
+    <%= link_to "Go to admin", admin_path %>
+  </div>
+  <% end %>
+
   <div class="row">
     <div class="column-container">
       <a href="/" class="logo">Liz + Gerardo</a>

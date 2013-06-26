@@ -1,0 +1,56 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-section {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+  font-size: emCalc(22px);
+}
+
+h3 {
+  font-size: emCalc(20px);
+}
+
+h4 {
+  font-size: emCalc(19px);
+}
+
+.party-list {
+  list-style-type: none;
+  & > li {
+    border: 1px solid #777;
+    max-width: 400px;
+    margin: 0 auto emCalc(20px);
+    padding: emCalc(20px);
+  }
+}
+
+.party-details {
+  dt,dd {
+    display: inline;
+  }
+
+  dt {
+    text-transform: lowercase;
+  }
+
+  dd {
+    text-transform: uppercase;
+    border-bottom: 1px dotted #777;
+  }
+}
+
+.guest-list {
+  & > li {
+    border-top: 1px dotted #777;
+    padding: emCalc(10px) 0;
+  }
+}

@@ -1,0 +1,33 @@
+<div class="admin-section">
+  <p><%= link_to "Go back to website", root_path %></p>
+</div>
+
+<h1>Wedding Guests</h1>
+
+
+<ul class="party-list">
+<% @parties.each do |party| %>
+  <li>
+    <h2><%= party.name %> Party</h2>
+
+
+
+    <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
+    <dl class="party-details">
+      <dt>Status:</dt>
+      <dd><%= party.friendly_status %></dd>
+    </dl>
+    <ul class="guest-list">
+    <% party.guests.where(attending: true).each do |guest| %>
+      <li>
+        <h4><%= guest.name %></h4>
+        <ul>
+          <!-- <li><strong>Attending:</strong> <%= guest.attending? %></li> -->
+          <li><strong>Age:</strong> <%= guest.age %></li>
+        </ul>
+      </li>
+    <% end %>
+    </ul>
+  </li>
+<% end %>
+</ul>

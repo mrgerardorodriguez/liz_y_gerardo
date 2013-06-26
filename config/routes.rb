@@ -1,5 +1,7 @@
 LizYGerardo::Application.routes.draw do
   
+  get "admin" => "admin#index"
+
   root :to => "home#index"
 
   # root :to => "coming_soon#index"
