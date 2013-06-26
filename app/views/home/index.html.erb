@@ -4,9 +4,9 @@
 
 <section id="nav-wrapper">
   <% if @party.is_admin? %>
-  <div class="admin-section">
+  <nav class="admin-nav">
     <%= link_to "Go to admin", admin_path %>
-  </div>
+  </nav>
   <% end %>
 
   <div class="row">
