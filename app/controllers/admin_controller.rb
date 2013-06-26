@@ -3,7 +3,7 @@ class AdminController < ApplicationController
   before_filter :authenticate_admin
 
   def index
-    @parties = Party.all
+    @parties = Party.order("updated_at DESC")
   end
 
   private
