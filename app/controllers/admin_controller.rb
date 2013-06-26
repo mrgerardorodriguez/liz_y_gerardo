@@ -4,6 +4,7 @@ class AdminController < ApplicationController
 
   def index
     @parties = Party.order("updated_at DESC")
+    # @parties_reserved = Party.where()
   end
 
   private
