@@ -21,13 +21,17 @@
         <dd><%= party.friendly_status %></dd>
       </dl>
       <ul class="guest-list">
-      <% party.guests.where(attending: true).each do |guest| %>
+      <% party.guests.each do |guest| %>
         <li>
-          <h4><%= guest.name %></h4>
-          <ul>
-            <!-- <li><strong>Attending:</strong> <%= guest.attending? %></li> -->
-            <li><strong>Age:</strong> <%= guest.age %></li>
-          </ul>
+          <% if guest.attending %>
+            <h4><%= guest.name %></h4>
+            <ul>
+              <!-- <li><strong>Attending:</strong> <%= guest.attending? %></li> -->
+              <li><strong>Age:</strong> <%= guest.age %></li>
+            </ul>
+          <% else %>
+            <h4>( Open Seat )</h4>
+          <% end %>
         </li>
       <% end %>
       </ul>
