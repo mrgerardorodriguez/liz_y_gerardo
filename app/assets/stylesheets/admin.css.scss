@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+#admin-section {
+  @include grid-row;
+}
+
 .admin-section {
 
   h1 {
@@ -25,6 +29,24 @@
     font-size: emCalc(19px);
   }
 
+  .wedding-details-container {
+    text-align: center;
+    list-style-type: none;
+  }
+
+  .wedding-details {
+    dt,dd {
+      display: inline;
+    }
+
+    dt {
+      &:before {
+        display: block;
+        content: "";
+      }
+    }
+  }
+
   .party-list {
     list-style-type: none;
     & > li {
@@ -32,6 +54,10 @@
       max-width: 400px;
       margin: 0 auto emCalc(20px);
       padding: emCalc(20px);
+
+      &.has-children {
+        background: rgb(198, 223, 230);
+      }
     }
   }
 
@@ -41,7 +67,12 @@
     }
 
     dt {
-      text-transform: lowercase;
+      text-transform: uppercase;
+
+      &:before {
+        display: block;
+        content: "";
+      }
     }
 
     dd {
