@@ -1,24 +1,51 @@
 <% provide(:title, 'Admin') %>
 
-<section class="admin-section">
+<section id="admin-section" class="admin-section">
   <nav class="admin-nav">
     <p><%= link_to "Go back to website", root_path %></p>
   </nav>
 
   <h1>Wedding Guests</h1>
 
+  <ul class="wedding-details-container">
+    <li>
+      <h3>Invited:</h3>
+      <dl class="wedding-details">
+        <dt>Guests:</dt>
+        <dd><%= @guests.count %></dd>
+        <dt>Adults:</dt>
+        <dd><%= @adults.count %></dd>
+        <dt>Children:</dt>
+        <dd><%= @children.count %></dd>
+      </dl>
+    </li>
+    <li>
+      <h3>Reserved</h3>
+      <dl class="wedding-details">
+        <dt>Parties:</dt>
+        <dd><%= @parties_reserved.count %></dd>
+        <dt>Adults:</dt>
+        <dd><%= @adults_reserved_total %></dd>
+        <dt>Children:</dt>
+        <dd><%= @children_reserved_total %></dd>
+      </dl>
+    </li>
+  </ul>
+
 
   <ul class="party-list">
   <% @parties.each do |party| %>
-    <li>
+    <li class="<%= 'has-children' if party.has_children? %>">
       <h2><%= party.name %> Party</h2>
-
-
 
       <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
       <dl class="party-details">
         <dt>Status:</dt>
         <dd><%= party.friendly_status %></dd>
+        <dt>Sign in count:</dt>
+        <dd><%= party.sign_in_count %></dd>
+        <dt>Last sign in:</dt>
+        <dd><%= party.current_sign_in_at.strftime("%A, %m/%d/%y, %l:%M%P") if party.current_sign_in_at %></dd>
       </dl>
       <ul class="guest-list">
       <% party.guests.each do |guest| %>
@@ -26,7 +53,6 @@
           <% if guest.attending %>
             <h4><%= guest.name %></h4>
             <ul>
-              <!-- <li><strong>Attending:</strong> <%= guest.attending? %></li> -->
               <li><strong>Age:</strong> <%= guest.age %></li>
             </ul>
           <% else %>
