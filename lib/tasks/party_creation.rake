@@ -106,7 +106,6 @@ namespace :wedding do
     Guest.create(name: "", age: 99, party_id: p.id, attending: false, primary_guest: false)
     Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
     Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
-    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
 
     p = Party.create(name: "Lindsay & Mayra", username: "lindsaymayra", password: "a3ya7y4sdn", spanish: false, has_children: false)
     Guest.create(name: "Mayra Nevarez", age: 99, party_id: p.id, attending: true, primary_guest: true)
@@ -121,6 +120,7 @@ namespace :wedding do
 
     p = Party.create(name: "Marylyn Rios", username: "marylynrios", password: "3i7ray9yra", spanish: false, has_children: false)
     Guest.create(name: "Marylyn Rios", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "", age: 99, party_id: p.id, attending: false, primary_guest: false)
 
     p = Party.create(name: "Brenda Sifuentez", username: "brendasifuentez", password: "z7ne5isad3r", spanish: false, has_children: false)
     Guest.create(name: "Brenda Sifuentez", age: 99, party_id: p.id, attending: true, primary_guest: true)
@@ -263,9 +263,8 @@ namespace :wedding do
     Guest.create(name: "Mario A. Garza", age: 99, party_id: p.id, attending: true, primary_guest: true)
     Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
 
-    # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
-    # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
-    # Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    p = Party.create(name: "Bola Majekobaje", username: "bola", password: "ej5b38jam", spanish: false, has_children: false)
+    Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
 
     # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
     # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
