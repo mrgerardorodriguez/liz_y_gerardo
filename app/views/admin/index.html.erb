@@ -37,7 +37,7 @@
         <li class="<%= 'has-children' if party.has_children? %>">
           <h2><%= party.name %> Party</h2>
 
-          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
+          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> )</h3>
           <dl class="party-details">
             <dt>Status:</dt>
             <dd><%= party.friendly_status %></dd>
@@ -80,7 +80,7 @@
         <li class="<%= 'has-children' if party.has_children? %>">
           <h2><%= party.name %> Party</h2>
 
-          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
+          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> )</h3>
           <dl class="party-details">
             <dt>Status:</dt>
             <dd><%= party.friendly_status %></dd>
@@ -123,7 +123,7 @@
         <li class="<%= 'has-children' if party.has_children? %>">
           <h2><%= party.name %> Party</h2>
 
-          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
+          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> )</h3>
           <dl class="party-details">
             <dt>Status:</dt>
             <dd><%= party.friendly_status %></dd>
