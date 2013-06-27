@@ -6,21 +6,23 @@
   </nav>
 
   <h1>Wedding Guests</h1>
+  <article class="overall-details-container">
+    <h3>Invited:</h3>
+    <dl class="wedding-details">
+      <dt>Guests:</dt>
+      <dd><%= @guests.count %></dd>
+      <dt>Parties:</dt>
+      <dd><%= @parties.count %></dd>
+      <dt>Adults:</dt>
+      <dd><%= @adults.count %></dd>
+      <dt>Children:</dt>
+      <dd><%= @children.count %></dd>
+    </dl>
+  </article>
 
   <ul class="wedding-details-container">
     <li>
-      <h3>Invited:</h3>
-      <dl class="wedding-details">
-        <dt>Guests:</dt>
-        <dd><%= @guests.count %></dd>
-        <dt>Adults:</dt>
-        <dd><%= @adults.count %></dd>
-        <dt>Children:</dt>
-        <dd><%= @children.count %></dd>
-      </dl>
-    </li>
-    <li>
-      <h3>Reserved</h3>
+      <h3>Reserved:</h3>
       <dl class="wedding-details">
         <dt>Parties:</dt>
         <dd><%= @parties_reserved.count %></dd>
@@ -29,39 +31,124 @@
         <dt>Children:</dt>
         <dd><%= @children_reserved_total %></dd>
       </dl>
-    </li>
-  </ul>
 
+      <ul class="party-list">
+      <% @parties_reserved.each do |party| %>
+        <li class="<%= 'has-children' if party.has_children? %>">
+          <h2><%= party.name %> Party</h2>
 
-  <ul class="party-list">
-  <% @parties.each do |party| %>
-    <li class="<%= 'has-children' if party.has_children? %>">
-      <h2><%= party.name %> Party</h2>
-
-      <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
-      <dl class="party-details">
-        <dt>Status:</dt>
-        <dd><%= party.friendly_status %></dd>
-        <dt>Sign in count:</dt>
-        <dd><%= party.sign_in_count %></dd>
-        <dt>Last sign in:</dt>
-        <dd><%= party.current_sign_in_at.strftime("%A, %m/%d/%y, %l:%M%P") if party.current_sign_in_at %></dd>
-      </dl>
-      <ul class="guest-list">
-      <% party.guests.each do |guest| %>
-        <li>
-          <% if guest.attending %>
-            <h4><%= guest.name %></h4>
-            <ul>
-              <li><strong>Age:</strong> <%= guest.age %></li>
-            </ul>
-          <% else %>
-            <h4>( Open Seat )</h4>
+          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
+          <dl class="party-details">
+            <dt>Status:</dt>
+            <dd><%= party.friendly_status %></dd>
+            <dt>Sign in count:</dt>
+            <dd><%= party.sign_in_count %></dd>
+            <dt>Last sign in:</dt>
+            <dd><%= party.current_sign_in_at.strftime("%A, %m/%d/%y, %l:%M%P") if party.current_sign_in_at %></dd>
+          </dl>
+          <ul class="guest-list">
+          <% party.guests.each do |guest| %>
+            <li>
+              <% if guest.attending %>
+                <h4><%= guest.name %></h4>
+                <ul>
+                  <li><strong>Age:</strong> <%= guest.age %></li>
+                </ul>
+              <% else %>
+                <h4>( Open Seat )</h4>
+              <% end %>
+            </li>
           <% end %>
+          </ul>
         </li>
       <% end %>
       </ul>
     </li>
-  <% end %>
+    <li>
+      <h3>Declined</h3>
+      <dl class="wedding-details">
+        <dt>Parties:</dt>
+        <dd><%= @parties_declined.count %></dd>
+        <dt>Adults:</dt>
+        <dd><%= @adults_declined_total %></dd>
+        <dt>Children:</dt>
+        <dd><%= @children_declined_total %></dd>
+      </dl>
+
+      <ul class="party-list">
+      <% @parties_declined.each do |party| %>
+        <li class="<%= 'has-children' if party.has_children? %>">
+          <h2><%= party.name %> Party</h2>
+
+          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
+          <dl class="party-details">
+            <dt>Status:</dt>
+            <dd><%= party.friendly_status %></dd>
+            <dt>Sign in count:</dt>
+            <dd><%= party.sign_in_count %></dd>
+            <dt>Last sign in:</dt>
+            <dd><%= party.current_sign_in_at.strftime("%A, %m/%d/%y, %l:%M%P") if party.current_sign_in_at %></dd>
+          </dl>
+          <ul class="guest-list">
+          <% party.guests.each do |guest| %>
+            <li>
+              <% if guest.attending %>
+                <h4><%= guest.name %></h4>
+                <ul>
+                  <li><strong>Age:</strong> <%= guest.age %></li>
+                </ul>
+              <% else %>
+                <h4>( Open Seat )</h4>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </li>
+      <% end %>
+      </ul>
+    </li>
+    <li>
+      <h3>Not Responded</h3>
+      <dl class="wedding-details">
+        <dt>Parties:</dt>
+        <dd><%= @parties_not_responded.count %></dd>
+        <dt>Adults:</dt>
+        <dd><%= @adults_not_responded_total %></dd>
+        <dt>Children:</dt>
+        <dd><%= @children_not_responded_total %></dd>
+      </dl>
+
+      <ul class="party-list">
+      <% @parties_not_responded.each do |party| %>
+        <li class="<%= 'has-children' if party.has_children? %>">
+          <h2><%= party.name %> Party</h2>
+
+          <h3>Guests ( <%= party.guests.where(attending: true).count %> / <%= party.guests.count %> ):</h3>
+          <dl class="party-details">
+            <dt>Status:</dt>
+            <dd><%= party.friendly_status %></dd>
+            <dt>Sign in count:</dt>
+            <dd><%= party.sign_in_count %></dd>
+            <dt>Last sign in:</dt>
+            <dd><%= party.current_sign_in_at.strftime("%A, %m/%d/%y, %l:%M%P") if party.current_sign_in_at %></dd>
+          </dl>
+          <ul class="guest-list">
+          <% party.guests.each do |guest| %>
+            <li>
+              <% if guest.attending %>
+                <h4><%= guest.name %></h4>
+                <ul>
+                  <li><strong>Age:</strong> <%= guest.age %></li>
+                </ul>
+              <% else %>
+                <h4>( Open Seat )</h4>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </li>
+      <% end %>
+      </ul>
+    </li>
   </ul>
 </section>

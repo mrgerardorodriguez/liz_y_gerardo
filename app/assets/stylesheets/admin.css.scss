@@ -2,12 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$row-width: 75em; // 1200px
+
 .admin-nav {
   text-align: center;
-}
-
-#admin-section {
-  @include grid-row;
 }
 
 .admin-section {
@@ -29,9 +27,18 @@
     font-size: emCalc(19px);
   }
 
+  .overall-details-container {
+    text-align: center;
+  }
+
   .wedding-details-container {
     text-align: center;
     list-style-type: none;
+    @include grid-row;
+
+    & > li {
+      @include grid-column(12);
+    }
   }
 
   .wedding-details {
@@ -49,9 +56,12 @@
 
   .party-list {
     list-style-type: none;
+    text-align: left;
+    margin: 0;
+
     & > li {
       border: 1px solid #777;
-      max-width: 400px;
+      // max-width: 400px;
       margin: 0 auto emCalc(20px);
       padding: emCalc(20px);
 
@@ -63,21 +73,25 @@
 
   .party-details {
     dt,dd {
-      display: inline;
+      display: block;
+      line-height: 1;
     }
 
     dt {
-      text-transform: uppercase;
+      // text-transform: uppercase;
+      margin-bottom: 0;
 
       &:before {
-        display: block;
-        content: "";
+        // display: block;
+        // content: "";
       }
     }
 
     dd {
       text-transform: uppercase;
-      border-bottom: 1px dotted #777;
+      color: #000;
+      // display: inline;
+      // border-bottom: 1px dotted #777;
     }
   }
 
@@ -87,4 +101,24 @@
       padding: emCalc(10px) 0;
     }
   }
+}
+
+/******************************************
+
+
+ "Medium" Viewport Section Styles (>=768px)
+
+
+ ******************************************/
+
+@media #{$medium} {
+
+  .admin-section {
+    .wedding-details-container {
+      & > li {
+        @include grid-column(4);
+      }
+    }
+  }
+
 }
