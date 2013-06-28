@@ -4,7 +4,7 @@ class AdminController < ApplicationController
 
   def index
 
-    @parties = Party.where(is_admin: false).order("current_sign_in_at ASC")
+    @parties = Party.where(is_admin: false).order("current_sign_in_at DESC")
     @guests_count = 0
     @children_count = 0 
     @adults_count = 0 
