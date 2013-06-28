@@ -15,7 +15,7 @@ class AdminController < ApplicationController
       @adults_count += party.guests.where(age: 13..99).count
     end
 
-    @parties_reserved = Party.where(status_id: 2, is_admin: false)
+    @parties_reserved = Party.where(status_id: 2, is_admin: false).order("current_sign_in_at DESC")
     @adults_reserved_total = 0
     @children_reserved_total = 0
 
@@ -24,7 +24,7 @@ class AdminController < ApplicationController
       @children_reserved_total += party.guests.where(age: 1..12).count
     end
 
-    @parties_declined = Party.where(status_id: 3, is_admin: false)
+    @parties_declined = Party.where(status_id: 3, is_admin: false).order("current_sign_in_at DESC")
     @adults_declined_total = 0
     @children_declined_total = 0
 
@@ -33,7 +33,7 @@ class AdminController < ApplicationController
       @children_declined_total += party.guests.where(age: 1..12).count
     end
 
-    @parties_not_responded = Party.where(status_id: 1, is_admin: false)
+    @parties_not_responded = Party.where(status_id: 1, is_admin: false).order("current_sign_in_at DESC")
     @adults_not_responded_total = 0
     @children_not_responded_total = 0
 
