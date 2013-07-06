@@ -276,7 +276,13 @@ namespace :wedding do
 
     p = Party.create(name: "Candice Coots", username: "candicecoots", password: "st6ce4a2nc", spanish: false, has_children: false)
     Guest.create(name: "Candice Coots", age: 99, party_id: p.id, attending: true, primary_guest: true)
-    # Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+
+    p = Party.create(name: "Francisco Juarez", username: "franciscojuarez", password: "cs3c7a8f", spanish: false, has_children: false)
+    Guest.create(name: "Francisco Juarez", age: 99, party_id: p.id, attending: true, primary_guest: true)
+
+    p = Party.create(name: "Paula & Pancho", username: "paulapancho", password: "4h6ap2up", spanish: false, has_children: false)
+    Guest.create(name: "Paula Pacheco-Valero", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "Pancho Valero", age: 99, party_id: p.id, attending: true, primary_guest: true)
 
     # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
     # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
