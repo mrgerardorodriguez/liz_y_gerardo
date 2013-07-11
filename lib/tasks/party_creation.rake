@@ -138,6 +138,7 @@ namespace :wedding do
 
     p = Party.create(name: "Marco Perez", username: "marco", password: "9c4ra5m", spanish: false, has_children: false)
     Guest.create(name: "Marco Perez", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "Travis", age: 99, party_id: p.id, attending: true, primary_guest: true)
     Guest.create(name: "", age: 99, party_id: p.id, attending: false, primary_guest: false)
 
     p = Party.create(name: "Elana", username: "elana", password: "a22na5e", spanish: false, has_children: true)
@@ -284,9 +285,9 @@ namespace :wedding do
     Guest.create(name: "Paula Pacheco-Valero", age: 99, party_id: p.id, attending: true, primary_guest: true)
     Guest.create(name: "Pancho Valero", age: 99, party_id: p.id, attending: true, primary_guest: true)
 
-    # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
-    # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
-    # Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    p = Party.create(name: "Veronica", username: "veronica", password: "ac2n4re", spanish: false, has_children: false)
+    Guest.create(name: "Veronica", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
 
     # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
     # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
