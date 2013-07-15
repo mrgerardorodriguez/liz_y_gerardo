@@ -330,9 +330,9 @@ namespace :wedding do
     Guest.create(name: "Maribel", age: 99, party_id: p.id, attending: true, primary_guest: true)
     Guest.create(name: "Ernesto", age: 99, party_id: p.id, attending: true, primary_guest: true)
 
-    # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
-    # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
-    # Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    p = Party.create(name: "[Party Name Here]", username: "pinkskyflowers", password: "s2efy4skn", is_vendor: true)
+    Guest.create(name: "Sample Guest", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
 
     # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
     # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)

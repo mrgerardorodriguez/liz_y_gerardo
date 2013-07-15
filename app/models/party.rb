@@ -14,7 +14,7 @@ class Party < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   # Our additional attributes
-  attr_accessible :name, :username, :status_id, :guests_attributes, :has_children, :spanish
+  attr_accessible :name, :username, :status_id, :guests_attributes, :has_children, :spanish, :is_vendor
 
   # Our validators
   validates :username, :name, :status_id, :presence => true
