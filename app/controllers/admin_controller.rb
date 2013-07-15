@@ -20,8 +20,8 @@ class AdminController < ApplicationController
     @children_reserved_total = 0
 
     @parties_reserved.each do |party|
-      @adults_reserved_total += party.guests.where(age: 13..99).count
-      @children_reserved_total += party.guests.where(age: 1..12).count
+      @adults_reserved_total += party.guests.where(age: 13..99, attending: true).count
+      @children_reserved_total += party.guests.where(age: 1..12, attending: true).count
     end
 
     @parties_declined = Party.where(status_id: 3, is_admin: false).order("current_sign_in_at DESC")
