@@ -273,8 +273,11 @@ namespace :wedding do
     Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
 
     p = Party.create(name: "Rodriguez", username: "diana", password: "2a4iad5", spanish: false, has_children: false)
-    Guest.create(name: "Alberto", age: 99, party_id: p.id, attending: true, primary_guest: true)
-    # Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    Guest.create(name: "Diana Rodriguez", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
 
     p = Party.create(name: "Candice Coots", username: "candicecoots", password: "st6ce4a2nc", spanish: false, has_children: false)
     Guest.create(name: "Candice Coots", age: 99, party_id: p.id, attending: true, primary_guest: true)
@@ -334,16 +337,17 @@ namespace :wedding do
     Guest.create(name: "Sample Guest", age: 99, party_id: p.id, attending: true, primary_guest: true)
     Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
 
-    # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
-    # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
-    # Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    p = Party.create(name: "Cristina & Oscar", username: "cristinaoscar", password: "ra2st5rh", spanish: false, has_children: false)
+    Guest.create(name: "Cristina Gonzales Perry", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "Oscar Guerra-Vera", age: 99, party_id: p.id, attending: true, primary_guest: true)
 
-    # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
-    # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
-    # Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
-    # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
-    # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
-    # Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+    p = Party.create(name: "Diego Hernandez", username: "diego", password: "z2dn4reh", spanish: false, has_children: false)
+    Guest.create(name: "Diego Hernandez", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
+
+    p = Party.create(name: "Lupita Peña", username: "lupitapena", password: "a2ep4tpu", spanish: false, has_children: false)
+    Guest.create(name: "Lupita Peña", age: 99, party_id: p.id, attending: true, primary_guest: true)
+    Guest.create(name: "", age: 1, party_id: p.id, attending: false, primary_guest: false)
 
     # p = Party.create(name: "party_name", username: "user", password: "pwd", spanish: false, has_children: false)
     # Guest.create(name: "name", age: 99, party_id: p.id, attending: true, primary_guest: true)
