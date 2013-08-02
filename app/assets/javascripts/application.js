@@ -20,6 +20,9 @@
 //= require touchTouch/touchTouch.jquery
 //= require jquery.scrollTo/jquery.scrollTo
 //= require jquery.easing.min
+// require jquery.countdown
+// require sugar-1.3.9.min
+// require weather
 //= require lizygerardo
 //= require home
 

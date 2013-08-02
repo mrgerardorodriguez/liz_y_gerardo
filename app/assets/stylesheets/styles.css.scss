@@ -80,6 +80,11 @@ $sprite-icons-bg-size: 119px 719px;
   padding: emCalc(5px);
 }
 
+.timer {
+  background: none;
+  border: none;
+}
+
 .column-container {
   @include grid-column(12);
 }

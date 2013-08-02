@@ -1,22 +1,19 @@
 class HomeController < ApplicationController
-  before_filter :authenticate_party!
+  # before_filter :authenticate_party!
 
   def index
-    @party = current_party
-    @guests = Guest.where(:party_id => current_party.id).order('attending DESC, primary_guest DESC')
+    # @party = current_party
+    # @guests = Guest.where(:party_id => current_party.id).order('attending DESC, primary_guest DESC')
 
-    @guest_age_array = 99.times.collect do |age| 
-      yearText = age === 0 ? "year" : "years"
-      [(age+1).to_s + " #{yearText} old", age+1] 
-    end
+    # @guest_age_array = 99.times.collect do |age| 
+    #   yearText = age === 0 ? "year" : "years"
+    #   [(age+1).to_s + " #{yearText} old", age+1] 
+    # end
+    
+    
   end
 
   def update
-=begin
-    @party = current_party
-    @guests = Guest.where(:party_id => current_party.id).order('attending DESC, primary_guest DESC')
-    @guest_age_array = 99.times.collect { |age| [age+1,age+1] }
-=end
 
     # Get the new status id based on the submit choice
     new_status_id = Status.find_by_name(params[:response]).id

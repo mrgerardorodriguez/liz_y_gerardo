@@ -1,14 +1,6 @@
 <% provide(:title, 'Liz y Gerardo') %>
-<% provide(:body_class, 'children') if @party.has_children? %>
-
 
 <section id="nav-wrapper">
-  <% if @party.is_admin? %>
-  <nav class="admin-nav">
-    <%= link_to "Go to admin", admin_path %>
-  </nav>
-  <% end %>
-
   <div class="row">
     <div class="column-container">
       <a href="/" class="logo">Liz + Gerardo</a>
@@ -88,103 +80,28 @@
         <section id="rsvp-container" class="column-container">
           <article id="rsvp">
             <h2>RSVP</h2>
-            <h3>For the <%= @party.name %> Party</h3>
 
             <hr />
 
-            <h4 class="status"><strong><%= @party.friendly_status %></strong></h4>
+            <h4 class="status"><strong>See you August 10th!</strong></h4>
 
-            <% if @party.has_responded? %>
+            <h5 class="timer"></h5>
 
-              <% if @party.has_reserved? %>
-                <p>You have reserved <strong><%= @party.total_attending %></strong> out of the <strong><%= @party.guests.count %></strong> seats available for your party. We look forward to seeing you at our wedding!</p>
-                <p>If you need to update your party, please do so by <strong>July 20<sup>th</sup>, 2013</strong> using the form below. Thank you!</p>
-              <% else %>
-                <p>You have informed us you will be unable to attend our wedding by <strong>declining</strong>. We are very sorry you will be unable to attend. Thank you for letting us know.</p>
-                <p>If circumstances change, please fill out the form below and reserve your seats no later than <strong>July 20<sup>th</sup>, 2013</strong>.</p>
-              <% end %>
-            <% else %>
-              <p>Please fill out the form to let us know who will be attending. Kindly respond by <strong>July 20<sup>th</sup>, 2013</strong> to make sure we have you on the list. *</p>
-            <% end %>
+            <p>The RSVP deadline has passed. Thank you to all who RSVP'ed and reserved your seats. We are very excited and look forward to seeing everyone on August 10th! The weather will be hot, so make sure to prepare for that.</p>
 
-            <% if @party.has_reserved? %>
-            <dl class="reserved-seats">
-              <dt>
-                <p><%= @party.total_attending %></p>
-              </dt>
-              <dd>
-                <p>Seats have been reserved for your party</p>
-              </dd>
-            </dl>
-            <% else %>
-            <dl class="reserved-seats">
-              <dt>
-                <p><%= @party.guests.count %></p>
-              </dt>
-              <dd>
-                <p>Seats are available for your party</p>
-              </dd>
-            </dl>
-            <% end %>
+            <p>If you have any questions, feel free to <script type="text/javascript">
+          <!-- 
+          // protected email script by Joe Maller
+          // JavaScripts available at http://www.joemaller.com
+          // this script is free to use and distribute
+          // but please credit me and/or link to my site
 
-            <hr />
+          emailE='gmail.com'
+          emailE=('lizygerardo2013' + '@' + emailE)
+          document.write('<a href="mailto:' + emailE + '?subject=RSVP question">reach out to us</a>')
 
-            <% if flash[:notice] %>
-              <!-- <p class="notice"><%= flash[:notice] %></p> -->
-            <% end %>
-            <% if flash[:error] %>
-              <!-- <p class="error"><%= flash[:error] %></p> -->
-            <% end %>
-
-            <%= form_for( @party, :html => { id: "party-guest-form"}, :url => party_update_path, :method => :put, :remote => true) do |f| %>
-
-              <ul class="guest-list">
-                <% @guests.each do |guest| %>
-
-                  <%= f.fields_for :guests, guest do |builder| %>
-
-                    <% if guest.attending? %>
-                      <%= render "attending_guest", :f => builder, :guest => guest %>
-                    <% else %>
-                      <%= render "non_attending_guest", :f => builder, :guest => guest %>
-                    <% end %>
-
-                  <% end %>
-                <% end %>
-              </ul>
-
-              <article class="actions-note-container">
-                <ul class="actions">
-                  <li>
-                    <%= f.button "Decline", class: "button decline", name: "response", value: "decline" %>
-                  </li>
-                  <li>
-                    <% if @party.has_reserved? %>
-                      <%= f.button "Update", class: "button", name: "response", value: "reserve", type: "submit" %>
-                    <% else %> 
-                      <%= f.button "Reserve", class: "button", name: "response", value: "reserve", type: "submit" %>
-                    <% end %>
-                  </li>
-                </ul>
-
-                <aside class="note">
-                  <p>* As a reminder, our seating is limited, please be accurate. Any guests who have not reserved their seat by <strong>July 20<sup>th</sup>, 2013</strong> will not be allowed to attend. If you have concerns or questions, please <script type="text/javascript">
-                  <!-- 
-                  // protected email script by Joe Maller
-                  // JavaScripts available at http://www.joemaller.com
-                  // this script is free to use and distribute
-                  // but please credit me and/or link to my site
-
-                  emailE='gmail.com'
-                  emailE=('lizygerardo2013' + '@' + emailE)
-                  document.write('<a href="mailto:' + emailE + '?subject=RSVP question/concern">contact us</a>')
-
-                   //-->
-                  </script> as soon as possible.</p>
-                </aside>
-              </article>
-
-            <% end %>
+           //-->
+          </script>.</p>
           </article>
         </section>
       </div>
@@ -585,38 +502,6 @@
               <a href="http://www.vrbo.com/vacation-rentals/usa/oregon/central-oregon" target="_blank">VRBO</a>
             </li>
           </ul>
-
-<!--           <ul class="lodging-list">
-            <li>
-              <h3>Eagle Crest Resort</h3>
-              <address>
-                <a href="http://maps.apple.com/maps?daddr=1522+Cline+Falls+Road+Redmond+OR+97756" target="_blank">
-                  <span>1522 Cline Falls Road</span>
-                  <span>Redmond, OR 97756</span>
-                </a>
-                <span>Reservations: (855) 682-4786</span>
-                <span>Use group code: <strong>KW82-THIS-IS-FAKE</strong></span>
-              </address>
-            </li>
-            <li>
-              <h3>Eagle Crest Resort</h3>
-              <address>
-                <span>1522 Cline Falls Road</span>
-                <span>Redmond, OR 97756</span>
-                <span>Reservations: (855) 682-4786</span>
-                <span>Use group code: <strong>KW82-THIS-IS-FAKE</strong></span>
-              </address>
-            </li>
-            <li>
-              <h3>Eagle Crest Resort</h3>
-              <address>
-                <span>1522 Cline Falls Road</span>
-                <span>Redmond, OR 97756</span>
-                <span>Reservations: (855) 682-4786</span>
-                <span>Use group code: <strong>KW82-THIS-IS-FAKE</strong></span>
-              </address>
-            </li>
-          </ul> -->
         </div>
       </article>
 
@@ -646,12 +531,10 @@
               <a href="http://www.ceylonblu.com/" target="_blank">Ceylon Blu</a>
               <span>Bend, OR</span>
             </li>
-            <% unless @party.username == 'pinkskyflowers' %>
             <li>
               <a href="http://pinkskyflowers.com" target="_blank">Pink Sky Flowers</a>
               <span>Redmond, OR</span>
             </li>
-            <% end %>
           </ul>
         </div>
       </article>
@@ -691,7 +574,5 @@
 </footer>
 
 <!-- <a id="back-to-top" class="button back" href="#nav-wrapper">Back to Top</a> -->
-
-<%= render "children_warning" if @party.has_children? %>
 
 <%= render "instagram_template" %>

@@ -49,7 +49,29 @@ LizYGerardo.HomeController = function() {
     if( $('#liz-y-gerardo-text').length ) {
       windowSizeCheck();
     }
-  }
+
+/*    Weather.getCurrent('Redmond, OR', function(current) {
+      console.log(Weather.kelvinToFahrenheit(current.temperature()).toFixed() + '°');
+      console.log(current.data.list[0].weather[0].id);
+      console.log(current.conditions());
+    });
+*/    
+/*    Weather.getForecast("Redmond, Oregon", function(forecast){
+      [1, 2, 3, 4, 5].each(function(day) {
+        console.log(Date.create(day + " day from now").format("{dow}").toUpperCase());
+        console.log(
+          Weather.kelvinToFahrenheit(
+            forecast.day(day + " day from now").high()
+          ).toFixed()
+        );
+        console.log(
+          Weather.kelvinToFahrenheit(
+            forecast.day(day + " day from now").low()
+          ).toFixed()
+        );
+      });
+    });
+*/  }
 
   function getParameterByName(name, searchString) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
