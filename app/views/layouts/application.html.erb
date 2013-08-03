@@ -8,8 +8,9 @@
     <meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Liz y Gerardo are getting married! #lizygerardo2013">
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Liz y Gerardo" %></title>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -24,16 +25,8 @@
   </head>
 
   <body class="<%= yield(:body_class) %>">
-    <% if Rails.env.development? || Rails.env.staging? %>
-<!--     <section class="warning">
-      <p>You are currently viewing our <span><%= Rails.env %></span> environment.</p>
-      <p>Please <strong>DO NOT</strong> share this url with <em>anyone</em> or you will be subject to mind-bending repercussions. You have been warned.</p>
-      <p>If you have reached this web page due to error, close the browser immediately as we are tracking all visits and will take all actions necessary to find you.</p>
-    </section> -->
-    <% end %>
 
     <%= yield %>
-
     
     <%= javascript_include_tag "application" %>
 
