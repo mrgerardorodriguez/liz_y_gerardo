@@ -220,6 +220,12 @@ input.button, button.button,
   border: emCalc(4px) solid #fff;
   display: inline-block;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
+
+  @include transition(all .4s ease-out);
+
+  // &:hover {
+  //   border: emCalc(4px) solid #ffd800;
+  // }
 }
 /******************************
  Global Styles
@@ -1187,6 +1193,18 @@ The Wedding Party Styles
     img {
       @include photo-frame;
       width: 100%;
+      opacity: .75;
+    }
+
+    a {
+      &:hover,
+      &:active,
+      &:focus {
+        img {
+          border: emCalc(4px) solid #ffd800;
+          opacity: 1;
+        }
+      }
     }
   }
 }
