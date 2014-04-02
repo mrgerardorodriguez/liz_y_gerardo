@@ -1,3 +1,30 @@
+/**
+ * ifPhotoIsAppropriate() - View helper that checks for innapropriate images.
+ * @param  {String} photoID The id of the photo to check.
+ * @param  {Object} options  Handlebars options object
+ * @return {Boolean}         Returns...
+ */
+Handlebars.registerHelper('ifPhotoIsAppropriate', function(photoID, options){
+  // TODO: Move this out of here???
+  // the naughty list
+  var naughtyIDList = ["514882851122594303_30876679"];
+
+  if(!in_array(photoID, naughtyIDList)) {
+    return options.fn(this);
+  }
+});
+
+function in_array(needle, haystack) {
+  for (var i = 0, maxi = haystack.length; i < maxi; ++i) {
+    if (haystack[i] == needle) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
