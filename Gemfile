@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 # gem 'pg', '0.12.2'
 gem 'pg'
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 3.1.3'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 
